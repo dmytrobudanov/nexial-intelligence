@@ -1172,6 +1172,11 @@ h1 {
 }
 
 @media (max-width: 768px) {
+  .solutions-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
   .header-inner {
     padding: 10px 0;
   }
