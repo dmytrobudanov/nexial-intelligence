@@ -398,12 +398,13 @@ h1 {
 
 .hero-visual {
   position: relative;
+  transform: translateY(-70px);
 }
 
 .intel-orbit {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 480px;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
 }
@@ -441,15 +442,15 @@ h1 {
 }
 
 .orbit-ring-1 {
-  width: 230px;
-  height: 230px;
+  width: 280px;
+  height: 280px;
   transform: translate(-50%, -50%) rotate(18deg);
   animation: orbit-spin 36s linear infinite;
 }
 
 .orbit-ring-2 {
-  width: 300px;
-  height: 300px;
+  width: 360px;
+  height: 360px;
   transform: translate(-50%, -50%) rotate(-12deg);
   animation: orbit-spin 52s linear infinite reverse;
 }
