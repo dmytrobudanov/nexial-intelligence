@@ -98,10 +98,10 @@ body {
 }
 
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
+  padding: 18px 0;
 }
 
 .logo {
@@ -148,16 +148,17 @@ body {
 
 .nav {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 18px;
-  font-size: 0.9rem;
+  gap: 42px;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
 }
 
 .nav a {
-  color: rgba(242, 246, 255, 0.82);
+  color: rgba(200, 215, 255, 0.8);
   text-decoration: none;
-  padding: 6px 4px;
-  position: relative;
+  font-weight: 400;
   transition: color 0.18s ease;
 }
 
@@ -184,10 +185,18 @@ body {
 }
 
 .nav-cta {
-  padding: 7px 14px;
+  padding: 10px 22px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 224, 255, 0.6);
-  background: radial-gradient(circle at top left, rgba(0, 224, 255, 0.12), transparent);
+  border: 1.5px solid rgba(0, 224, 255, 0.6);
+  background: transparent;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: rgba(0, 224, 255, 0.08);
+  border-color: rgba(0, 224, 255, 0.9);
 }
 
 .nav-cta::after {
@@ -256,43 +265,58 @@ h1 {
 
 .hero-metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 18px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 28px 0 32px;
+}
+
+@media (min-width: 640px) {
+  .hero-metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .metric-card {
-  padding: 8px 10px;
-  border-radius: 14px;
-  border: 1px solid rgba(109, 135, 237, 0.7);
-  background: radial-gradient(
-      circle at top left,
-      rgba(0, 224, 255, 0.16),
-      rgba(7, 10, 30, 0.95)
-    );
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.6);
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 224, 255, 0.25);
+  background: linear-gradient(
+    145deg,
+    rgba(8, 14, 36, 0.95),
+    rgba(6, 10, 28, 0.98)
+  );
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(0, 224, 255, 0.6);
+  transform: translateY(-3px);
 }
 
 .metric-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(179, 198, 255, 0.96);
-  margin-bottom: 2px;
+  letter-spacing: 0.18em;
+  color: rgba(150, 170, 255, 0.8);
+  margin-bottom: 8px;
 }
 
 .metric-value {
   display: block;
-  font-size: 1.12rem;
+  font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.1;
+  margin-bottom: 6px;
+  color: #ffffff;
 }
 
 .metric-caption {
   display: block;
-  font-size: 0.72rem;
-  color: rgba(181, 196, 245, 0.92);
+  font-size: 0.8rem;
+  color: rgba(200, 215, 255, 0.7);
 }
 
 .hero-actions {
