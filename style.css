@@ -87,7 +87,7 @@ body {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 50;
   font-size: 16px;
   backdrop-filter: blur(18px);
   background: linear-gradient(
@@ -101,9 +101,12 @@ body {
 
 .header-inner {
   display: grid;
+  position: relative;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 18px 0;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 .logo {
@@ -553,6 +556,7 @@ h1 {
 
 .section {
   padding: 56px 0;
+  scroll-margin-top: 110px;
 }
 
 .section-light {
@@ -823,6 +827,7 @@ h1 {
 .solution-card h3 {
   margin: 0 0 8px;
   font-size: 1.02rem;
+  padding-right: 48px;
 }
 
 .solution-tagline {
@@ -2011,3 +2016,64 @@ h1 {
   background: #547aff;
   box-shadow: 0 0 10px rgba(84, 122, 255, 0.8);
 }
+
+/* ===== FORCE MOBILE HEADER FIX ===== */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  position: relative;
+  z-index: 3000;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  margin: 5px 0;
+  background: #ffffff;
+}
+
+@media (max-width: 1024px) {
+
+  /* УБИРАЕМ nav из потока */
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 260px;
+    background: #060a1a;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 120px 30px;
+    gap: 24px;
+    transition: right 0.3s ease;
+    z-index: 2000;
+  }
+
+  .nav.nav-open {
+    right: 0;
+  }
+
+  /* СКРЫВАЕМ ДЕСКТОПНЫЙ ФЛЕКС */
+  .nav {
+    display: flex;
+  }
+
+  /* ПОКАЗЫВАЕМ КНОПКУ */
+  .menu-toggle {
+    display: block;
+    justify-self: end; /* КЛЮЧЕВОЕ */
+  }
+}
+
+
+.pilot-table th:first-child,
+.pilot-table td:first-child {
+  padding-left: 24px;
+}
+

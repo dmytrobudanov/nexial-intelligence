@@ -40,6 +40,11 @@
           <a href="#how-it-works">How It Works</a>
           <a href="#contact" class="nav-cta">Request Pilot</a>
         </nav>
+        <button class="menu-toggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
@@ -439,7 +444,7 @@
 
             <!-- 7 -->
             <article class="solution-card glass-card">
-              <span class="solution-index">07</span>
+              <span class="solution-index">04</span>
               <h3>Custom AI Agent Deployment (on‑prem / enterprise)</h3>
               <p class="solution-tagline">
                 Custom AI agents designed around your workflows, data, and risk profile — deployed where you need them.
@@ -468,7 +473,7 @@
             <div class="solutions-grid solutions-grid-more">
               <!-- 4 -->
               <article class="solution-card glass-card">
-                <span class="solution-index">04</span>
+                <span class="solution-index">05</span>
                 <h3>Competitive &amp; Narrative Intelligence Monitoring</h3>
                 <p class="solution-tagline">
                   Continuous read on how your competitors and portfolio are positioned, perceived, and discussed.
@@ -493,7 +498,7 @@
 
               <!-- 5 -->
               <article class="solution-card glass-card">
-                <span class="solution-index">05</span>
+                <span class="solution-index">06</span>
                 <h3>Digital Footprint &amp; Growth Intelligence</h3>
                 <p class="solution-tagline">
                   Infer growth, hiring, and execution from a company’s digital and organizational footprint.
@@ -518,7 +523,7 @@
 
               <!-- 6 -->
               <article class="solution-card glass-card">
-                <span class="solution-index">06</span>
+                <span class="solution-index">07</span>
                 <h3>AI-Based Internal Intelligence System</h3>
                 <p class="solution-tagline">
                   Private AI layer that turns your calls, memos, and internal data into structured, actionable intelligence.
@@ -989,6 +994,7 @@
             </div>
             <button type="submit" class="btn primary full-width"><span>Send Request</span></button>
             <p class="form-microcopy">We usually respond within 1–2 business days.</p>
+            <div id="form-status" class="form-status"></div>
           </form>
         </div>
       </section>
@@ -1003,6 +1009,64 @@
         <p class="footer-meta">© <span id="year">2026</span> Nexial Intelligence. All rights reserved.</p>
       </div>
     </footer>
+
+
+
+      <script>
+      const form = document.querySelector(".contact-form");
+      const statusBox = document.getElementById("form-status");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        statusBox.textContent = "Sending...";
+        statusBox.className = "form-status loading";
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("YOUR_ENDPOINT_HERE", {
+            method: "POST",
+            body: formData,
+          });
+
+          if (response.ok) {
+            statusBox.textContent = "✅ Request sent successfully.";
+            statusBox.className = "form-status success";
+            form.reset();
+          } else {
+            statusBox.textContent = "❌ Error: Server responded with an error.";
+            statusBox.className = "form-status error";
+          }
+        } catch (error) {
+          statusBox.textContent = "❌ Network error. Please try again.";
+          statusBox.className = "form-status error";
+        }
+      });
+    </script>
+
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      const links = document.querySelectorAll('.nav a');
+
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('nav-open');
+      });
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('nav-open');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+          nav.classList.remove('nav-open');
+        }
+      });
+    </script>
   </body>
 </html>
 
