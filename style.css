@@ -519,8 +519,8 @@ h1 {
 .glass-card {
   background: linear-gradient(
       135deg,
-      rgba(7, 12, 36, 0.94),
-      rgba(7, 10, 30, 0.96)
+      rgba(12, 20, 55, 0.92),
+      rgba(8, 14, 40, 0.95)
     );
   border-radius: 18px;
   border: 1px solid rgba(145, 169, 255, 0.4);
@@ -754,9 +754,31 @@ h1 {
 }
 
 .role-bars {
+  position: relative;
   display: flex;
-  gap: 4px;
-  margin: 6px 0 8px;
+  gap: 14px;
+  margin: 8px 0 10px;
+}
+
+.role-bars::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #22d3ee 0%,
+    #67e8f9 30%,
+    #a78bfa 55%,
+    #f472b6 80%,
+    #ec4899 100%
+  );
+
+  z-index: 0;
 }
 
 .role-bar {
@@ -764,38 +786,8 @@ h1 {
   height: 3px;
   border-radius: 999px;
   background: transparent;
-  overflow: hidden;
   position: relative;
-}
-
-.role-bar::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 224, 255, 0.95) 0%,
-    rgba(150, 215, 255, 0.95) 38%,
-    rgba(255, 120, 220, 0.95) 72%,
-    rgba(255, 51, 153, 0.95) 100%
-  );
-  filter: saturate(1.05) brightness(1.05);
-  transform-origin: left;
-  transform: scaleX(0.7);
-}
-
-.role-bar-ops::after {
-  transform: scaleX(0.85);
-}
-
-.role-bar-tech::after {
-  transform: scaleX(0.9);
-}
-
-.role-bar-risk::after,
-.role-bar-competition::after {
-  transform: scaleX(0.6);
+  z-index: 1;
 }
 
 .solutions-grid {
@@ -876,51 +868,45 @@ h1 {
   margin-bottom: 10px;
 }
 
+.solution-bars {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  margin: 12px 0 16px;
+}
+
+.solution-bars::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #22d3ee 0%,
+    #67e8f9 30%,
+    #a78bfa 55%,
+    #f472b6 80%,
+    #ec4899 100%
+  );
+
+  z-index: 0;
+}
+
 .solution-bar {
   flex: 1;
   height: 3px;
   border-radius: 999px;
   background: transparent;
-  overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
-.solution-bar::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 224, 255, 0.95) 0%,
-    rgba(150, 215, 255, 0.95) 38%,
-    rgba(255, 120, 220, 0.95) 72%,
-    rgba(255, 51, 153, 0.95) 100%
-  );
-  filter: saturate(1.05) brightness(1.05);
-  transform-origin: left;
-  transform: scaleX(0.6);
-}
 
-.solution-bar-tech::after {
-  transform: scaleX(0.9);
-}
 
-.solution-bar-market::after {
-  transform: scaleX(0.75);
-}
-
-.solution-bar-narrative::after {
-  transform: scaleX(0.5);
-}
-
-.solution-bar-growth::after {
-  transform: scaleX(0.7);
-}
-
-.solution-bar-internal::after {
-  transform: scaleX(0.8);
-}
 
 .solution-highlights {
   display: grid;
