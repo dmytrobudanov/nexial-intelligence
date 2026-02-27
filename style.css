@@ -220,6 +220,9 @@ main {
 
 .hero {
   padding: 72px 0 64px;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  position: relative;
 }
 
 .hero-inner {
@@ -1875,6 +1878,12 @@ h1 {
 
   .hero {
     padding-top: 52px;
+    padding-top: 180px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px; /* Если заголовок все равно слишком огромный, принудительно уменьши его тут */
+    line-height: 1.2;
   }
 
   .hero-inner {
