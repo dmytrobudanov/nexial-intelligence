@@ -1909,3 +1909,105 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================= */
+/* Pilot Matrix */
+/* ============================= */
+
+.pilot-matrix {
+  margin-top: 40px;
+  padding: 22px 24px;
+}
+
+.pilot-matrix-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.pilot-matrix-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+
+}
+
+.pilot-matrix-icon {
+  width: 24px;
+  height: 24px;
+  display: center;
+  align-items: center;
+  color: #818cf8;
+  justify-content: center;
+  border-radius: 6px;
+  background: conic-gradient(
+    from 200deg,
+    #00e0ff,
+    #ff3399,
+    #547aff,
+    #00e0ff
+  );
+  position: relative;
+}
+
+.pilot-matrix-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pilot-matrix-icon::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 4px;
+  background: radial-gradient(circle at 30% 20%, #0b1025, #02030a);
+}
+
+.pilot-table-wrapper {
+  overflow-x: auto;
+}
+
+.pilot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.pilot-table thead th {
+  text-align: left;
+  padding: 12px 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(180, 200, 255, 0.8);
+  border-bottom: 1px solid rgba(120, 140, 255, 0.25);
+}
+
+.pilot-table tbody td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(120, 140, 255, 0.12);
+  color: rgba(225, 235, 255, 0.95);
+}
+
+.pilot-table tbody tr:hover {
+  background: rgba(0, 224, 255, 0.04);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  margin-right: 8px;
+}
+
+.dot-cyan {
+  background: #00e0ff;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.8);
+}
+
+.dot-indigo {
+  background: #547aff;
+  box-shadow: 0 0 10px rgba(84, 122, 255, 0.8);
+}
