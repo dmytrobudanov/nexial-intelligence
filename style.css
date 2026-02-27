@@ -1002,7 +1002,7 @@ h1 {
 
 .solutions-more-summary::before {
   content: "▾";
-  font-size: 0.7rem;
+  font-size: 1.3rem;
 }
 
 .solutions-more[open] .solutions-more-summary::before {
