@@ -34,6 +34,7 @@ body {
   inset: 0;
   z-index: -2;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .blob {
@@ -88,9 +89,11 @@ body {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  z-index: 999;
   font-size: 16px;
   backdrop-filter: blur(18px);
   background: linear-gradient(
@@ -100,6 +103,7 @@ body {
     transparent
   );
   border-bottom: 1px solid rgba(123, 142, 255, 0.18);
+  transition: all 0.3s ease;
 }
 
 .header-inner {
@@ -1315,7 +1319,17 @@ h1 {
   color: rgba(221, 231, 255, 0.92);
 }
 
+.solutions-overview-clean {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  padding: 20px 0;
+}
+
 @media (min-width: 768px) {
+  .solutions-overview-clean {
+    grid-template-columns: repeat(4, 1fr); /* 4 в ряд на десктопе */
+  }
   .how-flow-line,
   .how-flow-line-accent {
     display: block;
@@ -1356,10 +1370,47 @@ h1 {
   overflow: hidden;
 }
 
+.overview-item-new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overview-header {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Расстояние между иконкой и заголовком */
+}
+
+.overview-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.overview-item-new h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.overview-item-new p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(220, 230, 255, 0.7); /* Текст чуть приглушен, как в примере */
+  padding-left: 32px; /* Сдвигаем описание под заголовок, чтобы оно не было под иконкой */
+}
+
 .how-secondary-item {
   padding: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   transition: background 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .how-secondary-item:first-child {
@@ -1372,10 +1423,13 @@ h1 {
 
 .how-secondary-title {
   margin: 0 0 8px;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0 !important;
 }
 
 .how-secondary-icon {
@@ -1383,18 +1437,24 @@ h1 {
   height: 22px;
   color: rgba(165, 184, 255, 0.72);
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.9;
 }
 
 .how-secondary-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 }
 
 .how-secondary-text {
   margin: 0;
   font-size: 0.96rem;
-  line-height: 1.55;
+  line-height: 1.5;
   color: rgba(211, 222, 255, 0.94);
+  color: rgba(225, 235, 255, 0.55); /* Тусклый текст */
+  padding-left: 30px;
 }
 
 .how-diff-shell {
@@ -1460,9 +1520,20 @@ h1 {
   height: 22px;
 }
 
+.features-clean-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+
 @media (min-width: 768px) {
   .how-secondary {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .features-clean-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки как в Data Control */
   }
 
   .how-secondary-item {
@@ -1473,6 +1544,40 @@ h1 {
   .how-secondary-item:first-child {
     border-left: 0;
   }
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feature-top {
+  display: flex;
+  align-items: center; /* Центрируем иконку и текст по вертикали */
+  gap: 12px;           /* Расстояние между иконкой и заголовком */
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.feature-title {
+  margin: 0 !important; /* Убираем стандартные отступы h3 */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.feature-text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(225, 235, 255, 0.6); /* Приглушенный цвет для описания */
+  padding-left: 32px; /* Главный секрет: текст начинается строго под заголовком */
 }
 
 .how-step {
@@ -2106,5 +2211,139 @@ h1 {
 .pilot-table th:first-child,
 .pilot-table td:first-child {
   padding-left: 24px;
+}
+
+.how-secondary-panel {
+  background: rgba(255, 255, 255, 0.03); /* Едва заметный белый фон */
+  backdrop-filter: blur(12px);           /* Тот самый блюр */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Тонкая граница */
+  border-radius: 20px;                   /* Закругление */
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.solutions-section h2,
+#solutions h2 {
+    margin-bottom: 8px !important; /* Почти вплотную к таблице */
+}
+
+.nexial-glass-container {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-top: 0 !important;      /* Убираем внешний отступ сверху */
+  margin-bottom: 20px !important; /* Уменьшаем отступ до следующих карточек */
+  overflow: hidden;
+}
+
+.solutions-section h2 {
+  margin-bottom: 10px !important;
+}
+
+/* Сетка */
+.nexial-glass-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 992px) {
+  .nexial-glass-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .nexial-glass-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
+}
+@media (max-width: 991px) {
+  .nexial-glass-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+.nexial-glass-item {
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.nexial-glass-content {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ЭФФЕКТ ПРИ НАВЕДЕНИИ */
+.nexial-glass-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.nexial-glass-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(123, 142, 255, 0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.nexial-glass-item:hover::before {
+  opacity: 1;
+}
+
+/* Заголовок и иконка */
+.nexial-glass-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.nexial-glass-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+.nexial-glass-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nexial-glass-title {
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  letter-spacing: 0.01em;
+}
+
+/* Текст */
+.nexial-glass-text {
+  margin: 0 !important;
+  padding-left: 28px; /* Выравнивание под текст заголовка */
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+  color: rgba(225, 235, 255, 0.6) !important;
+}
+
+/* Стили для иконок внутри карточек */
+.card-icon svg {
+  display: block;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 8px currentColor); /* Неоновое свечение под цвет иконки */
 }
 
