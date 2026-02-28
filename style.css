@@ -3173,8 +3173,8 @@ h1 {
 
 /* Остальные подклассы */
 #transformation .card-json { width: 240px; top: 0; left: 40px; transform: rotate(-2deg); opacity: 0.6; }
-#transformation .card-text { width: 360px; top: 150px; left: 10px; transform: rotate(-4deg); z-index: 20; }
-#transformation .card-table { width: 220px; top: 80px; right: 5px; transform: rotate(3deg); z-index: 30; }
+#transformation .card-text { width: 360px; top: 150px; left: -40px; transform: rotate(-4deg); z-index: 20; }
+#transformation .card-table { width: 220px; top: 80px; right: -35px; transform: rotate(3deg); z-index: 30; }
 
 /* Колонки и сетка внутри блока */
 #transformation .infographic-grid {
