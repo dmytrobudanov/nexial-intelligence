@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://unpkg.com/lucide@latest"></script>
   	<link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8" />
     <meta
@@ -285,6 +286,7 @@
       
       
 
+
       <!-- What We Do -->
       <section id="what-we-do" class="section section-light">
         <div class="container section-inner">
@@ -336,20 +338,191 @@
         </div>
       </section>
 
+
+
+      <section id="transformation" class="section">
+
+          <!-- Фоновое свечение -->
+          <div class="ambient-glow glow-1"></div>
+          <div class="ambient-glow glow-2"></div>
+
+          <main class="main-container">
+              <!-- Заголовок -->
+              <header class="header">
+                  <h2 class="title">
+                      From Chaotic Noise to <br class="hidden-mobile">
+                      <span class="gradient-text">Pure Gold</span>
+                  </h2>
+                  <p class="subtitle">
+                      Feed our engine millions of fragmented, messy data points. We process it all through our AI black box to deliver clean, actionable intelligence and profit-driving insights.
+                  </p>
+              </header>
+
+              <!-- Инфографика -->
+              <div class="infographic-grid">
+
+                  <!-- Линии связи (Desktop) -->
+                  <div class="connection-lines">
+                      <div class="flow-line flow-1"></div>
+                      <div class="flow-line flow-2"></div>
+                  </div>
+
+
+      <!-- Левая колонка: Raw Input -->
+                  <div class="column column-left">
+                      <div class="label label-raw">
+                          <i data-lucide="database" class="icon-sm"></i>
+                          Raw Input
+                      </div>
+
+                      <div class="input-visual">
+                          <!-- JSON Snippet (Самый нижний слой) -->
+                          <div class="card card-json">
+                              <div class="card-header">
+                                  <i data-lucide="file-json" class="icon-xs"></i>
+                                  <span>scrape_data.json</span>
+                              </div>
+                              <div class="code-content">
+                                  <span class="pink">"company_data"</span>: {<br>
+                                  &nbsp;&nbsp;<span class="pink">"name"</span>: <span class="green">"TechCorp Inc"</span>,<br>
+                                  &nbsp;&nbsp;<span class="pink">"revenue_q3"</span>: <span class="amber">"null"</span>,<br>
+                                  &nbsp;&nbsp;<span class="comment">// missing field</span><br>
+                                  &nbsp;&nbsp;<span class="pink">"signals"</span>: [<span class="green">"hiring_surge"</span>],<br>
+                                  &nbsp;&nbsp;<span class="pink">"metadata"</span>: {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"source"</span>: <span class="cyan">"web_scrp_01"</span>,<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"reliability"</span>: <span class="amber">0.42</span>,<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"raw_logs"</span>: [<span class="cyan">"ERR_404"</span>, <span class="cyan">"302_RED"</span>]<br>
+                                  &nbsp;&nbsp;},<br>
+                                  &nbsp;&nbsp;<span class="pink">"valuation"</span>: <span class="amber">"unverified"</span>,<br>
+                                  &nbsp;&nbsp;<span class="pink">"timestamp"</span>: <span class="cyan">1729785600</span><br>
+                                  }
+                              </div>
+
+                          </div>
+
+                          <!-- Unstructured Text (Средний слой) -->
+                          <div class="card card-text">
+                              <div class="card-header">
+                                  <i data-lucide="file-text" class="icon-xs"></i>
+                                  <span>notes_raw.txt</span>
+                              </div>
+                              <div class="text-content">
+                                  On <span class="tag tag-date">October 24, 2024 <small>DATE</small></span>,
+                                  <span class="tag tag-entity">Globex <small>ENTITY</small></span> reported
+                                  <span class="tag tag-capital">$4.2 million <small>CAPITAL</small></span> in Q3 revenue, reflecting a
+                                  <span class="tag tag-cyan">12% contraction <small class="text-red">SEM -0.64</small></span>.
+                                  CEO <span class="tag tag-entity">Sarah Mitchell <small>ENTITY9</small></span> confirmed a pending
+                                  <span class="tag tag-capital">$890 million <small>CAPITAL</small></span> acquisition of
+                                  <span class="tag tag-entity">DataStream Inc. <small>ENTITY</small></span> in
+                                  <span class="tag tag-loc">San Francisco, CA <small>LOC</small></span>.
+                                  Forward hiring <span class="tag tag-signal">SIGNAL <small>SEM +0.42</small></span> contrasts with uncertainty
+                                  <span class="tag tag-alert">ALERT <small>SEM -0.58</small></span>.
+
+                                  <div class="bias-box">
+                                      Overall Market Bias: <strong>0.37</strong> <small>(Moderate Positive)</small>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Таблица (Верхний слой, справа) -->
+                          <div class="card card-table">
+                              <div class="table-row table-header">
+                                  <span>ID</span><span>ORG</span><span>VAL</span><span>STATUS</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>921</span><span>Acme</span><span>---</span><span class="text-red">FAIL</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>922</span><span>Globex</span><span>$4M</span><span class="text-yellow">PEND</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>923</span><span>???</span><span>ERR</span><span class="text-red">FAIL</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <!-- Центр: Engine -->
+                  <div class="column column-center">
+                      <div class="engine-wrapper">
+                          <div class="orbit orbit-outer"></div>
+                          <div class="orbit orbit-inner"></div>
+                          <div class="engine-core">
+                              <i data-lucide="cpu" class="icon-lg cyan-icon"></i>
+                              <span class="engine-label">Nexial AI</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Правая колонка: Output -->
+                  <div class="column column-right">
+                      <div class="label label-output">
+                          <i data-lucide="sparkles" class="icon-sm"></i>
+                          Structured Output
+                      </div>
+
+                      <div class="output-visual">
+                          <div class="card-result result-amber">
+                              <div class="result-header">
+                                  <div class="result-info">
+                                      <div class="icon-box-amber"><i data-lucide="target"></i></div>
+                                      <div>
+                                          <h4>TechCorp Inc</h4>
+                                          <p>Prime Acquisition Target</p>
+                                      </div>
+                                  </div>
+                                  <span class="match-tag">98% Match</span>
+                              </div>
+                              <div class="progress-container">
+                                  <div class="progress-labels">
+                                      <span>Growth Signal Strength</span>
+                                      <span>High</span>
+                                  </div>
+                                  <div class="progress-bar">
+                                      <div class="progress-fill" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="card-result result-emerald">
+                              <div class="result-header">
+                                  <div class="result-info">
+                                      <div class="icon-box-emerald"><i data-lucide="trending-up"></i></div>
+                                      <h4>Revenue Forecast</h4>
+                                  </div>
+                                  <span class="text-emerald">+24% YoY</span>
+                              </div>
+                              <div class="chart-container">
+                                  <div class="chart-grid">
+                                      <div></div><div></div><div></div><div></div>
+                                  </div>
+                                  <div class="chart-bars">
+                                      <div class="bar" style="height: 30%;"></div>
+                                      <div class="bar" style="height: 45%;"></div>
+                                      <div class="bar" style="height: 40%;"></div>
+                                      <div class="bar" style="height: 65%;"></div>
+                                      <div class="bar" style="height: 80%;"></div>
+                                      <div class="bar bar-highlight" style="height: 100%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </main>
+
+          <script>lucide.createIcons();</script>
+      </section>
+
+
+
       <!-- Solutions -->
       <section id="solutions" class="section">
         <div class="container section-inner">
           <header class="section-header">
             <h2>Solutions</h2>
           </header>
-
-
-
-
-
-
-
-
 
 
           <div class="nexial-glass-container">
@@ -1108,6 +1281,9 @@
           nav.classList.remove('nav-open');
         }
       });
+    </script>
+    <script>
+      lucide.createIcons();
     </script>
   </body>
 </html>
