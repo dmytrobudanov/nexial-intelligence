@@ -1861,11 +1861,42 @@ h1 {
     gap: 18px;
   }
 
+  #transformation .infographic-grid {
+      gap: 3rem !important; /* Было 3rem — теперь почти вплотную */
+  }
+
+  #transformation .input-visual {
+      height: 350px !important;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      max-width: 340px; /* Ограничим ширину всей группы */
+      margin: 0 auto;
+      position: relative;
+  }
+
   #transformation {
       padding: 80px 0;
   }
   #transformation .header {
       margin-bottom: 40px;
+  }
+
+  #transformation .card-text {
+      width: 320px !important;
+      left: 50% !important;
+      top: 180px !important;
+      transform: translateX(-50%) rotate(-2deg) scale(0.9) !important;
+      z-index: 40;
+  }
+
+  #transformation .text-content,
+  #transformation .code-content {
+      font-size: 11px !important;
+      line-height: 1.4 !important;
+  }
+  #transformation .tag small {
+      display: none;
   }
 
   .nexial-glass-grid {
@@ -1877,6 +1908,24 @@ h1 {
   /* Исправляем внутренние отступы карточек */
   .nexial-glass-content {
     padding: 16px;
+  }
+
+  #transformation .card-table {
+      width: 200px !important;    /* Делаем табличку чуть компактнее */
+      right: 0 !important;
+      left: auto !important;
+      top: 60px !important;
+      transform: rotate(4deg) scale(0.85) !important;
+      z-index: 30;
+  }
+
+  #transformation .card-json {
+      width: 220px !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: rotate(-3deg) scale(0.8) !important;
+      opacity: 0.5;
+      z-index: 10;
   }
 
   /* Уменьшаем заголовки, чтобы они не разрывали блоки */
@@ -2622,12 +2671,59 @@ h1 {
     --text-main: #cbd5e1;
     --text-muted: #94a3b8;
     --cyan: #22d3ee;
-    --amber: #fbbf24;
-    --emerald: #10b981;
+    --amber: #d946ef;
+    --emerald: #3b82f6;
     --pink: #f472b6;
     --red: #f87171;
     --card-bg: #050505;
     --border-color: rgba(255, 255, 255, 0.1);
+}
+
+#transformation .label-output {
+    color: #f472b6; /* Светло-розовый для заголовка */
+}
+
+#transformation .icon-box-amber {
+    background: rgba(217, 70, 239, 0.1);
+    color: #f472b6;
+}
+
+#transformation .match-tag {
+    background: rgba(217, 70, 239, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(217, 70, 239, 0.3);
+}
+
+#transformation .progress-fill {
+    background: linear-gradient(to right, #db2777, #f472b6); /* Розовый градиент */
+}
+
+/* Синяя секция (бывшая Emerald) */
+#transformation .result-emerald {
+    background: #060b1a; /* Глубокий темно-синий фон карточки */
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+#transformation .text-emerald {
+    color: #60a5fa !important; /* Голубой текст */
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+#transformation .icon-box-emerald {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+#transformation .bar {
+    background: linear-gradient(to top, transparent, rgba(59, 130, 246, 0.3));
+    border-top: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+#transformation .bar-highlight {
+    background: linear-gradient(to top, transparent, #3b82f6);
+    box-shadow: 0 -8px 20px rgba(59, 130, 246, 0.4);
+    border-top: 1px solid #3b82f6;
 }
 
 /* Заголовок */
@@ -3225,10 +3321,22 @@ h1 {
     width: 100%;
     position: relative;
 }
+
+#transformation .text-yellow,
+#transformation .amber {
+    color: #fbbf24 !important; /* Настоящий янтарно-желтый */
+}
 #transformation .card-result::before {
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0; width: 3px;
 }
-#transformation .result-amber::before { background: #fbbf24; }
-#transformation .result-emerald::before { background: #10b981; }
+/* Для верхней карточки (розовая полоска вместо желтой) */
+#transformation .result-amber::before {
+    background: #db2777 !important; /* Насыщенный розовый */
+}
+
+/* Для нижней карточки (синяя полоска вместо зеленой) */
+#transformation .result-emerald::before {
+    background: #3b82f6 !important; /* Насыщенный синий */
+}
