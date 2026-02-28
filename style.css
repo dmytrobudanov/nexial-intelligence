@@ -2482,3 +2482,82 @@ h1 {
     margin-bottom: 1.2rem;
   }
 }
+
+.centered-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Стили для увеличенной кнопки с эффектом */
+.btn-large-glow {
+  font-size: 1.1.5rem !important; /* Увеличиваем текст */
+  padding: 16px 42px !important; /* Увеличиваем размер кнопки */
+  letter-spacing: 0.05em;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 224, 255, 0);
+  z-index: 1;
+}
+
+/* Создаем заблюренное свечение сзади */
+.btn-large-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Тот же градиент, что и у оригинальной кнопки */
+  background: linear-gradient(135deg, #00e0ff 0%, #ff3399 100%);
+  border-radius: inherit; /* Повторяет форму кнопки */
+  z-index: -1;
+  opacity: 0;
+  filter: blur(20px); /* Тот самый блюр */
+  transform: scale(0.9);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.btn-large-glow:hover {
+  transform: translateY(-3px) scale(1.01); /* Приподнимаем и чуть увеличиваем */
+  box-shadow: 0 10px 40px rgba(0, 224, 255, 0.4),
+              0 0 20px rgba(255, 51, 153, 0.3); /* Цветное свечение */
+  filter: brightness(1.1);
+}
+
+/* Если внутри кнопки есть <span>, убедимся, что он выше фона */
+.btn-large-glow span {
+  position: relative;
+  z-index: 2;
+}
+
+/*  Центрируем контейнер кнопки */
+.hero-actions.centered-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 40px; /* Отступ от низа экрана */
+  overflow: visible !important; /* Чтобы свечение не обрезалось */
+}
+
+/* Проявляем свечение при наведении */
+.btn-large-glow:hover::after {
+  opacity: 0.7; /* Насыщенность свечения */
+  transform: scale(1.15); /* Свечение чуть шире самой кнопки */
+}
+
+/* Добавляем пульсацию внутреннему слою при наведении */
+.btn-large-glow:hover::before {
+  opacity: 0.9;
+  filter: blur(8px);
+  animation: pulse-glow 2s infinite;
+}
+
+.btn-large-glow::before {
+  transition: opacity 0.6s ease;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
