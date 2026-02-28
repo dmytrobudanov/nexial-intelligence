@@ -365,11 +365,22 @@ h1 {
 }
 
 .btn.primary {
-  position: relative;
+position: relative;
+  display: inline-flex; /* Используем flex для центровки текста внутри */
+  align-items: center;
+  justify-content: center;
+
+  /* Возвращаем размер через отступы */
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+
   border-radius: 999px;
-  overflow: hidden;
+  background: #0b1224; /* Темный фон */
   color: #ffffff;
-  background: #0b1224; /* базовый плотный слой */
+  text-decoration: none;
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
 .btn.primary::before {
@@ -2490,43 +2501,50 @@ h1 {
   margin-top: 24px;
 }
 
-/* Стили для увеличенной кнопки с эффектом */
+/* Базовое состояние кнопки */
 .btn-large-glow {
-  font-size: 1.1.5rem !important; /* Увеличиваем текст */
-  padding: 16px 42px !important; /* Увеличиваем размер кнопки */
-  letter-spacing: 0.05em;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 0 rgba(0, 224, 255, 0);
-  z-index: 1;
+  position: relative;
+  transition: transform 0.3s ease;
 }
 
-/* Создаем заблюренное свечение сзади */
+/* Слой со свечением (под кнопкой) */
 .btn-large-glow::after {
   content: "";
   position: absolute;
+  top: 0;
   inset: 0;
-  /* Тот же градиент, что и у оригинальной кнопки */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Твой градиент */
   background: linear-gradient(135deg, #00e0ff 0%, #ff3399 100%);
-  border-radius: inherit; /* Повторяет форму кнопки */
+  border-radius: inherit;
+  /* Размытие */
+  filter: blur(15px);
+
+  /* Уводим назад и прячем */
   z-index: -1;
   opacity: 0;
-  filter: blur(20px); /* Тот самый блюр */
-  transform: scale(0.9);
+  transform: scale(0.95);
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
+/* Эффект при наведении */
 .btn-large-glow:hover {
-  transform: translateY(-3px) scale(1.01); /* Приподнимаем и чуть увеличиваем */
-  box-shadow: 0 10px 40px rgba(0, 224, 255, 0.4),
-              0 0 20px rgba(255, 51, 153, 0.3); /* Цветное свечение */
-  filter: brightness(1.1);
+  transform: translateY(-3px); /* Кнопка прыгает вверх, но НЕ блюрится */
 }
 
-/* Если внутри кнопки есть <span>, убедимся, что он выше фона */
+.btn-large-glow:hover::after {
+  opacity: 0.8; /* Проявляем свечение */
+  transform: scale(1.1); /* Свечение чуть шире кнопки */
+}
+
+/* Фикс для текста: гарантируем, что он четкий и сверху */
 .btn-large-glow span {
   position: relative;
   z-index: 2;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /*  Центрируем контейнер кнопки */
@@ -2539,22 +2557,7 @@ h1 {
   overflow: visible !important; /* Чтобы свечение не обрезалось */
 }
 
-/* Проявляем свечение при наведении */
-.btn-large-glow:hover::after {
-  opacity: 0.7; /* Насыщенность свечения */
-  transform: scale(1.15); /* Свечение чуть шире самой кнопки */
-}
 
-/* Добавляем пульсацию внутреннему слою при наведении */
-.btn-large-glow:hover::before {
-  opacity: 0.9;
-  filter: blur(8px);
-  animation: pulse-glow 2s infinite;
-}
-
-.btn-large-glow::before {
-  transition: opacity 0.6s ease;
-}
 
 @keyframes pulse-glow {
   0% { opacity: 0.7; }
