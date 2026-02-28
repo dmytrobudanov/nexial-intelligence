@@ -313,12 +313,14 @@ h1 {
 
 .metric-label {
   display: block;
+  white-space: nowrap;
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: rgba(150, 170, 255, 0.8);
   margin-bottom: 8px;
 }
+
 
 .metric-value {
   display: block;
@@ -1850,6 +1852,7 @@ h1 {
     align-items: center;
     width: 100%;
   }
+
 
 
   .nav {
