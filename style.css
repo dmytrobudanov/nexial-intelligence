@@ -365,10 +365,11 @@ h1 {
 }
 
 .btn.primary {
-position: relative;
+  position: relative;
   display: inline-flex; /* Используем flex для центровки текста внутри */
   align-items: center;
   justify-content: center;
+  transform: translateY(-4px);
 
   /* Возвращаем размер через отступы */
   padding: 16px 32px;
@@ -380,7 +381,7 @@ position: relative;
   color: #ffffff;
   text-decoration: none;
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.3s ease;;
 }
 
 .btn.primary::before {
