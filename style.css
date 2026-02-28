@@ -15,6 +15,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #547aff #02030a;
 }
 
 body {
@@ -46,6 +48,24 @@ body {
   opacity: 0.65;
   mix-blend-mode: screen;
   will-change: transform;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02030a; /* Цвет фона сайта */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00e0ff, #547aff); /* Твои фирменные цвета */
+  border-radius: 10px;
+  border: 2px solid #02030a; /* Отступ, чтобы полоска казалась тоньше */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3399; /* Розовый при наведении */
 }
 
 .blob-one {
@@ -2311,14 +2331,44 @@ h1 {
     background: #060a1a;
     flex-direction: column;
     align-items: flex-start;
-    padding: 120px 30px;
+    padding: 120px 40px;
     gap: 24px;
     transition: right 0.3s ease;
     z-index: 2000;
   }
 
+  .nav a {
+    font-size: 1.6rem !important; /* Делаем текст ссылок заметно крупнее */
+    font-weight: 600;
+    padding: 15px 0; /* Увеличиваем область нажатия */
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Легкая разделительная линия */
+  }
+
+  .nav a::after {
+    display: none !important;
+  }
+
+  .nav a:hover::after {
+    width: 0 !important;
+  }
+
+  .nav a:nth-last-child(2) {
+    border-bottom: none;
+  }
+
   .nav.nav-open {
     right: 0;
+  }
+
+  .nav-cta {
+    margin-top: 20px;
+    font-size: 1.2rem !important;
+    text-align: center;
+    padding: 16px !important;
+    border-color: #00e0ff !important;
+    background: rgba(0, 224, 255, 0.05) !important;
   }
 
   /* СКРЫВАЕМ ДЕСКТОПНЫЙ ФЛЕКС */
