@@ -111,7 +111,7 @@ body {
   position: relative;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  padding: 18px 0;
+  padding: 12px 0;
   padding-left: 6px;
   padding-right: 6px;
 }
@@ -219,10 +219,15 @@ main {
 }
 
 .hero {
-  padding: 72px 0 64px;
-  padding-top: 140px;
-  padding-bottom: 80px;
+  padding: 80px 0 40px;
+  padding-top: 100px; /* ИЗМЕНИТЕ ЭТО */
+  z-index: 1;
+  padding-bottom: 60px;
+  min-height: auto !important;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-inner {
@@ -241,13 +246,13 @@ main {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(172, 190, 255, 0.96);
-  margin: 0 0 12px;
+  margin: 0 0 4px;
 }
 
 h1 {
   font-size: clamp(2rem, 8vw, 4rem);
   line-height: 1.05;
-  margin: 0 0 18px;
+  margin: 0 0 10px;
 }
 
 .accent-break {
@@ -1915,8 +1920,12 @@ h1 {
   }
 
   .hero {
-    padding-top: 52px;
+    padding-top: 80px;
     padding-top: 180px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem !important; /* Чуть уменьшим шрифт, чтобы не занимал 5 строк */
   }
 
   .hero-content h1 {
@@ -2444,4 +2453,32 @@ h1 {
     width: 100%;
   }
 
+  .hero {
+    padding-top: 130px; /* Оптимально для мобильных, чтобы заголовок был виден сразу */
+    padding-bottom: 30px;
+  }
+
+  .hero-badge {
+    font-size: 12px !important;
+    padding: 4px 10px !important;
+    margin-bottom: 12px !important;
+    gap: 6px !important;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+
+  .hero-btns .btn {
+    width: 100%; /* На мобилке кнопки на всю ширину смотрятся лучше */
+    max-width: 280px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem; /* Если заголовок слишком огромный и выталкивает кнопки */
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
 }
