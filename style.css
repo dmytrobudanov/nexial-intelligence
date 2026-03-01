@@ -1895,6 +1895,10 @@ h1 {
     gap: 18px;
   }
 
+  #transformation .card-table:hover {
+      transform: rotate(-5deg) scale(1.02) !important; /* легкий наклон назад на мобилке */
+  }
+
   #transformation .infographic-grid {
       gap: 3rem !important; /* Было 3rem — теперь почти вплотную */
   }
@@ -1950,6 +1954,7 @@ h1 {
       left: auto !important;
       top: 60px !important;
       transform: rotate(4deg) scale(0.85) !important;
+      transition: transform 0.7s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.4s ease !important;
       z-index: 30;
   }
 
@@ -2683,9 +2688,18 @@ h1 {
 
 
 @keyframes pulse-glow {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+    0%, 100% {
+        border-color: rgba(34, 211, 238, 0.3);
+        box-shadow: 0 0 15px rgba(34, 211, 238, 0.1);
+    }
+    50% {
+        /* Рамка становится максимально яркой */
+        border-color: rgba(34, 211, 238, 1);
+        /* Создаем эффект свечения самой линии (внутреннее и внешнее) */
+        box-shadow:
+            0 0 20px rgba(34, 211, 238, 0.6),
+            inset 0 0 12px rgba(34, 211, 238, 0.4);
+    }
 }
 
 
@@ -3095,6 +3109,28 @@ h1 {
     50% { opacity: 1; filter: drop-shadow(0 0 15px var(--cyan)); }
 }
 
+#transformation .engine-label {
+    display: block;
+    text-align: center !important; /* Центрируем строки относительно друг друга */
+    line-height: 1.2 !important;  /* Уменьшаем расстояние между строками */
+    margin-top: 12px !important;  /* Отступ от иконки процессора */
+
+    font-size: 0.65rem !important; /* Чуть уменьшим шрифт, слово очень длинное */
+    letter-spacing: 0.1em !important; /* Уменьшаем разрядку (было 0.2), иначе не влезет */
+    text-transform: uppercase;
+
+    width: 100%;
+    padding: 0 5px; /* Чтобы буквы не прилипали к краям круга */
+}
+
+/* Центрируем содержимое самого чипа, если вдруг сбилось */
+#transformation .engine-core {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .engine-label {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
@@ -3107,10 +3143,6 @@ h1 {
     to { transform: rotate(360deg); }
 }
 
-@keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.1); border-color: var(--border-color); }
-    50% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.3); border-color: rgba(34, 211, 238, 0.5); }
-}
 
 /* Результаты (Право) */
 .output-visual {
@@ -3326,9 +3358,31 @@ h1 {
     border-radius: 12px;
     padding: 12px;
     position: absolute; /* Теперь абсолютное позиционирование только ТУТ */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    transition: all 0.3s ease;
-    z-index: 10;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8) !important;
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1),
+                opacity 0.4s ease !important;
+}
+
+#transformation .card:hover {
+    z-index: 100 !important;
+    opacity: 1 !important;
+    /* Рамка остается такой же, как в обычном состоянии */
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9) !important;
+    cursor: pointer;
+}
+
+#transformation .card-json:hover {
+    transform: rotate(-1deg) scale(1.03) translateY(-5px) !important;
+}
+
+#transformation .card-text:hover {
+    transform: rotate(-2deg) scale(1.02) translateY(-3px) !important;
+}
+
+#transformation .card-table:hover {
+    transform: rotate(1deg) scale(1.04) translateY(-5px) !important;
 }
 
 /* Остальные подклассы */
@@ -3403,4 +3457,12 @@ h1 {
 /* Для нижней карточки (синяя полоска вместо зеленой) */
 #transformation .result-emerald::before {
     background: #3b82f6 !important; /* Насыщенный синий */
+}
+
+#transformation .row-dimmed {
+    color: #cbd5e1 !important;
+}
+/* Чтобы статус FAIL внутри тусклой строки тоже не горел слишком ярко */
+#transformation .row-dimmed .text-red {
+    opacity: 0.7;
 }
