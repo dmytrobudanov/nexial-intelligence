@@ -1907,6 +1907,28 @@ h1 {
     gap: 18px;
   }
 
+  .solution-highlights {
+    display: grid !important; /* Возвращаем сетку */
+    gap: 4px !important;      /* Вот этот микро-отступ как на втором скрине */
+    margin-top: 10px !important;
+  }
+
+  .solution-highlights li {
+    display: block !important; /* Текст будет падать под метку или идти рядом */
+    margin-bottom: 0 !important;
+    line-height: 1.6 !important;
+  }
+  .solution-highlights .pill {
+    display: inline-block !important; /* Позволяет тексту обтекать метку */
+    width: auto !important;           /* Убираем фиксированные 80px */
+    flex: none !important;            /* Отключаем flex-растяжение */
+    padding: 2px 10px !important;     /* Уменьшаем внутренние отступы */
+    margin-right: 8px !important;     /* Отступ от метки до текста */
+    margin-bottom: 4px !important;    /* Чтобы не слипалось, если текст перейдет на новую строку */
+    font-size: 0.65rem !important;    /* Делаем шрифт чуть меньше, как на 2 скрине */
+    vertical-align: middle !important;
+  }
+
   #transformation .infographic-grid {
       gap: 3rem !important; /* Было 3rem — теперь почти вплотную */
   }
