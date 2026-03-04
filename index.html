@@ -1157,6 +1157,105 @@
         </div>
       </section>
 
+
+
+
+
+
+
+
+
+<!-- FAQ Section -->
+      <section id="faq" class="section">
+        <div class="container section-inner">
+          <header class="section-header" style="max-width: 100%; margin-bottom: 50px;">
+            <h2 class="faq-header-title">
+              Frequently Asked <span class="text-gradient-cyan-pink">Questions</span>
+            </h2>
+          </header>
+
+          <div class="faq-list">
+            <!-- Q1 -->
+            <div class="faq-item glass-card">
+              <button class="faq-trigger">
+                <span class="question">What exactly does Nexial Intelligence do?</span>
+                <div class="icon-box"></div>
+              </button>
+              <div class="faq-content">
+                <div class="content-inner">
+                  <div class="answer">
+                    <p>Nexial Intelligence transforms fragmented external and internal signals into structured intelligence for investors and corporate strategy teams.</p>
+                    <p>Instead of static reports, clients receive continuously updated maps of sectors, companies, and emerging opportunities.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="faq-item glass-card">
+              <button class="faq-trigger">
+                <span class="question">Who typically works with Nexial Intelligence?</span>
+                <div class="icon-box"></div>
+              </button>
+              <div class="faq-content">
+                <div class="content-inner">
+                  <div class="answer">
+                   <p>Our clients are typically:</p>
+                    <ul class="faq-answer-list">
+                      <li>Venture capital firms</li>
+                      <li>Private equity funds</li>
+                      <li>Corporate strategy and M&A teams</li>
+                      <li>Government and policy intelligence units</li>
+                    </ul>
+                    <p style="margin-top: 15px;">These organizations use Nexial to identify opportunities earlier and make better strategic decisions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="faq-item glass-card">
+              <button class="faq-trigger">
+                <span class="question">How is this different from traditional research or data platforms?</span>
+                <div class="icon-box"></div>
+              </button>
+              <div class="faq-content">
+                <div class="content-inner">
+                  <div class="answer">
+                    <p>Traditional research produces static reports, while data platforms provide structured databases.</p>
+                    <p>Nexial Intelligence focuses on detecting patterns and early signals across many sources to identify emerging companies, technologies, and market shifts before they become obvious.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="faq-item glass-card">
+              <button class="faq-trigger">
+                <span class="question">What does a typical engagement look like?</span>
+                <div class="icon-box"></div>
+              </button>
+              <div class="faq-content">
+                <div class="content-inner">
+                  <div class="answer">
+                    <p>Engagements typically start with a focused intelligence project — such as mapping a sector, identifying emerging companies, or monitoring strategic signals.</p>
+                    <p>Within weeks, clients receive structured intelligence outputs and a system that continues updating as new signals appear.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
       <!-- Contact -->
       <section id="contact" class="section section-contact">
         <div class="container section-inner contact-inner">
@@ -1285,6 +1384,32 @@
     <script>
       lucide.createIcons();
     </script>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+        faqTriggers.forEach(trigger => {
+          trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            const item = this.closest('.faq-item'); // находим родительскую карточку
+
+            // Закрываем другие (аккордеон)
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+              }
+            });
+
+            // Переключаем текущий
+            item.classList.toggle('active');
+          });
+        });
+      });
+    </script>
+
+
   </body>
 </html>
 
