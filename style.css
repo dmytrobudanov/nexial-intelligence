@@ -2161,6 +2161,8 @@ h1 {
 
 .example-badge {
   align-self: flex-start;
+  margin-left: -10px;
+  transition: all 0.3s ease;
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 0.72rem;
