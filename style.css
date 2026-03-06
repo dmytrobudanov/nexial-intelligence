@@ -1907,6 +1907,12 @@ h1 {
     gap: 18px;
   }
 
+  .pilot-table th,
+  .pilot-table td {
+    white-space: nowrap; /* Запрещаем тексту разрываться, чтобы колонки держали форму */
+    padding: 12px 15px;  /* Чуть больше отступов для удобства тапа */
+  }
+
   .faq-trigger { padding: 20px; }
   .question { font-size: 1rem; }
 
@@ -2438,7 +2444,18 @@ h1 {
 
 .pilot-table th:first-child,
 .pilot-table td:first-child {
+  display: table-cell !important; /* Возвращаем как было */
+  vertical-align: middle !important; /* Центрируем всё содержимое по вертикали */
   padding-left: 24px;
+  text-align: left;
+}
+
+.pilot-table .dot {
+  display: inline-block !important; /* Чтобы он шел в одну строку с текстом */
+  vertical-align: middle !important; /* Выравниваем по центру строки */
+  margin-right: 10px;
+  margin-top: -2px; /* Микро-коррекция для идеального центра */
+  flex-shrink: 0;
 }
 
 .how-secondary-panel {
