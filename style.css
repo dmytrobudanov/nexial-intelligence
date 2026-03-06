@@ -1968,9 +1968,7 @@ h1 {
       font-size: 11px !important;
       line-height: 1.4 !important;
   }
-  #transformation .tag small {
-      display: none;
-  }
+
 
   .nexial-glass-grid {
     grid-template-columns: 1fr;
