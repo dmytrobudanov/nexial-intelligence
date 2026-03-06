@@ -174,8 +174,8 @@ body {
 }
 
 .logo-text span {
-  font-weight: 400;
-  opacity: 0.8;
+  font-weight: 600;
+  opacity: 1;
 }
 
 .nav {
@@ -185,6 +185,10 @@ body {
   gap: 42px;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
+}
+
+.nav a:first-child {
+  margin-left: 60px; /* Регулируйте это число, чтобы изменить отступ от логотипа */
 }
 
 .nav a {
@@ -223,6 +227,7 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.2s ease;
+  margin-left: 60px;
 }
 
 .nav-cta:hover {
