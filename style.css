@@ -1846,19 +1846,84 @@ h1 {
 }
 
 .site-footer {
-  padding: 32px 0 40px;
-  border-top: 1px solid rgba(64, 82, 170, 0.5);
-  background: radial-gradient(circle at top, rgba(6, 10, 30, 0.95), #02030a);
+  padding: 40px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
 }
 
 .footer-inner {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-size: 0.85rem;
-  color: rgba(179, 192, 239, 0.96);
+  align-items: center;
+  gap: 32px;
 }
+
+/* Стили логотипа в футере */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Контейнер кнопок */
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Стиль кнопок как на скрине */
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  color: #f5f7ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00e0ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 224, 255, 0.15);
+}
+
+.social-btn i {
+  width: 18px;
+  height: 18px;
+  color: #00e0ff; /* Голубой акцент для иконок */
+}
+
+/* Текстовый блок */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-tagline {
+  color: #94a3b8;
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.copyright {
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+
 
 .footer-brand {
   font-weight: 500;
