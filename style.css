@@ -2160,9 +2160,15 @@ h1 {
 }
 
 .example-badge {
+  /* Центрируем текст внутри бейджа, если он переносится */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* Твои текущие стили */
   align-self: flex-start;
   margin-left: -10px;
-  transition: all 0.3s ease;
   padding: 4px 12px;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -2171,6 +2177,7 @@ h1 {
   background: rgba(0, 224, 255, 0.12);
   border: 1px solid rgba(0, 224, 255, 0.6);
   color: rgba(190, 230, 255, 0.95);
+  transition: all 0.3s ease;
 }
 
 .badge-indigo {
