@@ -2187,7 +2187,7 @@ h1 {
 .example-timeline::before {
   content: "";
   position: absolute;
-  left: 32px;
+  left: 24px;
   top: 6px;
   bottom: 6px;
   width: 2px;
@@ -2196,6 +2196,7 @@ h1 {
     rgba(0, 224, 255, 0.5),
     rgba(255, 51, 153, 0.3)
   );
+  z-index: 1;
 }
 
 .example-step {
@@ -2220,6 +2221,52 @@ h1 {
   border-radius: 999px;
   background: #00e0ff;
   box-shadow: 0 0 10px rgba(0, 224, 255, 0.8);
+}
+
+.example-advanced .icon-box::before,
+.example-advanced .icon-box::after {
+    display: none !important;
+}
+
+.example-dot.icon-box {
+    position: absolute;
+    left: -46px;
+    top: -2px;
+
+    /* Размеры контейнера */
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important; /* Делаем квадрат со скруглением как в How It Works */
+
+    /* Фон и границы */
+    background: #000000 !important;
+    opacity: 1 !important;
+    z-index: 2;
+    border: 1px solid rgba(0, 224, 255, 0.4) !important;
+
+    /* Центрируем иконку внутри */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #00e0ff;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.1);
+}
+.example-dot.icon-box svg {
+    width: 16px !important;
+    height: 16px !important;
+    stroke-width: 2px;
+}
+.example-dot.outcome-icon {
+    border-color: rgba(255, 51, 153, 0.5) !important;
+    color: #ff3399 !important;
+    box-shadow: 0 0 20px rgba(255, 51, 153, 0.2) !important;
+}
+.example-timeline::before {
+    top: 32px !important;
+}
+.example-timeline {
+    padding-left: 70px;
+    position: relative;
 }
 
 .example-step h4 {
