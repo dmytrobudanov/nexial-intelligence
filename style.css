@@ -1976,7 +1976,12 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
-
+  .nav .btn-primary {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
   .pilot-table th,
   .pilot-table td {
     white-space: nowrap; /* Запрещаем тексту разрываться, чтобы колонки держали форму */
@@ -2119,17 +2124,40 @@ h1 {
     right: -100%; /* Меню уехало вправо */
     width: 280px;
     height: 100vh;
-    background: rgba(7, 11, 25, 0.98);
+    padding: 80px 30px;
+    gap: 20px;
+    align-items: center;
+    background: #070b19;
+    flex-direction: column;
+    justify-content: flex-start;
     /* ... ваши остальные стили (flex-direction, padding и т.д.) ... */
 
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
 
     /* ДОБАВЬТЕ ЭТО: */
     visibility: hidden;
     pointer-events: none;
     z-index: 100;
   }
+  .nav a,
+  .nav-cta,
+  .nav-socials {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .nav-cta {
+    display: inline-block;
+    width: fit-content; /* Чтобы кнопка не растягивалась на весь экран */
+  }
 
+  /* Центрируем иконки соцсетей, если вы их добавили */
+  .nav-socials {
+    justify-content: center;
+    width: 100%;
+  }
   /* Состояние, когда меню открыто (добавляется через JS) */
   .nav.nav-open {
     right: 0;
@@ -2508,6 +2536,9 @@ h1 {
   /* УБИРАЕМ nav из потока */
   .nav {
     position: fixed;
+    display: flex !important;
+    flex-direction: column !important;
+    padding-right: 40px !important;
     top: 0;
     right: -100%;
     height: 100vh;
@@ -2528,8 +2559,12 @@ h1 {
     width: 100%;
     display: block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Легкая разделительная линия */
+    margin-top: 10px !important;
   }
 
+  .nav a:first-child {
+      margin-left: 0 !important;
+  }
   .nav a::after {
     display: none !important;
   }
@@ -2553,12 +2588,14 @@ h1 {
     padding: 16px !important;
     border-color: #00e0ff !important;
     background: rgba(0, 224, 255, 0.05) !important;
+    margin-top: 10px !important;
+    margin-left: 0 !important; /* ДОБАВЬТЕ ЭТУ СТРОКУ */
+    margin-right: 0 !important; /* На всякий случай обнуляем и правый */
+    width: 100%; /* Чтобы кнопка была на всю ширину меню, как ссылки */
+    box-sizing: border-box;
   }
 
-  /* СКРЫВАЕМ ДЕСКТОПНЫЙ ФЛЕКС */
-  .nav {
-    display: flex;
-  }
+
 
   /* ПОКАЗЫВАЕМ КНОПКУ */
   .menu-toggle {
