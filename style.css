@@ -1100,6 +1100,7 @@ h1 {
   margin-top: 14px;
 }
 
+
 .how-grid {
   position: relative;
   display: grid;
@@ -3888,3 +3889,98 @@ h1 {
 .answer p { margin: 0 0 16px 0; }
 .answer p:last-child { margin-bottom: 0; }
 
+/* Блок процесса в контактах — исправленный */
+.contact-process {
+  margin-top: 24px; /* Уменьшили, чтобы поднять блок выше */
+  padding-top: 24px; /* Внутренний отступ от линии */
+  border-top: 1px solid rgba(123, 142, 255, 0.15);
+  max-width: 500px;
+}
+
+.process-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #ffffff; /* Теперь белый, как просил */
+  margin-bottom: 16px; /* Чуть меньше отступ до списка */
+  font-weight: 700;
+  display: block;
+}
+
+.process-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px; /* Чуть плотнее список */
+}
+
+.process-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem; /* Чуть аккуратнее шрифт */
+  color: rgba(211, 222, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.process-list li:hover {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+.process-icon {
+  width: 28px; /* Слегка уменьшили иконки для изящности */
+  height: 28px;
+  background: rgba(0, 224, 255, 0.05);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e0ff;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.05);
+}
+
+.process-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.process-icon.icon-cyan {
+  background: rgba(0, 224, 255, 0.05);
+  border: 1px solid rgba(0, 224, 255, 0.3);
+  color: #00e0ff;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
+}
+
+/* Фиолетовая иконка (Violet) */
+.process-icon.icon-violet {
+  background: rgba(192, 132, 252, 0.05);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  color: #c084fc; /* Цвет как в How It Works */
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.1);
+}
+
+/* Розовая иконка (Pink) */
+.process-icon.icon-pink {
+  background: rgba(255, 51, 153, 0.05);
+  border: 1px solid rgba(255, 51, 153, 0.3);
+  color: #ff3399;
+  box-shadow: 0 0 10px rgba(255, 51, 153, 0.1);
+}
+
+/* Эффект при наведении на всю строку li */
+.process-list li:hover .icon-cyan { border-color: rgba(0, 224, 255, 0.8); box-shadow: 0 0 15px rgba(0, 224, 255, 0.3); }
+.process-list li:hover .icon-violet { border-color: rgba(192, 132, 252, 0.8); box-shadow: 0 0 15px rgba(192, 132, 252, 0.3); }
+.process-list li:hover .icon-pink { border-color: rgba(255, 51, 153, 0.8); box-shadow: 0 0 15px rgba(255, 51, 153, 0.3); }
+
+/* Фикс для мобилок: убираем лишние отступы, когда колонки встают друг под друга */
+@media (max-width: 1024px) {
+  .contact-process {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+}
