@@ -1977,6 +1977,12 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
+  
+  .example-timeline::before {
+      /* Увеличиваем отступ снизу, так как текст Outcome на мобилках выше */
+      bottom: 80px !important; 
+  }  
+
   .nav .btn-primary {
     margin-top: 20px;
     width: 100%;
@@ -2352,8 +2358,8 @@ h1 {
   content: "";
   position: absolute;
   left: 24px;
-  top: 6px;
-  bottom: 6px;
+  top: 16px;
+  bottom: 28px;
   width: 2px;
   background: linear-gradient(
     180deg,
