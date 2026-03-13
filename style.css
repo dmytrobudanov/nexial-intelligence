@@ -1977,7 +1977,7 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
-  
+
   .example-timeline::before {
       /* Увеличиваем отступ снизу, так как текст Outcome на мобилках выше */
       bottom: 80px !important; 
@@ -3989,4 +3989,17 @@ h1 {
     margin-bottom: 20px;
     padding-top: 20px;
   }
+}
+
+/* Цвет и свечение для звездочки */
+.required-star {
+  color: #00e0ff; 
+  margin-left: 4px;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 224, 255, 0.4);
+}
+
+/* Подсветка поля при ошибке (если пустое) */
+input:required:invalid:focus {
+  border-color: #ff3399; /* Твой розовый цвет для индикации ошибки */
 }
