@@ -665,17 +665,162 @@ h1 {
   gap: 12px;
 }
 
+.signals-strip-container {
+  padding: 30px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 130, 230, 0.3);
+  background: radial-gradient(
+      circle at top left,
+      rgba(0, 224, 255, 0.08),
+      rgba(8, 11, 34, 0.98)
+    );
+  position: relative;
+}
+
+/* Новая сетка внутри блока */
+.signals-grid-new {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: stretch; /* Карточки будут одной высоты, но минимально возможной */
+}
+
+.signal-card-integrated {
+  background: rgba(4, 7, 20, 0.6);
+  border: 1px solid rgba(126, 147, 236, 0.15);
+  border-radius: 12px;
+  padding: 16px 18px; /* Уменьшили вертикальный отступ */
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.signal-card-integrated:hover {
+  background: rgba(6, 10, 30, 0.8);
+  border-color: rgba(0, 224, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.signal-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-bottom: 8px;
+}
+
+.signal-card-head h3 {
+  margin: 0;
+  font-size: 0.95rem; /* Размер как в оригинальных плашках */
+  font-weight: 500;
+  color: rgba(210, 221, 255, 0.96); /* Тот самый цвет .signal-text */
+  letter-spacing: 0.02em;
+}
+
+.signal-card-integrated p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(210, 221, 255, 0.7);
+  padding-left: 18px; /* Отступ, чтобы текст был под заголовком, а не под точкой */
+}
+
+/* 4. ЦВЕТНОЕ НАВЕДЕНИЕ (Индивидуальные стили) */
+
+/* Market - Cyan */
+.signal-card-integrated.market:hover {
+  border-color: rgba(0, 224, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 224, 255, 0.15);
+  background: rgba(0, 224, 255, 0.03);
+}
+
+/* Tech - Pink */
+.signal-card-integrated.tech:hover {
+  border-color: rgba(255, 51, 153, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 51, 153, 0.15);
+  background: rgba(255, 51, 153, 0.03);
+}
+
+/* Narrative - Amber */
+.signal-card-integrated.narrative:hover {
+  border-color: rgba(255, 198, 88, 0.5);
+  box-shadow: 0 10px 30px rgba(255, 198, 88, 0.15);
+  background: rgba(255, 198, 88, 0.03);
+}
+
+/* Growth - Green */
+.signal-card-integrated.growth:hover {
+  border-color: rgba(124, 255, 155, 0.5);
+  box-shadow: 0 10px 30px rgba(124, 255, 155, 0.15);
+  background: rgba(124, 255, 155, 0.03);
+}
+
+/* Адаптив для планшетов и мобилок */
+@media (max-width: 1024px) {
+  .signals-grid-new {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 на планшетах */
+  }
+}
+
+@media (max-width: 640px) {
+  .signals-grid-new {
+    grid-template-columns: 1fr; /* 1 колонка на телефонах */
+  }
+  
+  .signal-card-integrated {
+    padding: 16px;
+  }
+}
+
+/* Адаптив */
+@media (max-width: 1100px) {
+  .signals-grid-new { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .signals-grid-new { grid-template-columns: 1fr; }
+  .signal-card-head h3 { white-space: normal; } /* На мобилках пусть переносится */
+}
+
+
+/* Текст в самом низу блока Transformation */
+.transformation-footer {
+    width: 100%;
+    margin-top: 15px; /* Расстояние от карточек до текста */
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.transformation-footer p {
+    font-size: 1.1rem;
+    color: rgba(220, 229, 255, 0.7); /* Цвет как у подзаголовка выше */
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+/* На мобильных устройствах уменьшаем отступ, чтобы не было гигантской дыры */
+@media (max-width: 768px) {
+    .transformation-footer {
+        margin-top: 40px !important;
+        padding: 0 20px;
+    }
+}
+
+
 .signals-strip-label {
   text-align: center;
   width: 100%;
   font-size: 1.2rem !important;
   font-weight: 800 !important;
   margin-top: 8px !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 25px !important; /* Оставим отступ до карточек */
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: rgba(178, 196, 255, 0.8);
-  margin: 0 !important;
   padding: 0 !important;
 }
 
@@ -2082,6 +2227,7 @@ h1 {
 
   #transformation .input-visual {
       height: 420px !important;
+      position: relative;
       display: flex;
       justify-content: center;
       width: 100%;
