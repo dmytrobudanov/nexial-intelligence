@@ -1173,7 +1173,7 @@ h1 {
 }
 
 .solution-details {
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 0.82rem;
   color: rgba(185, 199, 248, 0.96);
 }
@@ -1182,7 +1182,19 @@ h1 {
   cursor: pointer;
   list-style: none;
   font-size: 0.86rem;
-  color: rgba(218, 230, 255, 0.98);
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 14px;
+  border-radius: 999px;
+  width: fit-content;
+  transition: all 0.3s ease;
+  line-height: 1.2;
+}
+
+.solution-details summary:hover {
+  background: rgba(0, 224, 255, 0.15);
+  color: #00e0ff;
 }
 
 .solution-details summary::-webkit-details-marker {
@@ -1193,9 +1205,10 @@ h1 {
   content: "▾";
   display: inline-block;
   margin-right: 6px;
-  font-size: 1.4rem;
+  font-size: 1rem;
   transform-origin: center;
   transition: transform 0.16s ease;
+  vertical-align: middle;
 }
 
 .solution-details[open] summary::before {
@@ -2851,8 +2864,8 @@ h1 {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  margin-top: 0 !important;      /* Убираем внешний отступ сверху */
-  margin-bottom: 20px !important; /* Уменьшаем отступ до следующих карточек */
+  margin-top: 20px !important;    /* Добавляем воздух сверху */
+  margin-bottom: 0 !important;     /* Убираем нижний маржин, так как там сработает отступ секции */
   overflow: hidden;
 }
 
