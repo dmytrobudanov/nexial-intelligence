@@ -2138,7 +2138,12 @@ h1 {
 
   .example-timeline::before {
       /* Увеличиваем отступ снизу, так как текст Outcome на мобилках выше */
-      bottom: 80px !important; 
+      bottom: 45px !important; 
+      .example-timeline::before {
+        /* 72px — это среднее значение, которое не даст линии 
+          провалиться слишком глубоко при сильном переносе текста */
+          bottom: 120px !important; 
+      }
   }  
 
   .nav .btn-primary {
@@ -3113,13 +3118,38 @@ h1 {
 /*  Центрируем контейнер кнопки */
 .hero-actions.centered-action {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 20px;
   width: 100%;
   margin-top: 32px;
   margin-bottom: 40px; /* Отступ от низа экрана */
   overflow: visible !important; /* Чтобы свечение не обрезалось */
 }
 
+.hero-trust-tagline {
+  margin: -6px 0 0;
+  font-size: 0.85rem;           /* Небольшой размер */
+  letter-spacing: 0.08em;       /* Немного «воздуха» между буквами */
+  color: rgba(180, 200, 255, 0.5); /* Приглушенный сине-голубой цвет */
+  font-weight: 400;
+  text-transform: none;         /* Оставляем строчными для мягкости */
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.centered-action:hover .hero-trust-tagline {
+  color: rgba(180, 200, 255, 0.8); /* Текст чуть подсвечивается при наведении */
+}
+
+@media (max-width: 768px) {
+  .hero-trust-tagline {
+    font-size: 0.75rem;         /* Чуть меньше на телефонах */
+    max-width: 280px;           /* Чтобы текст аккуратно разбился на 2 строки если не влезет */
+    line-height: 1.5;
+  }
+}
 
 
 @keyframes pulse-glow {
