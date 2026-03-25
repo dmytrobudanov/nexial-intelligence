@@ -311,7 +311,7 @@ h1 {
 
 .hero-metrics {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin: 28px 0 32px;
 }
@@ -770,6 +770,68 @@ h1 {
   
   .signal-card-integrated {
     padding: 16px;
+  }
+}
+
+/* Убираем пустое пространство в блоке Hero на мобильных */
+@media (max-width: 767px) {
+  .hero {
+    /* Подтягиваем весь контент выше к хедеру */
+    padding-top: 90px !important; 
+    padding-bottom: 10px !important;
+  }
+
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    /* Уменьшаем отступы СВЕРХУ и СНИЗУ от блока с карточками */
+    margin: 20px 0 !important; 
+  }
+
+  .metric-card {
+    /* Уменьшаем высоту карточки (было 160px) */
+    min-height: 135px !important; 
+    padding: 15px 4px !important; /* Меньше вертикальные отступы внутри */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .metric-label {
+    font-size: 0.62rem; 
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: rgba(150, 170, 255, 1);
+    /* Уменьшаем отступ от заголовка до цифр */
+    margin-bottom: 10px !important; 
+    min-height: 2.8em; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+  }
+
+  .metric-value {
+    font-size: 1.15rem; 
+    font-weight: 700;
+    margin-bottom: 4px; /* Уменьшаем отступ до подписи */
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  .hero-metrics .metric-card:last-child .metric-caption {
+    display: block;
+    max-width: 70px; /* Ограничиваем ширину, чтобы "cloud" не поместился в строку */
+    margin: 0 auto;  /* Центрируем блок текста */
+  }
+
+  /* Подтягиваем кнопку Request Pilot ближе к карточкам */
+  .hero-actions.centered-action {
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
   }
 }
 
