@@ -835,6 +835,30 @@ h1 {
   }
 }
 
+/* Дополнительный фикс специально для Mobile L (425px) и выше */
+@media (min-width: 400px) and (max-width: 767px) {
+  .metric-label {
+    /* Увеличиваем заголовок для больших экранов */
+    font-size: 0.67rem !important; 
+    letter-spacing: 0.06em;
+  }
+
+  .metric-value {
+    /* Цифры тоже можно чуть-чуть поднять */
+    font-size: 1.25rem !important; 
+  }
+
+  .metric-caption {
+    font-size: 0.72rem !important;
+  }
+
+  /* Для L-экрана можно чуть расширить текстовый блок, 
+     чтобы перенос "cloud" все равно работал, но не был слишком узким */
+  .hero-metrics .metric-card:last-child .metric-caption {
+    max-width: 85px !important; 
+  }
+}
+
 /* Адаптив */
 @media (max-width: 1100px) {
   .signals-grid-new { grid-template-columns: repeat(2, 1fr); }
