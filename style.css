@@ -3380,7 +3380,9 @@ h1 {
 }
 
 #transformation .label-output {
-    color: #f472b6; /* Светло-розовый для заголовка */
+    color: #b775f5 !important; /* Красивый фиолетовый */
+    font-weight: 600 !important;
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.4); /* Мягкое свечение текста */
 }
 
 #transformation .icon-box-amber {
