@@ -3380,7 +3380,7 @@ h1 {
 }
 
 #transformation .label-output {
-    color: #94A3B8 !important; /* Красивый фиолетовый */
+    color: #ecc24e !important; /* Красивый фиолетовый */
     font-weight: 600 !important;
     text-shadow: 0 0 15px rgba(168, 85, 247, 0.4); /* Мягкое свечение текста */
 }
