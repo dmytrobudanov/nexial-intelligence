@@ -3308,6 +3308,77 @@ h1 {
     --border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Специальный фикс для блока Transformation на мобилках */
+@media (max-width: 767px) {
+  /* Центрируем заголовок Structured Output */
+  #transformation .label-output {
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Выстраиваем карточки в ряд */
+  #transformation .output-visual {
+    flex-direction: row !important; /* Ряд вместо колонки */
+    gap: 10px !important;           /* Небольшой отступ между ними */
+    align-items: stretch !important;
+    width: 100% !important;
+    padding: 0 5px !important;
+  }
+
+  /* Настраиваем сами карточки, чтобы они влезли в ряд */
+  #transformation .card-result {
+    flex: 1 !important;             /* Равная ширина */
+    min-width: 0 !important;        /* Позволяет сжиматься */
+    padding: 12px 8px !important;   /* Уменьшаем внутренние отступы */
+  }
+
+  /* Уменьшаем шрифты и элементы внутри, чтобы всё поместилось */
+  #transformation .result-info h4 {
+    font-size: 0.85rem !important;
+    line-height: 1.2 !important;
+  }
+
+  #transformation .result-info p {
+    font-size: 0.65rem !important;
+  }
+
+  #transformation .match-tag, 
+  #transformation .text-emerald {
+    font-size: 0.55rem !important;
+    padding: 1px 5px !important;
+  }
+
+  #transformation .icon-box-amber, 
+  #transformation .icon-box-emerald {
+    padding: 4px !important;
+  }
+
+  #transformation .icon-box-amber svg, 
+  #transformation .icon-box-emerald svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Делаем заголовок карточки вертикальным, если текст не влазит */
+  #transformation .result-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Поджимаем график и прогресс-бар */
+  #transformation .chart-container {
+    height: 60px !important;
+  }
+  
+  #transformation .progress-labels {
+    font-size: 0.6rem !important;
+  }
+}
+
 #transformation .label-output {
     color: #f472b6; /* Светло-розовый для заголовка */
 }
