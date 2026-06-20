@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Подключаем иконки Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexial Intelligence Blog — Strategic Alpha & AI Insights</title>
+
+    <!-- Путь к фавикону в корне сайта -->
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <meta name="description" content="Insights on AI-native intelligence, market signal detection, and strategic alpha for VC, PE, and corporate teams." />
+
+    <!-- Путь к основному CSS в корне сайта -->
+    <link rel="stylesheet" href="../style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      /* Фиксы навигации специально для этой страницы */
+      .nav {
+        gap: 32px !important; /* Уплотняем меню, так как добавился пункт Blog */
+      }
+      .nav a:first-child {
+        margin-left: 0 !important; /* Убираем лишний отступ слева */
+      }
+      .nav-cta {
+        margin-left: 10px !important; /* Притягиваем кнопку ближе к меню */
+      }
+
+      /* Стиль активной ссылки Blog */
+      .nav-link-active {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+      }
+      .nav-link-active::after {
+        width: 100% !important; /* Линия под ссылкой всегда видна */
+      }
+
+      /* Стили контента блога */
+      .blog-hero {
+        padding: 160px 0 60px;
+        text-align: center;
+      }
+      .blog-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        max-width: 800px;
+        margin: 0 auto 100px;
+      }
+      .blog-card {
+        padding: 32px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+      .blog-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 224, 255, 0.5);
+      }
+      .blog-date {
+        font-size: 0.85rem;
+        color: rgba(150, 170, 255, 0.6);
+        margin-bottom: 12px;
+        display: block;
+        letter-spacing: 0.05em;
+      }
+      .blog-card h2 {
+        margin: 0 0 16px 0;
+        font-size: 1.8rem;
+        line-height: 1.3;
+        background: linear-gradient(90deg, #fff, #cbd5e1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .blog-excerpt {
+        color: rgba(220, 229, 255, 0.7);
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .read-more {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #00e0ff;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .blog-hero { padding-top: 120px; }
+        .blog-card { padding: 24px; }
+        .blog-card h2 { font-size: 1.4rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Фоновые эффекты (блобы) -->
+    <div class="page-bg">
+      <div class="blob blob-one"></div>
+      <div class="blob blob-two"></div>
+      <div class="blob blob-three"></div>
+    </div>
+
+    <!-- Шапка (Header) -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="logo">
+          <span class="logo-mark"></span>
+          <span class="logo-text">Nexial<span> Intelligence</span></span>
+        </a>
+        <nav class="nav">
+          <!-- Ссылки ведут на главную страницу -->
+          <a href="../index.html#what-we-do">What We Do</a>
+          <a href="../index.html#solutions">Solutions</a>
+          <a href="../index.html#who-we-work-with">Who We Work With</a>
+          <a href="../index.html#how-it-works">How It Works</a>
+          <!-- Текущий раздел -->
+          <a href="./index.html" class="nav-link-active">Blog</a>
+          <a href="../index.html#contact" class="nav-cta">Request Pilot</a>
+        </nav>
+
+        <button class="menu-toggle" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Заголовок страницы блога -->
+      <section class="blog-hero">
+        <p class="eyebrow">Strategic Alpha</p>
+        <h1 class="title">Intelligence <span class="text-gradient-cyan-pink">Insights</span></h1>
+        <p class="subtitle" style="margin: 20px auto 0;">Analytic deep dives into alternative data, signal modeling, and the future of strategic decision making.</p>
+      </section>
+
+      <!-- Список статей (Сетка) -->
+
+
+      <div class="blog-grid">
+
+        <!-- Статья 1 -->
+        <article>
+        <a href="./signal-based-market-research-beyond-traditional-strategic-analytics/index.html" class="blog-card glass-card">
+          <span class="blog-date">June 26, 2026</span>
+          <h2>Signal Based Market Research: Beyond Traditional Strategic Analytics</h2>
+          <p class="blog-excerpt">
+            A comprehensive guide to signal-based market research for high-stakes strategic intelligence. Learn how to transition from static, lagging reports to multi-layer signal modeling within a secure private cloud or on-premises infrastructure.
+          </p>
+          <div class="read-more">
+            Read Full Article <i data-lucide="arrow-right" class="icon-xs"></i>
+          </div>
+        </a>
+      </article>
+
+        <!-- Статья 2 -->
+        <article>
+          <a href="./sector-mapping-and-landscape-analysis-a-framework-or-strategic-intelligence/index.html" class="blog-card glass-card">
+            <span class="blog-date">June 19, 2026</span>
+            <h2>Sector Mapping & Landscape Analysis: A Framework for Strategic Intelligence</h2>
+            <p class="blog-excerpt">
+              A comprehensive guide to multi-layer signal modeling for advanced landscape analysis. Learn how to securely track non-obvious competitors, talent migration, and technical breadcrumbs in a sovereign data environment to detect stealth startups and anticipate market shifts before they crystalize.
+            </p>
+            <div class="read-more">
+              Read Full Article <i data-lucide="arrow-right" class="icon-xs"></i>
+            </div>
+          </a>
+        </article>
+
+        <!-- Статья 3 -->
+        <article>
+          <a href="./predictive-market-intelligence-signal-modeling-for-strategic-foresight-in-2026/index.html" class="blog-card glass-card">
+            <span class="blog-date">June 12, 2026</span>
+            <h2>Predictive Market Intelligence: Signal Modeling for Strategic Foresight in 2026</h2>
+            <p class="blog-excerpt">
+              A deep dive into predictive market intelligence for strategic foresight. Learn how to transition from reactive data collection to advanced signal modeling, tracking talent migration and R&D pivots within a secure, sovereign infrastructure to discover market alpha before your competitors.
+            </p>
+            <div class="read-more">
+              Read Full Article <i data-lucide="arrow-right" class="icon-xs"></i>
+            </div>
+          </a>
+        </article>
+
+        <!-- Статья 4 -->
+        <article>
+          <a href="./on-premises-strategic-intelligence-securing-sovereign-data-for-global-strategy/index.html" class="blog-card glass-card">
+            <span class="blog-date">June 05, 2026</span>
+            <h2>On-Premises Strategic Intelligence: Securing Sovereign Data for Global Strategy</h2>
+            <p class="blog-excerpt">
+              A comprehensive guide to on-premises strategic intelligence for high-stakes decision making. Learn how to reclaim sovereign control over sensitive data, eliminate alpha leakage, and process multi-layer signal models within a secure private cloud to identify M&A targets up to 90 days before they hit the market.
+            </p>
+            <div class="read-more">
+              Read Full Article <i data-lucide="arrow-right" class="icon-xs"></i>
+            </div>
+          </a>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Подвал (Footer) -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-logo">
+          <span class="logo-mark"></span>
+          <span class="logo-text">Nexial Intelligence</span>
+        </div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/nexial-intelligence" target="_blank" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-linkedin" style="width: 18px; fill: #fff;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="mailto:solutions@nexial-intelligence.com" class="social-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-mail" style="width: 22px; fill: #fff;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-7.07 4.42c-.32.2-.74.2-1.06 0L4.4 8.25c-.25-.16-.4-.43-.4-.72 0-.67.73-1.07 1.3-.72L12 11l6.7-4.19c.57-.35 1.3.05 1.3.72 0 .29-.15.56-.4.72z"/></svg>
+            <span>Contact Us</span>
+          </a>
+        </div>
+        <div class="footer-info">
+          <p class="footer-tagline">Strategic intelligence partner for investors, corporates, and policy units.</p>
+          <p class="copyright">© 2026 Nexial Intelligence. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+      lucide.createIcons();
+
+      // Мобильное меню
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nav.classList.toggle('nav-open');
+      });
+    </script>
+  </body>
+</html>

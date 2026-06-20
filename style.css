@@ -182,13 +182,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 42px;
+  gap: 32px;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
 }
 
 .nav a:first-child {
-  margin-left: 60px; /* Регулируйте это число, чтобы изменить отступ от логотипа */
+  margin-left: 0; /* Регулируйте это число, чтобы изменить отступ от логотипа */
 }
 
 .nav a {
@@ -227,7 +227,7 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
   transition: all 0.2s ease;
-  margin-left: 60px;
+  margin-left: 10px;
 }
 
 .nav-cta:hover {
@@ -4777,4 +4777,57 @@ input:required:invalid:focus {
     .sol-output-box p {
         font-size: 0.85rem;
     }
+}
+
+.article-visual {
+    margin: 60px 0;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.article-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .article-container {
+        padding-top: 80px; /* Еще меньше отступ на мобилках */
+    }
+    .article-visual {
+        margin: 40px -20px; /* Вылет картинки в края экрана */
+        width: calc(100% + 40px);
+        border-radius: 0;
+    }
+}
+
+.article-toc {
+    padding: 15px 25px 25px; /* Сверху 15px вместо 25px */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+.article-toc h2 {
+    font-size: 1.5rem; /* Размер как у заголовка */
+    font-weight: 600;
+    color: #fff;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+    letter-spacing: normal; /* Убираем сильную разрядку букв */
+    text-transform: none;   /* Убираем принудительные заглавные, если были */
+}
+
+.article-container {
+    padding-top: 100px; /* Уменьшили отступ от хедера */
+    max-width: 850px;
+    margin: 0 auto 100px;
+}
+
+.article-header {
+    margin-top: 0;
+    margin-bottom: 40px;
 }
