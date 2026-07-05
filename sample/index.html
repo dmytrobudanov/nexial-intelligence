@@ -65,10 +65,23 @@
     background:rgba(4,6,12,.85);
     border-bottom:1px solid var(--line);
   }
+  a.brand, a.brand:hover { text-decoration:none; }
+  a.brand, a.brand:hover { text-decoration:none; }
+  a.brand:hover { opacity:.85; }
   .brand { justify-self:start; display:inline-flex; align-items:center; gap:10px; font-size:.92rem; letter-spacing:.05em; text-transform:uppercase; color:var(--text); font-weight:600; white-space:nowrap; }
   .brand b { font-weight:600; background:var(--brand-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .logo-mark { width:24px; height:24px; border-radius:8px; background:conic-gradient(from 200deg,#00e0ff,#ff3399,#547aff,#00e0ff); position:relative; flex-shrink:0; display:inline-block; }
   .logo-mark::after { content:""; position:absolute; inset:3px; border-radius:6px; background:#070c16; }
+  .back-site {
+    justify-self:end; display:inline-flex; align-items:center; gap:7px;
+    font-size:.78rem; letter-spacing:.04em; color:var(--text-dim);
+    border:1px solid var(--line-2); border-radius:999px; padding:6px 16px;
+    text-decoration:none; white-space:nowrap; transition:all .18s ease;
+  }
+  .back-site:hover { color:#fff; border-color:var(--line-accent); background:rgba(34,211,238,.07); text-decoration:none; }
+  .back-site .bs-arrow { transition:transform .18s ease; }
+  .back-site:hover .bs-arrow { transform:translateX(-3px); }
+  @media (max-width:560px) { .back-site { padding:6px 12px; font-size:.72rem; } }
   .steps { display:flex; gap:6px; align-items:center; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint); }
   .steps .st { padding:5px 13px; border:1px solid var(--line); border-radius:999px; transition:all .2s ease; }
   .steps .st.active { color:#fff; border:1px solid transparent;
@@ -358,12 +371,13 @@
 </div>
 
 <div class="topbar">
-  <div class="brand"><span class="logo-mark"></span>NEXIAL <b>INTELLIGENCE</b></div>
+  <a class="brand" href="/"><span class="logo-mark"></span>NEXIAL <b>INTELLIGENCE</b></a>
   <div class="steps">
     <span class="st active" id="stp1">1 · Scope</span><span class="sep">—</span>
     <span class="st" id="stp2">2 · Assemble</span><span class="sep">—</span>
     <span class="st" id="stp3">3 · Report</span>
   </div>
+  <a class="back-site" href="/"><span class="bs-arrow">←</span> Back to website</a>
 </div>
 
 <!-- ============================================================ SCREEN 1 -->
