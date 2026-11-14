@@ -1,0 +1,6 @@
+.DS_Store
+*.xlsx
+*.csv
+code/
+test/
+*.env

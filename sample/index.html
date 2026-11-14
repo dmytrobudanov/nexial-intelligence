@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>Nexial Intelligence — Scoped Intelligence Configurator</title>
+<title>Custom Pilot Configurator | Nexial Intelligence</title>
 <style>
   :root {
     --bg: #04060c;
@@ -360,7 +360,16 @@
   .modal-note { font-size:.76rem; color:var(--text-faint); margin-top:14px; line-height:1.6; }
   .modal-x { float:right; color:var(--text-faint); cursor:pointer; font-size:.8rem; padding:4px 12px; border:1px solid var(--line); border-radius:8px; transition:all .2s; }
   .modal-x:hover { color:var(--text); border-color:var(--line-2); }
-  @media (max-width:560px){ .frm { grid-template-columns:1fr; } .steps { display:none; } }
+  @media (max-width:560px){ .frm { grid-template-columns:1fr; } .steps { display:none; } .topbar { grid-template-columns:1fr auto; padding:10px 14px; } .back-site { padding:6px 10px; } .brand { font-size:.8rem; } }
+  html, body { overflow-x:hidden; }
+
+  .trial-banner { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px 18px; margin:12px auto 0; max-width:1100px; padding:12px 18px; border-radius:14px; border:1px solid rgba(0,224,255,.35); background:linear-gradient(90deg, rgba(0,224,255,.08), rgba(255,51,153,.06)); font-size:.9rem; color:var(--text-body); }
+  .trial-banner .btn.primary { padding:9px 16px; font-size:.9rem; }
+  .trial-banner .tb-link { color:var(--cyan); text-decoration:none; font-weight:500; }
+  .trial-banner .tb-link:hover { text-decoration:underline; }
+  .trial-plate { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:16px 0 0; padding:16px 18px; border-radius:14px; border:1px solid rgba(0,224,255,.3); background:rgba(0,224,255,.05); }
+  .trial-plate .tp-text { flex:1 1 260px; font-size:.9rem; color:var(--text-body); }
+  .trial-plate .tp-text b { color:var(--text); }
 </style>
 </head>
 <body>
@@ -374,18 +383,24 @@
 <div class="topbar">
   <a class="brand" href="/"><span class="logo-mark"></span>NEXIAL <b>INTELLIGENCE</b></a>
   <div class="steps">
-    <span class="st active" id="stp1">1 · Scope</span><span class="sep">—</span>
-    <span class="st" id="stp2">2 · Assemble</span><span class="sep">—</span>
+    <span class="st active" id="stp1">1 · Scope</span><span class="sep">-</span>
+    <span class="st" id="stp2">2 · Assemble</span><span class="sep">-</span>
     <span class="st" id="stp3">3 · Report</span>
   </div>
   <a class="back-site" href="/"><span class="bs-arrow">←</span> Back to website</a>
 </div>
+<div class="trial-banner">
+  <span>Want to see it live on your sector? The platform runs on demo data today and your sector goes live next.</span>
+  <a class="btn primary" href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=sample">Start 14-day free trial</a>
+  <a class="tb-link" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=sample">See the live sample report →</a>
+</div>
+
 
 <!-- ============================================================ SCREEN 1 -->
 <div class="screen visible" id="screen-cfg">
   <div class="kicker">Scoped Intelligence Configurator</div>
   <h1>Define your intelligence scope</h1>
-  <p class="sub">Each report is assembled on-demand against your scope — sector, entities, and the convergence markers you care about. No dashboards to learn. No generic databases. Output in 2–4 weeks.</p>
+  <p class="sub">Each report is assembled on-demand against your scope - sector, entities, and the convergence markers you care about. No dashboards to learn. No generic databases. Output in 2-4 weeks.</p>
 
   <div class="cfg-section">
     <div class="cfg-label"><span class="num">01</span> REGION / GEOGRAPHY</div>
@@ -424,11 +439,11 @@
 
   <div class="cfg-section">
     <div class="cfg-label"><span class="num">04</span> CONVERGENCE MARKERS</div>
-    <div class="cfg-hint">The patterns we detect for you. Each marker is a combination of independent signals — never a single alert. Grounding rule: a marker is only reported when backed by ≥2 verifiable data points.</div>
+    <div class="cfg-hint">The patterns we detect for you. Each marker is a combination of independent signals - never a single alert. Grounding rule: a marker is only reported when backed by ≥2 verifiable data points.</div>
     <div class="marker-grid" id="cfg-markers">
       <div class="marker-card on" data-v="M1">
         <span class="tick">✓</span><div class="mrow"><span class="mid">M1</span><h4>Pre-Raise Buildout</h4></div>
-        <p>Senior engineering hiring spike + patent density growth, no announced round → raise forming. Lead ~4–8 mo.</p>
+        <p>Senior engineering hiring spike + patent density growth, no announced round → raise forming. Lead ~4-8 mo.</p>
       </div>
       <div class="marker-card" data-v="M2">
         <span class="tick">✓</span><div class="mrow"><span class="mid">M2</span><h4>Infrastructure Pivot</h4></div>
@@ -507,7 +522,7 @@
     <div class="gen-step" id="gs3"><span class="dot"></span> Signal convergence <span class="detail" id="gs3-detail"></span></div>
     <div class="gen-step" id="gs4"><span class="dot"></span> Ranked output <span class="detail">clusters · watchlist · markers</span></div>
     <div class="gen-bar"><i id="gen-bar-i"></i></div>
-    <div class="gen-foot">This sample opens instantly — it is pre-assembled. A client engagement runs this pipeline against live sources and delivers in 2–4 weeks, inside your perimeter (incl. on-prem). No always-on infrastructure.</div>
+    <div class="gen-foot">This sample opens instantly - it is pre-assembled. A client engagement runs this pipeline against live sources and delivers in 2-4 weeks, inside your perimeter (incl. on-prem). No always-on infrastructure.</div>
   </div>
 </div>
 
@@ -519,10 +534,10 @@
     <div class="rep-head-top">
       <div>
         <div class="kicker">Ecosystem Intelligence Report</div>
-        <h1 id="rep-title">Climate &amp; Deep Tech — Europe</h1>
+        <h1 id="rep-title">Climate &amp; Deep Tech - Europe</h1>
         <div class="rep-meta" id="rep-meta"></div>
       </div>
-      <div class="sample-flag">SAMPLE — YOUR REPORT COVERS YOUR SECTOR</div>
+      <div class="sample-flag">SAMPLE - YOUR REPORT COVERS YOUR SECTOR</div>
     </div>
     <div class="scope-echo" id="scope-echo"></div>
     <div class="sample-mismatch" id="sample-mismatch" style="display:none;"></div>
@@ -538,7 +553,7 @@
         <div class="cluster">
           <div class="cscore">84</div>
           <h4>Industrial Heat Decarbonization</h4>
-          <p>Capital, deployment and hiring signals moving in the same window. Anchored by verifiable public rounds — see marker M3 below.</p>
+          <p>Capital, deployment and hiring signals moving in the same window. Anchored by verifiable public rounds - see marker M3 below.</p>
           <span class="ctag">FORMING · M1 M3 ACTIVE</span>
         </div>
         <div class="cluster">
@@ -550,14 +565,14 @@
         <div class="cluster">
           <div class="cscore">71</div>
           <h4>Grid-Edge Orchestration Software</h4>
-          <p>Enabling layer for both clusters above. Capital concentration lags asset-layer investment — see white spaces.</p>
+          <p>Enabling layer for both clusters above. Capital concentration lags asset-layer investment - see white spaces.</p>
           <span class="ctag">WHITE-SPACE ADJACENT · M4 ACTIVE</span>
         </div>
       </div>
     </div>
 
     <div class="rep-section">
-      <h2><span class="idx">02</span> Watchlist — ranked entities</h2>
+      <h2><span class="idx">02</span> Watchlist - ranked entities</h2>
       <p class="sec-sub">Entities marked † are fictional composites built to demonstrate output structure. In a client report every row is a real entity linked to its full signal history.</p>
       <div class="table-wrap">
       <table class="watch">
@@ -573,7 +588,7 @@
           <tr><td><span class="ent-name">HelioForge †</span><span class="ent-sub">Solar-thermal process heat · ES</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:81%"></i></span>81</span></td>
               <td><span class="mtag">M3</span></td>
-              <td><span class="momentum flat">— stable</span></td>
+              <td><span class="momentum flat">- stable</span></td>
               <td><span class="conf emerging">EMERGING</span></td></tr>
           <tr><td><span class="ent-name">Nordwind Grid †</span><span class="ent-sub">Grid-edge orchestration software · DK</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:78%"></i></span>78</span></td>
@@ -588,7 +603,7 @@
           <tr><td><span class="ent-name">CarbonKilde †</span><span class="ent-sub">Point-source capture · NO</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:69%"></i></span>69</span></td>
               <td><span class="mtag">M3</span></td>
-              <td><span class="momentum flat">— stable</span></td>
+              <td><span class="momentum flat">- stable</span></td>
               <td><span class="conf emerging">EMERGING</span></td></tr>
           <tr><td><span class="ent-name">PolarWatt Systems †</span><span class="ent-sub">HV interconnect hardware · SE</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:66%"></i></span>66</span></td>
@@ -598,7 +613,7 @@
           <tr><td><span class="ent-name">GreenSpan Analytics †</span><span class="ent-sub">MRV / carbon accounting software · NL</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:61%"></i></span>61</span></td>
               <td><span class="mtag">M3</span> <span class="mtag">M7</span></td>
-              <td><span class="momentum flat">— stable</span></td>
+              <td><span class="momentum flat">- stable</span></td>
               <td><span class="conf hypothesis">HYPOTHESIS</span></td></tr>
           <tr><td><span class="ent-name">Company F (anonymized)</span><span class="ent-sub">Battery recycling · FR · RISK FLAG</span></td>
               <td><span class="scorebar riskrow"><span class="bar"><i style="width:44%"></i></span>44</span></td>
@@ -608,19 +623,19 @@
         </tbody>
       </table>
       </div>
-      <p class="tbl-foot">† fictional composite entity — any resemblance to real organizations is coincidental. Distress-flagged entities are anonymized even in client reports until independently confirmed.</p>
+      <p class="tbl-foot">† fictional composite entity - any resemblance to real organizations is coincidental. Distress-flagged entities are anonymized even in client reports until independently confirmed.</p>
     </div>
 
     <div class="rep-section">
       <h2><span class="idx">03</span> Detected convergence markers</h2>
-      <p class="sec-sub">Every marker is grounded in ≥2 independent data points, listed below each card. No sources — no marker. Cards are ordered by evidence strength, not by marker number. One marker in this sample (M3) is built entirely on verifiable public data you can check yourself.</p>
+      <p class="sec-sub">Every marker is grounded in ≥2 independent data points, listed below each card. No sources - no marker. Cards are ordered by evidence strength, not by marker number. One marker in this sample (M3) is built entirely on verifiable public data you can check yourself.</p>
 
       <div class="missing-markers"></div>
 
-      <!-- M3 — REAL, VERIFIABLE ANCHOR -->
+      <!-- M3 - REAL, VERIFIABLE ANCHOR -->
       <div class="rmarker anchor" data-marker="M3">
         <div class="rmarker-top">
-          <span class="mid">M3</span><h3>Cluster Formation (early stage) — High-Temperature Thermal Storage</h3>
+          <span class="mid">M3</span><h3>Cluster Formation (early stage) - High-Temperature Thermal Storage</h3>
           <span class="scope-slot"></span><span class="conf verifiable">VERIFIABLE · PUBLIC DATA</span><span class="conf emerging">EMERGING</span>
         </div>
         <div class="composed">
@@ -629,27 +644,27 @@
           <span class="sigchip"><b>Execution</b> · first commercial-scale deployments, 2025</span>
           <span class="sigchip"><b>Policy</b> · EU clean-heat funding mechanism live</span>
         </div>
-        <p class="finding">Corporate energy and industrial capital entered high-temperature thermal storage through three independent rounds in 2023–2026: Kraftblock’s Series B carried a six-investor syndicate led by Shell Ventures with Finindus (ArcelorMittal) and TechEnergy Ventures; ENERGYNEST took €110M from Infracapital; Exergy3 raised a seed led by Axeleo Capital. Strategics whose parents <i>buy</i> industrial heat are funding the storage layer that serves it. <b>Assessment: thematic capital concentration — the early stage of cluster formation.</b> The full M3 signature (the same investors recurring across several companies of the sub-segment) is not yet visible in public data: what is public is one multi-investor syndicate plus two separate deals. Mapping that syndicate-graph overlap is precisely what a client engagement does — which is why this card is held at <b>Emerging, not Confirmed</b>.</p>
+        <p class="finding">Corporate energy and industrial capital entered high-temperature thermal storage through three independent rounds in 2023-2026: Kraftblock’s Series B carried a six-investor syndicate led by Shell Ventures with Finindus (ArcelorMittal) and TechEnergy Ventures; ENERGYNEST took €110M from Infracapital; Exergy3 raised a seed led by Axeleo Capital. Strategics whose parents <i>buy</i> industrial heat are funding the storage layer that serves it. <b>Assessment: thematic capital concentration - the early stage of cluster formation.</b> The full M3 signature (the same investors recurring across several companies of the sub-segment) is not yet visible in public data: what is public is one multi-investor syndicate plus two separate deals. Mapping that syndicate-graph overlap is precisely what a client engagement does - which is why this card is held at <b>Emerging, not Confirmed</b>.</p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Detection lead time</div><div class="cv lead">thematic pattern visible from the Aug 2023 syndicate — ~18 months before 2025 deployment headlines</div></div>
-          <div class="cell"><div class="cl">Recommended action</div><div class="cv">The asset layer is now priced. Map the still-unfunded enabling layers around it — orchestration software, heat offtake MRV (see white spaces).</div></div>
+          <div class="cell"><div class="cl">Detection lead time</div><div class="cv lead">thematic pattern visible from the Aug 2023 syndicate - ~18 months before 2025 deployment headlines</div></div>
+          <div class="cell"><div class="cl">Recommended action</div><div class="cv">The asset layer is now priced. Map the still-unfunded enabling layers around it - orchestration software, heat offtake MRV (see white spaces).</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — verifiable public data points</div>
+          <div class="gl">Grounding - verifiable public data points</div>
           <ul>
-            <li>Kraftblock (DE) Series B ~€20M, Aug 2023 — led by Shell Ventures with Finindus, TechEnergy Ventures, A&amp;G Energy Transition Tech Fund, Future Industry Ventures <span class="src">· <a href="https://www.techenergyventures.com/en/news/2023/kraftblock-thermal-energy-storage-technology" target="_blank" rel="noopener">techenergyventures.com</a></span></li>
-            <li>ENERGYNEST (NO) — €110M investment agreed with Infracapital; 2025: 3 MWe / 12 MWh ThermalBattery power-to-heat system commissioned at the KURZ site in Sulzbach-Rosenberg (DE) <span class="src">· <a href="https://www.energy-storage.news/thermal-energy-storage-startup-energynest-secures-us130-million-investment/" target="_blank" rel="noopener">energy-storage.news</a>, <a href="https://www.enerdata.net/publications/executive-briefing/rise-industrial-heat-storage-europe.html" target="_blank" rel="noopener">enerdata.net</a></span></li>
-            <li>Exergy3 (UK) — €11.4M seed, Apr 2026, led by Axeleo Capital with Bayern Kapital, Kibo Invest <span class="src">· <a href="https://www.eu-startups.com/2026/04/edinburghs-exergy3-raises-e11-4-million-to-turn-surplus-renewable-power-into-clean-industrial-heat" target="_blank" rel="noopener">eu-startups.com</a></span></li>
+            <li>Kraftblock (DE) Series B ~€20M, Aug 2023 - led by Shell Ventures with Finindus, TechEnergy Ventures, A&amp;G Energy Transition Tech Fund, Future Industry Ventures <span class="src">· <a href="https://www.techenergyventures.com/en/news/2023/kraftblock-thermal-energy-storage-technology" target="_blank" rel="noopener">techenergyventures.com</a></span></li>
+            <li>ENERGYNEST (NO) - €110M investment agreed with Infracapital; 2025: 3 MWe / 12 MWh ThermalBattery power-to-heat system commissioned at the KURZ site in Sulzbach-Rosenberg (DE) <span class="src">· <a href="https://www.energy-storage.news/thermal-energy-storage-startup-energynest-secures-us130-million-investment/" target="_blank" rel="noopener">energy-storage.news</a>, <a href="https://www.enerdata.net/publications/executive-briefing/rise-industrial-heat-storage-europe.html" target="_blank" rel="noopener">enerdata.net</a></span></li>
+            <li>Exergy3 (UK) - €11.4M seed, Apr 2026, led by Axeleo Capital with Bayern Kapital, Kibo Invest <span class="src">· <a href="https://www.eu-startups.com/2026/04/edinburghs-exergy3-raises-e11-4-million-to-turn-surplus-renewable-power-into-clean-industrial-heat" target="_blank" rel="noopener">eu-startups.com</a></span></li>
             <li>Cumulative equity funding of European energy-storage startups: €2.14B (Avnet Silica analysis of Crunchbase data, as of Sept 2025), ~47% of it raised over the last three years <span class="src">· <a href="https://www.ess-news.com/2025/12/08/funding-for-european-energy-storage-startups-reaches-e2-14-billion/" target="_blank" rel="noopener">ess-news.com</a></span></li>
           </ul>
         </div>
-        <div class="anchor-note"><b>Why this card is different:</b> every data point above is public and checkable. This is the grounding standard applied to all markers in a client report. Entities are named for verifiability only — no affiliation or non-public information is implied.</div>
+        <div class="anchor-note"><b>Why this card is different:</b> every data point above is public and checkable. This is the grounding standard applied to all markers in a client report. Entities are named for verifiability only - no affiliation or non-public information is implied.</div>
       </div>
 
       <!-- M1 -->
       <div class="rmarker" data-marker="M1">
         <div class="rmarker-top">
-          <span class="mid">M1</span><h3>Pre-Raise Buildout — ThermoVault Energy †</h3>
+          <span class="mid">M1</span><h3>Pre-Raise Buildout - ThermoVault Energy †</h3>
           <span class="scope-slot"></span><span class="conf confirmed">CONFIRMED</span>
         </div>
         <div class="composed">
@@ -657,15 +672,15 @@
           <span class="sigchip"><b>IP</b> · filing density rising in one storage subfield</span>
           <span class="sigchip"><b>Capital</b> · no announced round in 19 months</span>
         </div>
-        <p class="finding">Senior engineering hiring spiked against the company's own 12-month baseline while patent density in a narrow thermal-storage subfield accelerated — with no announced funding event. The combination matches the pre-raise buildout pattern. <b>Assessment: a Series B is forming.</b></p>
+        <p class="finding">Senior engineering hiring spiked against the company's own 12-month baseline while patent density in a narrow thermal-storage subfield accelerated - with no announced funding event. The combination matches the pre-raise buildout pattern. <b>Assessment: a Series B is forming.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">5–7 months before round announcement</div></div>
-          <div class="cell"><div class="cl">Recommended action</div><div class="cv">Initiate contact now — before price and syndicate form. Prepare thesis on industrial heat storage economics.</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">5-7 months before round announcement</div></div>
+          <div class="cell"><div class="cl">Recommended action</div><div class="cv">Initiate contact now - before price and syndicate form. Prepare thesis on industrial heat storage economics.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (illustrative structure)</div>
+          <div class="gl">Grounding - data points (illustrative structure)</div>
           <ul>
-            <li>14 senior engineering roles posted over 90 days vs baseline of 3–4 <span class="src">· careers page + job-board delta</span></li>
+            <li>14 senior engineering roles posted over 90 days vs baseline of 3-4 <span class="src">· careers page + job-board delta</span></li>
             <li>6 patent applications in one storage subfield within 120 days <span class="src">· patent filings index</span></li>
             <li>Last disclosed round: seed, 19 months ago; no follow-on recorded <span class="src">· funding registries cross-check</span></li>
           </ul>
@@ -675,7 +690,7 @@
       <!-- M5 -->
       <div class="rmarker" data-marker="M5">
         <div class="rmarker-top">
-          <span class="mid">M5</span><h3>IP Feeder — university lab → electrolyzer startups †</h3>
+          <span class="mid">M5</span><h3>IP Feeder - university lab → electrolyzer startups †</h3>
           <span class="scope-slot"></span><span class="conf confirmed">CONFIRMED</span>
         </div>
         <div class="composed">
@@ -683,13 +698,13 @@
           <span class="sigchip"><b>Graph</b> · shared board advisor across 3 startups</span>
           <span class="sigchip"><b>IP</b> · assignment transfers university → spin-outs</span>
         </div>
-        <p class="finding">One university lab (PEM catalysis) connects to three venture-backed electrolyzer companies through co-authorship and a shared board advisor. Two IP assignments transferred from the university to spin-outs in 14 months. <b>Assessment: a hidden innovation pipeline — the next spin-out is likely already forming inside the lab.</b></p>
+        <p class="finding">One university lab (PEM catalysis) connects to three venture-backed electrolyzer companies through co-authorship and a shared board advisor. Two IP assignments transferred from the university to spin-outs in 14 months. <b>Assessment: a hidden innovation pipeline - the next spin-out is likely already forming inside the lab.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">12–18 months before spin-out becomes visible</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">12-18 months before spin-out becomes visible</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">Track the lab's grant activity and PhD departures; establish relationship with the TTO before formation.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (illustrative structure)</div>
+          <div class="gl">Grounding - data points (illustrative structure)</div>
           <ul>
             <li>17 co-authored papers linking lab members to founders of 3 startups <span class="src">· publication graph</span></li>
             <li>Same individual on advisory boards of 3 peer companies <span class="src">· registry filings, board data</span></li>
@@ -701,7 +716,7 @@
       <!-- M4 -->
       <div class="rmarker" data-marker="M4">
         <div class="rmarker-top">
-          <span class="mid">M4</span><h3>Stealth Scale — Nordwind Grid †</h3>
+          <span class="mid">M4</span><h3>Stealth Scale - Nordwind Grid †</h3>
           <span class="scope-slot"></span><span class="conf emerging">EMERGING</span>
         </div>
         <div class="composed">
@@ -709,13 +724,13 @@
           <span class="sigchip"><b>Talent</b> · hiring opened in 3 new geographies</span>
           <span class="sigchip"><b>Org</b> · first compliance &amp; regulatory-affairs hires</span>
         </div>
-        <p class="finding">Infrastructure footprint expanded into three new regions while hiring opened in the UK, Poland and Iberia — led by go-to-market and regulatory-affairs roles, not engineering. <b>Assessment: quiet multi-market expansion ahead of any announcement.</b></p>
+        <p class="finding">Infrastructure footprint expanded into three new regions while hiring opened in the UK, Poland and Iberia - led by go-to-market and regulatory-affairs roles, not engineering. <b>Assessment: quiet multi-market expansion ahead of any announcement.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">4–6 months before public expansion news</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">4-6 months before public expansion news</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">Re-price the segment: incumbent orchestration players face a funded, expanding entrant. Assess partnership vs compete posture.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (illustrative structure)</div>
+          <div class="gl">Grounding - data points (illustrative structure)</div>
           <ul>
             <li>DNS/CDN + status-page footprint: 3 new deployment regions <span class="src">· digital layer scan</span></li>
             <li>9 roles posted across UK/PL/ES incl. Head of Regulatory Affairs <span class="src">· hiring layer</span></li>
@@ -726,20 +741,20 @@
       <!-- M7 -->
       <div class="rmarker" data-marker="M7">
         <div class="rmarker-top">
-          <span class="mid">M7</span><h3>Regulatory Pre-Positioning — battery recycling compliance barrier</h3>
+          <span class="mid">M7</span><h3>Regulatory Pre-Positioning - battery recycling compliance barrier</h3>
           <span class="scope-slot"></span><span class="conf emerging">EMERGING</span>
         </div>
         <div class="composed">
           <span class="sigchip"><b>Regulatory</b> · EU battery-passport consultation activity</span>
           <span class="sigchip"><b>Talent</b> · compliance hiring across 4 of 6 tracked recyclers</span>
         </div>
-        <p class="finding">Consultation activity around battery-passport enforcement is rising while compliance hiring appears across four of six tracked recyclers — before any enforcement deadline is public. <b>Assessment: a compliance barrier is forming within 9–12 months — a moat for prepared players, a cost shock for the rest.</b></p>
+        <p class="finding">Consultation activity around battery-passport enforcement is rising while compliance hiring appears across four of six tracked recyclers - before any enforcement deadline is public. <b>Assessment: a compliance barrier is forming within 9-12 months - a moat for prepared players, a cost shock for the rest.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">9–12 months before barrier materializes</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">9-12 months before barrier materializes</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">Reweight exposure: favor recyclers already hiring compliance functions; discount those that are not.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (illustrative structure)</div>
+          <div class="gl">Grounding - data points (illustrative structure)</div>
           <ul>
             <li>Consultation responses filed by sector participants <span class="src">· regulatory layer</span></li>
             <li>Compliance/regulatory-affairs roles opened at 4 of 6 tracked companies <span class="src">· hiring layer</span></li>
@@ -750,7 +765,7 @@
       <!-- M6 -->
       <div class="rmarker risk" data-marker="M6">
         <div class="rmarker-top">
-          <span class="mid" style="color:var(--risk)">M6</span><h3>Quiet Exit / Distress — Company F (anonymized)</h3>
+          <span class="mid" style="color:var(--risk)">M6</span><h3>Quiet Exit / Distress - Company F (anonymized)</h3>
           <span class="scope-slot"></span><span class="conf hypothesis">HYPOTHESIS</span>
         </div>
         <div class="composed">
@@ -758,13 +773,13 @@
           <span class="sigchip"><b>Talent</b> · open roles −85% vs 6-mo average</span>
           <span class="sigchip"><b>Narrative</b> · forum sentiment cooling, delivery complaints</span>
         </div>
-        <p class="finding">Two executive departures within 60 days, hiring effectively frozen, and cooling sentiment in niche industry forums referencing delivery delays. Signals are individually weak; the temporal alignment is what raises the flag. <b>Assessment: deterioration risk before any public news. Held at Hypothesis tier — forum-weighted evidence. Entity anonymized by policy until independently confirmed.</b></p>
+        <p class="finding">Two executive departures within 60 days, hiring effectively frozen, and cooling sentiment in niche industry forums referencing delivery delays. Signals are individually weak; the temporal alignment is what raises the flag. <b>Assessment: deterioration risk before any public news. Held at Hypothesis tier - forum-weighted evidence. Entity anonymized by policy until independently confirmed.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">3–6 months before public distress signals</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">3-6 months before public distress signals</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">If exposed: request updated financials at next board cycle. If not: monitor as potential distressed-asset entry.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (illustrative structure)</div>
+          <div class="gl">Grounding - data points (illustrative structure)</div>
           <ul>
             <li>CTO and VP Operations profile changes, no announced successors <span class="src">· people-mobility layer</span></li>
             <li>Open roles: 2 vs 6-month average of 13 <span class="src">· hiring layer</span></li>
@@ -810,44 +825,44 @@
         <path class="edge e-risk" d="M480,385 Q400,382 320,360"/>
 
         <!-- investors -->
-        <g class="node inv" transform="translate(140,120)"><title>Fund A† — 3 cluster investments, 2 co-invest edges</title>
+        <g class="node inv" transform="translate(140,120)"><title>Fund A† - 3 cluster investments, 2 co-invest edges</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Fund A†</text></g>
-        <g class="node inv" transform="translate(140,300)"><title>Fund B† — 3 cluster investments</title>
+        <g class="node inv" transform="translate(140,300)"><title>Fund B† - 3 cluster investments</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">Fund B†</text></g>
-        <g class="node inv" transform="translate(320,70)"><title>Fund C† — 2 cluster investments</title>
+        <g class="node inv" transform="translate(320,70)"><title>Fund C† - 2 cluster investments</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Fund C†</text></g>
-        <g class="node inv" transform="translate(320,360)"><title>Fund D† — 2 cluster investments · exposure to Company F</title>
+        <g class="node inv" transform="translate(320,360)"><title>Fund D† - 2 cluster investments · exposure to Company F</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">Fund D†</text></g>
 
         <!-- companies -->
-        <g class="node comp" transform="translate(470,150)"><title>ThermoVault Energy† — M1 Pre-Raise Buildout · score 87</title>
+        <g class="node comp" transform="translate(470,150)"><title>ThermoVault Energy† - M1 Pre-Raise Buildout · score 87</title>
           <circle class="halo" r="19"/><circle class="core" r="7"/>
           <text y="40">ThermoVault†</text><text class="nsub" y="54">M1 · 87</text></g>
-        <g class="node comp" transform="translate(480,265)"><title>HelioForge† — M3 cluster member · score 81</title>
+        <g class="node comp" transform="translate(480,265)"><title>HelioForge† - M3 cluster member · score 81</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">HelioForge†</text><text class="nsub" y="50">M3 · 81</text></g>
-        <g class="node comp" transform="translate(630,100)"><title>Nordwind Grid† — M4 Stealth Scale · score 78</title>
+        <g class="node comp" transform="translate(630,100)"><title>Nordwind Grid† - M4 Stealth Scale · score 78</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Nordwind Grid†</text></g>
-        <g class="node comp" transform="translate(665,215)"><title>Elektra Materials† — M5 IP Feeder target · score 74</title>
+        <g class="node comp" transform="translate(665,215)"><title>Elektra Materials† - M5 IP Feeder target · score 74</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Elektra Materials†</text></g>
-        <g class="node comp" transform="translate(640,330)"><title>CarbonKilde† — M3 cluster member · score 69</title>
+        <g class="node comp" transform="translate(640,330)"><title>CarbonKilde† - M3 cluster member · score 69</title>
           <circle class="halo" r="15"/><circle class="core" r="5"/>
           <text y="34">CarbonKilde†</text></g>
-        <g class="node rsk" transform="translate(480,385)"><title>Company F (anonymized) — M6 risk flag · score 44</title>
+        <g class="node rsk" transform="translate(480,385)"><title>Company F (anonymized) - M6 risk flag · score 44</title>
           <circle class="halo" r="15"/><circle class="core" r="5"/>
           <text y="34">Company F ⚠</text></g>
 
         <!-- universities -->
-        <g class="node uni" transform="translate(810,180)"><title>University Lab 1† — PEM catalysis group · IP feeder to 3 startups</title>
+        <g class="node uni" transform="translate(810,180)"><title>University Lab 1† - PEM catalysis group · IP feeder to 3 startups</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Univ. Lab 1†</text></g>
-        <g class="node uni" transform="translate(790,350)"><title>University Lab 2† — secondary research feeder</title>
+        <g class="node uni" transform="translate(790,350)"><title>University Lab 2† - secondary research feeder</title>
           <circle class="halo" r="15"/><circle class="core" r="5"/>
           <text y="34">Univ. Lab 2†</text></g>
       </svg>
@@ -856,21 +871,21 @@
 
     <div class="rep-section">
       <h2><span class="idx">05</span> White spaces &amp; early warnings</h2>
-      <p class="sec-sub">Where capital has not yet concentrated — and where structural barriers are forming.</p>
+      <p class="sec-sub">Where capital has not yet concentrated - and where structural barriers are forming.</p>
       <div class="ws-item">
         <span class="ws-type space">WHITE SPACE</span>
         <div><h4>Grid-edge orchestration for industrial heat</h4>
-        <p>Capital concentrates in the asset layer (storage, generation — now including the verifiable rounds in marker M3) while the enabling software layer lags, even as offtake contracts increasingly require dynamic load orchestration. <b>One funded player tracked — the segment supports 3–4.</b></p></div>
+        <p>Capital concentrates in the asset layer (storage, generation - now including the verifiable rounds in marker M3) while the enabling software layer lags, even as offtake contracts increasingly require dynamic load orchestration. <b>One funded player tracked - the segment supports 3-4.</b></p></div>
       </div>
       <div class="ws-item">
         <span class="ws-type space">WHITE SPACE</span>
         <div><h4>MRV for industrial heat offtake</h4>
-        <p>"Heat offtake verification" narrative rising in niche forums and policy papers; <b>no dedicated funded player identified in 12 months</b>. Adjacent MRV incumbents positioned to extend — or be displaced by a spin-out.</p></div>
+        <p>"Heat offtake verification" narrative rising in niche forums and policy papers; <b>no dedicated funded player identified in 12 months</b>. Adjacent MRV incumbents positioned to extend - or be displaced by a spin-out.</p></div>
       </div>
       <div class="ws-item">
         <span class="ws-type warning">EARLY WARNING</span>
         <div><h4>Regulatory barrier forming in battery recycling</h4>
-        <p>See marker M7: consultation activity plus compliance hiring across <b>4 of 6 tracked recyclers</b> indicates a compliance barrier within 9–12 months. Reweight exposure accordingly.</p></div>
+        <p>See marker M7: consultation activity plus compliance hiring across <b>4 of 6 tracked recyclers</b> indicates a compliance barrier within 9-12 months. Reweight exposure accordingly.</p></div>
       </div>
     </div>
   </div>
@@ -885,13 +900,13 @@
         <div class="cluster">
           <div class="cscore">79</div>
           <h4>Transaction-Layer Infrastructure</h4>
-          <p>Rewards platforms repositioning from loyalty products toward transaction infrastructure. Five independent signal layers align — see marker M2.</p>
+          <p>Rewards platforms repositioning from loyalty products toward transaction infrastructure. Five independent signal layers align - see marker M2.</p>
           <span class="ctag">FORMING · M2 ACTIVE</span>
         </div>
         <div class="cluster">
           <div class="cscore">72</div>
           <h4>Merchant Enablement Stack</h4>
-          <p>Partnership activity clustering around merchant connectivity, payment integrations and transaction-linked rewards — not standalone loyalty launches.</p>
+          <p>Partnership activity clustering around merchant connectivity, payment integrations and transaction-linked rewards - not standalone loyalty launches.</p>
           <span class="ctag">EARLY · M3 ACTIVE</span>
         </div>
         <div class="cluster">
@@ -904,7 +919,7 @@
     </div>
 
     <div class="rep-section">
-      <h2><span class="idx">02</span> Watchlist — ranked entities</h2>
+      <h2><span class="idx">02</span> Watchlist - ranked entities</h2>
       <p class="sec-sub">Entities anonymized (source analysis covered real GCC ecosystem participants). Structure identical to a client deliverable.</p>
       <div class="table-wrap">
       <table class="watch">
@@ -925,12 +940,12 @@
           <tr><td><span class="ent-name">Platform R2 (anonymized)</span><span class="ent-sub">White-label rewards technology · UAE</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:68%"></i></span>68</span></td>
               <td><span class="mtag">M2</span></td>
-              <td><span class="momentum flat">— stable</span></td>
+              <td><span class="momentum flat">- stable</span></td>
               <td><span class="conf emerging">EMERGING</span></td></tr>
           <tr><td><span class="ent-name">Bank venture J1 (anonymized)</span><span class="ent-sub">Bank-backed commerce initiative · KSA</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:61%"></i></span>61</span></td>
               <td><span class="mtag">M3</span></td>
-              <td><span class="momentum flat">— stable</span></td>
+              <td><span class="momentum flat">- stable</span></td>
               <td><span class="conf hypothesis">HYPOTHESIS</span></td></tr>
           <tr><td><span class="ent-name">Integrator M1 (anonymized)</span><span class="ent-sub">POS / merchant integrations · QA</span></td>
               <td><span class="scorebar"><span class="bar"><i style="width:58%"></i></span>58</span></td>
@@ -950,14 +965,14 @@
 
     <div class="rep-section">
       <h2><span class="idx">03</span> Detected convergence markers</h2>
-      <p class="sec-sub">Every marker is grounded in ≥2 independent data points. No sources — no marker. Cards are ordered by evidence strength, not by marker number. This sample's flagship marker (M2) is adapted from a real Nexial analysis.</p>
+      <p class="sec-sub">Every marker is grounded in ≥2 independent data points. No sources - no marker. Cards are ordered by evidence strength, not by marker number. This sample's flagship marker (M2) is adapted from a real Nexial analysis.</p>
 
       <div class="missing-markers"></div>
 
       <!-- M2 -->
       <div class="rmarker anchor" data-marker="M2">
         <div class="rmarker-top">
-          <span class="mid">M2</span><h3>Infrastructure Pivot — merchant-funded rewards → transaction layer</h3>
+          <span class="mid">M2</span><h3>Infrastructure Pivot - merchant-funded rewards → transaction layer</h3>
           <span class="scope-slot"></span><span class="conf verifiable">FROM A REAL NEXIAL ANALYSIS</span><span class="conf emerging">EMERGING</span>
         </div>
         <div class="composed">
@@ -969,11 +984,11 @@
         </div>
         <p class="finding">Across five independent signal layers, multiple ecosystem participants moved in the same direction: hiring shifted to payment-integration and merchant-enablement functions; partnerships clustered around transaction-linked rewards rather than standalone loyalty launches; positioning language added "transaction intelligence" and "merchant enablement" alongside loyalty terms; capital concentrated in enablement; executives moved between payments, rewards and commerce companies. <b>Assessment: merchant-funded rewards platforms are becoming transaction-layer infrastructure. Value migrates to whoever owns the transaction + identity layer.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">12–18 months before category re-rating</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">12-18 months before category re-rating</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">Re-price the segment: evaluate rewards platforms as infrastructure assets, not marketing tools. Standalone loyalty models face structural decline.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — signal layers from the source analysis (entities anonymized)</div>
+          <div class="gl">Grounding - signal layers from the source analysis (entities anonymized)</div>
           <ul>
             <li>Hiring review across ecosystem participants: infrastructure roles &gt; loyalty-program roles <span class="src">· hiring layer · evidence: moderate</span></li>
             <li>Partnership announcements clustering on merchant connectivity &amp; transaction-linked rewards <span class="src">· partnership layer · evidence: strong</span></li>
@@ -988,20 +1003,20 @@
       <!-- M3 (B) -->
       <div class="rmarker" data-marker="M3">
         <div class="rmarker-top">
-          <span class="mid">M3</span><h3>Cluster Formation — merchant enablement capital</h3>
+          <span class="mid">M3</span><h3>Cluster Formation - merchant enablement capital</h3>
           <span class="scope-slot"></span><span class="conf emerging">EMERGING</span>
         </div>
         <div class="composed">
           <span class="sigchip"><b>Capital</b> · investment concentrating in enablement businesses</span>
           <span class="sigchip"><b>Partnerships</b> · same integration layer across participants</span>
         </div>
-        <p class="finding">Strategic initiatives and investment activity concentrate on transaction enablement, merchant connectivity and infrastructure integration — while consumer-facing loyalty applications attract fewer new commitments. <b>Assessment: an enablement sub-segment is forming before it has a category label.</b></p>
+        <p class="finding">Strategic initiatives and investment activity concentrate on transaction enablement, merchant connectivity and infrastructure integration - while consumer-facing loyalty applications attract fewer new commitments. <b>Assessment: an enablement sub-segment is forming before it has a category label.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">6–12 months before mainstream thesis coverage</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">6-12 months before mainstream thesis coverage</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">Map unfunded players in the merchant-data and identity layers before the category is named and priced.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (anonymized from source analysis)</div>
+          <div class="gl">Grounding - data points (anonymized from source analysis)</div>
           <ul>
             <li>Funding &amp; strategic initiatives skew to enablement vs consumer loyalty <span class="src">· capital layer</span></li>
             <li>Partnership activity centers on the same merchant-connectivity layer <span class="src">· partnership layer</span></li>
@@ -1012,20 +1027,20 @@
       <!-- M4 (B) -->
       <div class="rmarker" data-marker="M4">
         <div class="rmarker-top">
-          <span class="mid">M4</span><h3>Stealth Scale — PSP G2 (anonymized)</h3>
+          <span class="mid">M4</span><h3>Stealth Scale - PSP G2 (anonymized)</h3>
           <span class="scope-slot"></span><span class="conf hypothesis">HYPOTHESIS</span>
         </div>
         <div class="composed">
           <span class="sigchip"><b>Talent</b> · hiring spread into 2 new GCC markets</span>
           <span class="sigchip"><b>Digital</b> · integration endpoints expanding</span>
         </div>
-        <p class="finding">A payment-orchestration player opened hiring in two new GCC markets while its public integration surface expanded — ahead of any announced market entry. <b>Assessment: quiet regional expansion in progress. Held at Hypothesis tier pending a third independent signal.</b></p>
+        <p class="finding">A payment-orchestration player opened hiring in two new GCC markets while its public integration surface expanded - ahead of any announced market entry. <b>Assessment: quiet regional expansion in progress. Held at Hypothesis tier pending a third independent signal.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">3–6 months before public market-entry news</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">3-6 months before public market-entry news</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">If sourcing in GCC payments: engage before the expansion is announced and priced in.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (anonymized from source analysis)</div>
+          <div class="gl">Grounding - data points (anonymized from source analysis)</div>
           <ul>
             <li>Roles posted in 2 new markets, integration &amp; merchant-onboarding functions <span class="src">· hiring layer</span></li>
             <li>Public API/integration catalogue growth quarter-over-quarter <span class="src">· digital layer</span></li>
@@ -1036,7 +1051,7 @@
       <!-- M6 (B) -->
       <div class="rmarker risk" data-marker="M6">
         <div class="rmarker-top">
-          <span class="mid" style="color:var(--risk)">M6</span><h3>Quiet Decline Risk — Platform R3 (anonymized)</h3>
+          <span class="mid" style="color:var(--risk)">M6</span><h3>Quiet Decline Risk - Platform R3 (anonymized)</h3>
           <span class="scope-slot"></span><span class="conf hypothesis">HYPOTHESIS</span>
         </div>
         <div class="composed">
@@ -1044,13 +1059,13 @@
           <span class="sigchip"><b>Narrative</b> · loyalty-only positioning static while peers shift</span>
           <span class="sigchip"><b>Capital</b> · no new strategic initiatives detected</span>
         </div>
-        <p class="finding">While ecosystem peers reposition toward the transaction layer, one consumer cashback platform shows no integration hiring, no enablement partnerships, and unchanged loyalty-only positioning. Against capital rotating to enablement, standing still is itself a signal. <b>Assessment: structural decline risk before it appears in reported metrics. Held at Hypothesis — absence-of-signal evidence only.</b></p>
+        <p class="finding">While ecosystem peers reposition toward the transaction layer, one consumer cashback platform shows no integration hiring, no enablement partnerships, and unchanged loyalty-only positioning. Against capital rotating to enablement, standing still is itself a signal. <b>Assessment: structural decline risk before it appears in reported metrics. Held at Hypothesis - absence-of-signal evidence only.</b></p>
         <div class="rmarker-grid">
-          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">6–12 months before visible underperformance</div></div>
+          <div class="cell"><div class="cl">Estimated lead time</div><div class="cv lead">6-12 months before visible underperformance</div></div>
           <div class="cell"><div class="cl">Recommended action</div><div class="cv">If exposed: press for a transaction-layer roadmap. If sourcing: monitor as a potential consolidation target.</div></div>
         </div>
         <div class="grounding">
-          <div class="gl">Grounding — data points (anonymized from source analysis)</div>
+          <div class="gl">Grounding - data points (anonymized from source analysis)</div>
           <ul>
             <li>Zero integration/merchant-enablement roles posted vs active hiring at 4 peers <span class="src">· hiring layer</span></li>
             <li>Positioning-language audit: no infrastructure terminology added in observation window <span class="src">· narrative layer</span></li>
@@ -1061,7 +1076,7 @@
 
     <div class="rep-section">
       <h2><span class="idx">04</span> Ecosystem network view</h2>
-      <p class="sec-sub">Simplified extract. The source analysis modeled the ecosystem as a connected network — banks, PSPs, rewards platforms, merchants — rather than separate market categories.</p>
+      <p class="sec-sub">Simplified extract. The source analysis modeled the ecosystem as a connected network - banks, PSPs, rewards platforms, merchants - rather than separate market categories.</p>
       <div class="net-wrap">
         <div class="net-legend">
         <span><i class="lg-dot" style="background:#22d3ee"></i> Platform / PSP</span>
@@ -1087,29 +1102,29 @@
         <path class="edge e-ip" d="M820,200 Q755,258 670,300"/>
 
         <!-- banks -->
-        <g class="node inv" transform="translate(150,110)"><title>Bank K1 (anonymized) — 2 platform partnerships, 1 executive edge</title>
+        <g class="node inv" transform="translate(150,110)"><title>Bank K1 (anonymized) - 2 platform partnerships, 1 executive edge</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Bank K1</text></g>
-        <g class="node inv" transform="translate(150,290)"><title>Bank K2 (anonymized) — commerce venture sponsor</title>
+        <g class="node inv" transform="translate(150,290)"><title>Bank K2 (anonymized) - commerce venture sponsor</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">Bank K2</text></g>
 
         <!-- platforms -->
-        <g class="node comp" transform="translate(430,130)"><title>Platform R1 (anonymized) — M2 Infrastructure Pivot · score 79</title>
+        <g class="node comp" transform="translate(430,130)"><title>Platform R1 (anonymized) - M2 Infrastructure Pivot · score 79</title>
           <circle class="halo" r="19"/><circle class="core" r="7"/>
           <text y="40">Platform R1</text><text class="nsub" y="54">M2 · 79</text></g>
-        <g class="node comp" transform="translate(460,265)"><title>PSP G2 (anonymized) — M4 Stealth Scale · score 73</title>
+        <g class="node comp" transform="translate(460,265)"><title>PSP G2 (anonymized) - M4 Stealth Scale · score 73</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">PSP G2</text><text class="nsub" y="50">M4 · 73</text></g>
-        <g class="node comp" transform="translate(650,100)"><title>Platform R2 (anonymized) — white-label rewards · score 68</title>
+        <g class="node comp" transform="translate(650,100)"><title>Platform R2 (anonymized) - white-label rewards · score 68</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="-26">Platform R2</text></g>
-        <g class="node comp" transform="translate(670,300)"><title>Integrator M1 (anonymized) — POS integrations · score 58</title>
+        <g class="node comp" transform="translate(670,300)"><title>Integrator M1 (anonymized) - POS integrations · score 58</title>
           <circle class="halo" r="15"/><circle class="core" r="5"/>
           <text y="34">Integrator M1</text></g>
 
         <!-- regulator -->
-        <g class="node uni" transform="translate(820,200)"><title>Central-bank fintech sandbox — regulatory edge to 2 entities</title>
+        <g class="node uni" transform="translate(820,200)"><title>Central-bank fintech sandbox - regulatory edge to 2 entities</title>
           <circle class="halo" r="16"/><circle class="core" r="5.5"/>
           <text y="36">CB Sandbox</text></g>
       </svg>
@@ -1118,7 +1133,7 @@
 
     <div class="rep-section">
       <h2><span class="idx">05</span> White spaces &amp; early warnings</h2>
-      <p class="sec-sub">Where capital has not yet concentrated — and where structural shifts create risk.</p>
+      <p class="sec-sub">Where capital has not yet concentrated - and where structural shifts create risk.</p>
       <div class="ws-item">
         <span class="ws-type space">WHITE SPACE</span>
         <div><h4>Merchant data &amp; identity layer</h4>
@@ -1141,17 +1156,23 @@
         <span class="dp-f" data-v="Hosted interactive view">Hosted view</span>
         <span class="dp-f" data-v="Structured DB">Structured DB</span>
       </div>
-      <p class="dp-note">This is a sample. Your report is assembled against your scope and delivered inside your perimeter — on-prem or private cloud. Your data never leaves your environment.</p>
+      <p class="dp-note">This is a sample. Your report is assembled against your scope and delivered inside your perimeter - on-prem or private cloud. Your data never leaves your environment.</p>
     </div>
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
-      <button class="btn primary" onclick="document.getElementById('contact-form-sec').scrollIntoView({behavior:'smooth'})">Request scoped pilot ↓</button>
+      <a class="btn primary" href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=sample-report">Start 14-day free trial</a>
+      <a class="btn ghost" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=sample-report">See the live sample report</a>
+      <button class="btn ghost" onclick="document.getElementById('contact-form-sec').scrollIntoView({behavior:'smooth'})">Request scoped pilot ↓</button>
       <button class="btn ghost" onclick="goto(1)">Reconfigure scope</button>
     </div>
   </div>
 
   <div class="rep-section" id="contact-form-sec">
     <h2><span class="idx">06</span> Let's build your intelligence layer</h2>
-    <p class="sec-sub">The sample ends here — your report starts with a scoping call. Tell us who you are; your configured scope is attached automatically.</p>
+    <p class="sec-sub">This configurator ends in a pilot spec for custom sectors, on-prem and AI agents. For the two sectors with data today you can skip the call: the platform gives you ranked markers with evidence in 2 minutes.</p>
+    <div class="trial-plate">
+      <div class="tp-text"><b>Self-serve path:</b> 14-day free trial, one sector, no card. Demo data until your sector is live.</div>
+      <a class="btn primary" href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=sample-contact">Start 14-day free trial</a>
+    </div>
     <div class="contact-card">
       <div class="contact-grid">
         <div>
@@ -1167,16 +1188,16 @@
             <button class="btn primary" onclick="sendContactRequest()">Send request →</button>
             <button class="btn ghost" onclick="copySpec()">Copy scope spec</button>
           </div>
-          <p class="contact-foot">We usually respond within 1–2 business days. Prototype behavior: opens a pre-filled email draft to solutions@nexial-intelligence.com — the production version submits directly.</p>
+          <p class="contact-foot">We usually respond within 1-2 business days. Prototype behavior: opens a pre-filled email draft to solutions@nexial-intelligence.com - the production version submits directly.</p>
         </div>
         <aside class="contact-aside">
           <div class="ca-label">After submission we will</div>
           <ul class="next-steps">
             <li>review your use case</li>
-            <li>propose a pilot scope — fixed, 2–4 weeks, no long-term commitment</li>
+            <li>propose a pilot scope - fixed, 2-4 weeks, no long-term commitment</li>
             <li>outline signals, markers and deliverables for your sector</li>
           </ul>
-          <div class="ca-label">Attached automatically — your configured scope</div>
+          <div class="ca-label">Attached automatically - your configured scope</div>
           <div class="contact-spec" id="contact-spec"></div>
         </aside>
       </div>
@@ -1184,7 +1205,7 @@
   </div>
 
   <div class="methodology">
-    METHODOLOGY · Convergence score = Σ(signal_weight × recency_decay × source_reliability) × temporal_alignment_bonus. Confidence tiers: CONFIRMED = 2+ independent recent sources · EMERGING = 1 strong + supporting weak signals · HYPOTHESIS = weak/forum-class sources only. Grounding rule: markers without ≥2 verifiable data points are not reported — a selected marker with no qualifying convergence is shown as "none detected", never fabricated. Entities marked † are fictional composites; entities marked "anonymized" reference real analysis subjects whose identity is withheld. Public entities are named only with public, checkable sources. Provenance flags (VERIFIABLE · PUBLIC DATA, FROM A REAL NEXIAL ANALYSIS) describe the source class of a card’s evidence; they are orthogonal to — and do not replace — confidence tiers.
+    METHODOLOGY · Convergence score = Σ(signal_weight × recency_decay × source_reliability) × temporal_alignment_bonus. Confidence tiers: CONFIRMED = 2+ independent recent sources · EMERGING = 1 strong + supporting weak signals · HYPOTHESIS = weak/forum-class sources only. Grounding rule: markers without ≥2 verifiable data points are not reported - a selected marker with no qualifying convergence is shown as "none detected", never fabricated. Entities marked † are fictional composites; entities marked "anonymized" reference real analysis subjects whose identity is withheld. Public entities are named only with public, checkable sources. Provenance flags (VERIFIABLE · PUBLIC DATA, FROM A REAL NEXIAL ANALYSIS) describe the source class of a card’s evidence; they are orthogonal to - and do not replace - confidence tiers.
   </div>
 </div>
 
@@ -1193,7 +1214,7 @@
   <div class="modal">
     <span class="modal-x" onclick="closePilotModal()">✕ close</span>
     <h2>Request scoped pilot</h2>
-    <p class="m-sub">Your configured scope becomes the pilot spec. We respond within 1–2 business days with scope, signals and deliverables.</p>
+    <p class="m-sub">Your configured scope becomes the pilot spec. We respond within 1-2 business days with scope, signals and deliverables.</p>
     <div class="spec-box" id="spec-box"></div>
     <div class="frm">
       <div><label>Name *</label><input type="text" id="f-name" placeholder="Jane Doe"></div>
@@ -1224,13 +1245,13 @@
   };
 
   const SAMPLES = {
-    A: { title: "Climate & Deep Tech — Europe", sector: "Climate & Deep Tech",
+    A: { title: "Climate & Deep Tech - Europe", sector: "Climate & Deep Tech",
          region: "Europe",
-         meta: [["PERIOD","Q2–Q3 2026"],["ENTITIES MAPPED","1,240"],["SIGNAL LAYERS","6"],["EDGES","4,816"],["SCOPE ID","NX-2026-0704"]],
+         meta: [["PERIOD","Q2-Q3 2026"],["ENTITIES MAPPED","1,240"],["SIGNAL LAYERS","6"],["EDGES","4,816"],["SCOPE ID","NX-2026-0704"]],
          markers: ["M1","M3","M4","M5","M6","M7"] },
-    B: { title: "Fintech Infrastructure — GCC · Merchant-Funded Rewards", sector: "Fintech Infrastructure",
+    B: { title: "Fintech Infrastructure - GCC · Merchant-Funded Rewards", sector: "Fintech Infrastructure",
          region: "MENA / GCC",
-         meta: [["PERIOD","OBSERVATION WINDOW 2025–2026"],["ENTITIES MAPPED","380"],["SIGNAL LAYERS","5"],["EDGES","1,940"],["SCOPE ID","NX-2026-0705"]],
+         meta: [["PERIOD","OBSERVATION WINDOW 2025-2026"],["ENTITIES MAPPED","380"],["SIGNAL LAYERS","5"],["EDGES","1,940"],["SCOPE ID","NX-2026-0705"]],
          markers: ["M2","M3","M4","M6"] }
   };
   const SECTOR_SAMPLE = {
@@ -1385,13 +1406,13 @@
 
     // scope echo
     document.getElementById("scope-echo").innerHTML =
-      `<b>YOUR SCOPE</b> — region: <b>${cfg.region.join(", ") || "Global"}</b> · sector: <b>${cfg.sector}</b> · entities: <b>${cfg.entity.join(", ") || "all"}</b> · markers: <b>${sel.rec ? "recommended set" : sel.list.join(", ")}</b> · delivery: <b>${cfg.delivery}</b> · cadence: <b>${cfg.cadence}</b>`;
+      `<b>YOUR SCOPE</b> - region: <b>${cfg.region.join(", ") || "Global"}</b> · sector: <b>${cfg.sector}</b> · entities: <b>${cfg.entity.join(", ") || "all"}</b> · markers: <b>${sel.rec ? "recommended set" : sel.list.join(", ")}</b> · delivery: <b>${cfg.delivery}</b> · cadence: <b>${cfg.cadence}</b>`;
 
     // sector/sample mismatch note
     const mm = document.getElementById("sample-mismatch");
     if (cfg.sector !== sample.sector) {
       mm.style.display = "block";
-      mm.innerHTML = `No pre-assembled sample exists for <b>${cfg.sector}</b> yet — showing the nearest sample (${sample.sector}). Your pilot report is assembled for ${cfg.sector} against your exact scope.`;
+      mm.innerHTML = `No pre-assembled sample exists for <b>${cfg.sector}</b> yet - showing the nearest sample (${sample.sector}). Your pilot report is assembled for ${cfg.sector} against your exact scope.`;
     } else if (cfg.region.length && !cfg.region.some(r => r === sample.region || r === "Global")) {
       mm.style.display = "block";
       mm.innerHTML = `Sample region differs from your selection (<b>${cfg.region.join(", ")}</b>). Your pilot report covers your regions.`;
@@ -1414,13 +1435,13 @@
     missingBox.innerHTML = "";
     const missing = sel.list.filter(m => !sample.markers.includes(m));
     missing.forEach(m => {
-      const other = key === "A" && SAMPLES.B.markers.includes(m) ? ` A detected instance of this marker exists in the <b>Fintech Infrastructure (GCC)</b> sample — select that sector to view it.` :
-                    key === "B" && SAMPLES.A.markers.includes(m) ? ` A detected instance of this marker exists in the <b>Climate &amp; Deep Tech (Europe)</b> sample — select that sector to view it.` : "";
+      const other = key === "A" && SAMPLES.B.markers.includes(m) ? ` A detected instance of this marker exists in the <b>Fintech Infrastructure (GCC)</b> sample - select that sector to view it.` :
+                    key === "B" && SAMPLES.A.markers.includes(m) ? ` A detected instance of this marker exists in the <b>Climate &amp; Deep Tech (Europe)</b> sample - select that sector to view it.` : "";
       missingBox.insertAdjacentHTML("beforeend",
         `<div class="rmarker empty">
-           <div class="rmarker-top"><span class="mid">${m}</span><h3>${MARKER_NAMES[m]} — none detected in this sample</h3>
+           <div class="rmarker-top"><span class="mid">${m}</span><h3>${MARKER_NAMES[m]} - none detected in this sample</h3>
            <span class="inscope-tag">IN YOUR SCOPE</span></div>
-           <p><b>No convergence above the grounding threshold</b> was found for this pattern in this sample's period. By policy, markers are reported only when backed by ≥2 verifiable data points — absence is reported as absence, never filled in.${other}</p>
+           <p><b>No convergence above the grounding threshold</b> was found for this pattern in this sample's period. By policy, markers are reported only when backed by ≥2 verifiable data points - absence is reported as absence, never filled in.${other}</p>
          </div>`);
     });
 
@@ -1448,7 +1469,7 @@
       (role ? "\nrole:      " + role : "") +
       (focus ? "\nfocus:     " + focus : "");
     const url = "mailto:solutions@nexial-intelligence.com?subject=" +
-                encodeURIComponent("Scoped pilot request — " + cfg.sector) +
+                encodeURIComponent("Scoped pilot request - " + cfg.sector) +
                 "&body=" + encodeURIComponent(body);
     window.location.href = url;
     showToast("Email draft opened. In production this submits directly.");
@@ -1485,7 +1506,7 @@
                  (firm ? "\nfirm:      " + firm : "") +
                  (note ? "\nnote:      " + note : "");
     const url = "mailto:solutions@nexial-intelligence.com?subject=" +
-                encodeURIComponent("Scoped pilot request — " + cfg.sector) +
+                encodeURIComponent("Scoped pilot request - " + cfg.sector) +
                 "&body=" + encodeURIComponent(body);
     window.location.href = url;
     closePilotModal();
@@ -1496,8 +1517,8 @@
   function copySpec() {
     const txt = buildSpec();
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).then(() => showToast("Scope spec copied."), () => showToast("Copy failed — select the text manually."));
-    } else { showToast("Copy not available — select the text manually."); }
+      navigator.clipboard.writeText(txt).then(() => showToast("Scope spec copied."), () => showToast("Copy failed - select the text manually."));
+    } else { showToast("Copy not available - select the text manually."); }
   }
 </script>
 </body>
