@@ -5278,15 +5278,6 @@ a.shot-frame:hover { transform: translateY(-3px); border-color: rgba(0, 224, 255
   backdrop-filter: blur(6px);
 }
 .shot-frame-hero { width: 100%; max-width: 640px; }
-.shot-frame-hero::after {
-  content: "";
-  position: absolute;
-  inset: -40%;
-  z-index: -1;
-  background: radial-gradient(circle at 60% 40%, rgba(0, 224, 255, 0.18), transparent 55%),
-              radial-gradient(circle at 30% 70%, rgba(255, 51, 153, 0.16), transparent 55%);
-  pointer-events: none;
-}
 
 /* Product rows */
 .product-list { display: flex; flex-direction: column; gap: 48px; }
@@ -5592,3 +5583,7 @@ a.shot-frame:hover { transform: translateY(-3px); border-color: rgba(0, 224, 255
   .hero-fact-value { font-size: 1.25rem; }
   .hero-fact-label { font-size: 0.72rem; }
 }
+
+/* Safari safety: explicit root background so the canvas can never fall back to white */
+html { background-color: #02030a; }
+.hero-platform { isolation: isolate; }
