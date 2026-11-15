@@ -6074,3 +6074,27 @@ html { background-color: #02030a; }
 
 .how-note { margin: 2px 0 0; text-align: center; font-size: 0.9rem; color: rgba(180, 200, 255, 0.62); }
 @media (max-width: 900px) { .how-note { text-align: left; padding-left: 44px; } }
+
+/* ===== Who it is for: four large tiles, 2x2 ===== */
+.who-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.who-tile {
+  display: flex; flex-direction: column; gap: 18px; padding: 38px 40px 34px; border-radius: 22px;
+  background: linear-gradient(165deg, rgba(12, 20, 55, 0.9), rgba(6, 10, 30, 0.97)); border: 1px solid rgba(145, 169, 255, 0.22);
+  transition: border-color .35s, box-shadow .35s, transform .35s cubic-bezier(.23, 1, .32, 1);
+}
+.who-tile:hover { transform: translateY(-3px); border-color: var(--who-tone); box-shadow: 0 18px 50px var(--who-glow); }
+.who-cyan { --who-tone: #00e0ff; --who-glow: rgba(0, 224, 255, .12); }
+.who-pink { --who-tone: #ff3399; --who-glow: rgba(255, 51, 153, .12); }
+.who-amber { --who-tone: #ffc658; --who-glow: rgba(255, 198, 88, .1); }
+.who-green { --who-tone: #7cff9b; --who-glow: rgba(124, 255, 155, .1); }
+.who-top { display: flex; align-items: baseline; gap: 16px; }
+.who-index { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: .06em; color: var(--who-tone); }
+.who-tile h3 { margin: 0; font-size: 1.45rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; color: #eef2ff; }
+.who-tile p { margin: 0; max-width: 46ch; font-size: 1rem; line-height: 1.6; color: rgba(210, 221, 255, .74); }
+.who-markers { margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(145, 169, 255, .16); display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.who-markers-label { font-size: 0.66rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(178, 196, 255, .6); margin-right: 6px; }
+.who-markers span:not(.who-markers-label) { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; border-radius: 999px; font-size: 0.78rem; color: rgba(222, 230, 255, .9); background: rgba(145, 169, 255, .08); border: 1px solid rgba(145, 169, 255, .18); }
+.who-markers b { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.7rem; font-weight: 700; color: var(--who-tone); }
+@media (max-width: 1024px) { .who-tile { padding: 30px 28px 26px; } .who-tile h3 { font-size: 1.3rem; } }
+@media (max-width: 760px) { .who-grid { grid-template-columns: 1fr; gap: 16px; } .who-tile { padding: 26px 22px 22px; gap: 14px; } .who-tile h3 { font-size: 1.2rem; } .who-tile p { font-size: .95rem; } }
+@media (prefers-reduced-motion: reduce) { .who-tile { transition: none; } }
