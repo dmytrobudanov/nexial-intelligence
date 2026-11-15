@@ -52,8 +52,8 @@
           <span class="logo-text">Nexial<span> Intelligence</span></span>
         </a>
         <nav class="nav">
-          <a href="#what-we-do">What We Do</a>
-          <a href="#solutions">Solutions</a>
+          <a href="#product">Product</a>
+          <a href="#solutions">Add-ons</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#pricing">Pricing</a>
           <a href="/sample">Live Sample</a>
@@ -130,431 +130,57 @@
           </div>
 
           <div class="hero-visual hero-visual-video">
-            <div class="tour-frame">
-              <div class="shot-bar">
-                <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
-                <span class="shot-url">app.nexial-intelligence.com/today</span>
+            <div class="tour-player" id="tour-player">
+              <div class="tour-frame">
+                <div class="shot-bar">
+                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+                  <span class="shot-url">app.nexial-intelligence.com/today</span>
+                  <span class="shot-tag shot-tag-inline">Demo data</span>
+                </div>
+                <video class="tour-video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/tour-poster.jpg" width="1440" height="900" aria-label="Nexial platform tour">
+                  <source src="/assets/video/nexial-tour.webm" type="video/webm" />
+                  <source src="/assets/video/nexial-tour.mp4" type="video/mp4" />
+                  <track kind="subtitles" src="/assets/video/nexial-tour.en.vtt" srclang="en" label="English" default />
+                </video>
+                <div class="tour-caption" aria-hidden="true"></div>
+                <div class="tour-controls">
+                  <button type="button" class="tour-btn" data-tour="play" aria-label="Pause">
+                    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+                  </button>
+                  <div class="tour-progress" data-tour="seek" role="slider" aria-label="Progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><span></span></div>
+                  <span class="tour-time" data-tour="time">0:00</span>
+                  <button type="button" class="tour-btn" data-tour="mute" aria-label="Turn sound on" aria-pressed="false">
+                    <svg class="i-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9zm12.5 3l2.5-2.5-1.4-1.4L15 10.6l-2.6-2.5L11 9.5l2.5 2.5L11 14.5l1.4 1.4 2.6-2.5 2.6 2.5 1.4-1.4z"/></svg>
+                    <svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9zm11.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zm-2.5-8.8v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+                  </button>
+                  <button type="button" class="tour-btn tour-btn-cc" data-tour="cc" aria-label="Subtitles" aria-pressed="true">CC</button>
+                  <button type="button" class="tour-btn" data-tour="full" aria-label="Full screen">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg>
+                  </button>
+                </div>
               </div>
-              <video class="tour-video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/tour-poster.jpg" width="1440" height="900" aria-label="Silent preview of the Nexial platform tour">
-                <source src="/assets/video/nexial-tour.webm" type="video/webm" />
-                <source src="/assets/video/nexial-tour.mp4" type="video/mp4" />
-              </video>
-              <button type="button" class="tour-play" data-open-tour>
-                <span class="tour-play-icon" aria-hidden="true"></span>
-                <span>Watch the tour with sound (1:18)</span>
-              </button>
-              <span class="shot-tag">Demo data</span>
+              <ol class="tour-chapters" aria-label="Tour chapters">
+                <li><button type="button" data-seek="0"><img src="/assets/video/clip-today.jpg" alt="" loading="lazy" width="288" height="180" /><span><b>Today</b>Ranked markers</span></button></li>
+                <li><button type="button" data-seek="22.8"><img src="/assets/video/clip-company.jpg" alt="" loading="lazy" width="288" height="180" /><span><b>Company</b>Evidence and confidence</span></button></li>
+                <li><button type="button" data-seek="52.8"><img src="/assets/video/clip-graph.jpg" alt="" loading="lazy" width="288" height="180" /><span><b>Sector</b>Clusters and white spaces</span></button></li>
+                <li><button type="button" data-seek="70.8"><img src="/assets/video/clip-investors.jpg" alt="" loading="lazy" width="288" height="180" /><span><b>Investors</b>Who backs the move</span></button></li>
+              </ol>
             </div>
           </div>
 
-          <dialog class="tour-modal" id="tour-modal" aria-label="Nexial platform tour">
-            <button type="button" class="tour-close" data-close-tour aria-label="Close">×</button>
-            <video class="tour-modal-video" controls playsinline preload="none" poster="/assets/video/tour-poster.jpg" width="1440" height="900">
-              <source src="/assets/video/nexial-tour.webm" type="video/webm" />
-              <source src="/assets/video/nexial-tour.mp4" type="video/mp4" />
-            </video>
-          </dialog>
-
         </div>
       </section>
-
-
-      <!-- Example Engagements -->
-      <section id="examples" class="section section-light section-examples">
-        <div class="container section-inner">
-          <header class="section-header">
-            <h2>Example Scenarios</h2>
-            <p>
-              How a trial week can look for a fund or a corporate team.
-            </p>
-            <p>
-              Synthetic scenarios on demo data, built from real signal patterns.
-            </p>
-          </header>
-
-
-
-          <div class="examples-grid-advanced">
-              <!-- Card 1 -->
-              <article class="example-advanced glass-card">
-                  <div class="example-head">
-                      <span class="example-badge">VC Fund</span>
-                      <h3>Climate tech thesis</h3>
-                  </div>
-                  <div class="example-timeline">
-                      <div class="example-step">
-                          <div class="example-dot icon-box"><i data-lucide="target"></i></div>
-                          <div>
-                              <h4>Situation</h4>
-                              <p>A VC fund wants early-stage climate tech companies before the round is announced.</p>
-                          </div>
-                      </div>
-                      <div class="example-step">
-                          <div class="example-dot icon-box"><i data-lucide="zap"></i></div>
-                          <div>
-                              <h4>Signal detected</h4>
-                              <p>M1 Pre-Raise Buildout confirmed on 12 companies in the Industrial Heat cluster: senior hiring plus patent density, no round yet.</p>
-                          </div>
-                      </div>
-                      <div class="example-step">
-                          <div class="example-dot icon-box outcome-icon"><i data-lucide="trending-up"></i></div>
-                          <div>
-                              <h4>Outcome</h4>
-                              <p><strong>12 non-obvious targets</strong> on the watchlist in week 1</p>
-                          </div>
-                      </div>
-                  </div>
-                  <p class="example-disclaimer">Synthetic pilot scenario based on real signal patterns</p>
-              </article>
-
-              <!-- Card 2 -->
-              <article class="example-advanced glass-card">
-                  <div class="example-head">
-                      <span class="example-badge badge-indigo">Corporate</span>
-                      <h3>M&A Watchlist in Fintech</h3>
-                  </div>
-                  <div class="example-timeline">
-                      <div class="example-step">
-                          <div class="example-dot icon-box"><i data-lucide="target"></i></div>
-                          <div>
-                              <h4>Situation</h4>
-                              <p>A corporate team tracks acquisition targets in payments infrastructure.</p>
-                          </div>
-                      </div>
-                      <div class="example-step">
-                          <div class="example-dot icon-box"><i data-lucide="zap"></i></div>
-                          <div>
-                              <h4>Signal detected</h4>
-                              <p>M3 Cluster Formation across three co-investing funds, confirmed by hiring and product signals, ranked into a watchlist.</p>
-                          </div>
-                      </div>
-                     <div class="example-step">
-                          <div class="example-dot icon-box outcome-icon"><i data-lucide="trending-up"></i></div>
-                          <div>
-                              <h4>Outcome</h4>
-                              <p>Deal signal <strong>90 days</strong> before it became public</p>
-                          </div>
-                      </div>
-                  </div>
-                  <p class="example-disclaimer">Synthetic pilot scenario based on real signal patterns</p>
-              </article>
-          </div>
-
-
-
-
-        </div>
-      </section>
-      
-      
-      
-      
-
-
-      <!-- What We Do -->
-      <section id="what-we-do" class="section section-light">
-        <div class="container section-inner">
-          <header class="section-header">
-            <h2>Four Signal Layers Behind Every Marker</h2>
-            <p>
-              The platform reads capital, talent, technology and narrative signals for every company in your sector and combines them into markers. One layer alone never triggers an alert.
-            </p>
-          </header>
-
-          <div class="signals-strip-container">
-            <div class="signals-strip-label">Signal Layers We Model</div>
-            
-            <div class="signals-grid-new">
-              <!-- Markets & Capital -->
-              <div class="signal-card-integrated market">
-                <div class="signal-card-head">
-                  <span class="signal-dot signal-dot-market"></span>
-                  <h3>Markets & Capital</h3>
-                </div>
-                <p>Where capital, talent, and attention are actually going.</p>
-              </div>
-
-              <!-- Technology & IP -->
-              <div class="signal-card-integrated tech">
-                <div class="signal-card-head">
-                  <span class="signal-dot signal-dot-tech"></span>
-                  <h3>Technology & IP</h3>
-                </div>
-                <p>Patents, trials, research - tech that is compounding.</p>
-              </div>
-
-              <!-- Narratives & Reputation -->
-              <div class="signal-card-integrated narrative">
-                <div class="signal-card-head">
-                  <span class="signal-dot signal-dot-narrative"></span>
-                  <h3>Narratives & Reputation</h3>
-                </div>
-                <p>How companies and themes are framed in public space.</p>
-              </div>
-
-              <!-- Growth & Execution -->
-              <div class="signal-card-integrated growth">
-                <div class="signal-card-head">
-                  <span class="signal-dot signal-dot-growth"></span>
-                  <h3>Growth & Execution</h3>
-                </div>
-                <p>Signals of scale-up, restructuring, or quiet pivots.</p>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-      </section>      
-
-
-
-      <section id="transformation" class="section">
-
-          <!-- Фоновое свечение -->
-          <div class="ambient-glow glow-1"></div>
-          <div class="ambient-glow glow-2"></div>
-
-          <main class="main-container">
-              <!-- Заголовок -->
-              <header class="header">
-                  <h2 class="title">
-                      From Chaotic Noise to <br class="hidden-mobile">
-                      <span class="gradient-text">Pure Gold</span>
-                  </h2>
-                  <p class="subtitle">
-                      Job posts, patents, filings, news and web footprints arrive as millions of fragmented data points. The platform links them to companies, scores the patterns and hands you ranked markers with the evidence attached.
-                  </p>
-              </header>
-
-              <!-- Инфографика -->
-              <div class="infographic-grid">
-
-                  <!-- Линии связи (Desktop) -->
-                  <div class="connection-lines">
-                      <div class="flow-line flow-1"></div>
-                      <div class="flow-line flow-2"></div>
-                  </div>
-
-
-      <!-- Левая колонка: Raw Input -->
-                  <div class="column column-left">
-                      <div class="label label-raw">
-                          <i data-lucide="database" class="icon-sm"></i>
-                          Raw Input
-                      </div>
-
-                      <div class="input-visual">
-                          <!-- JSON Snippet (Самый нижний слой) -->
-                          <div class="card card-json">
-                              <div class="card-header">
-                                  <i data-lucide="file-json" class="icon-xs"></i>
-                                  <span>scrape_data.json</span>
-                              </div>
-                              <div class="code-content">
-                                  <span class="pink">"company_data"</span>: {<br>
-                                  &nbsp;&nbsp;<span class="pink">"name"</span>: <span class="green">"TechCorp Inc"</span>,<br>
-                                  &nbsp;&nbsp;<span class="pink">"revenue_q3"</span>: <span class="amber">"null"</span>,<br>
-                                  &nbsp;&nbsp;<span class="comment">// missing field</span><br>
-                                  &nbsp;&nbsp;<span class="pink">"signals"</span>: [<span class="green">"hiring_surge"</span>],<br>
-                                  &nbsp;&nbsp;<span class="pink">"metadata"</span>: {<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"source"</span>: <span class="cyan">"web_scrp_01"</span>,<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"reliability"</span>: <span class="amber">0.42</span>,<br>
-                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"raw_logs"</span>: [<span class="cyan">"ERR_404"</span>, <span class="cyan">"302_RED"</span>]<br>
-                                  &nbsp;&nbsp;},<br>
-                                  &nbsp;&nbsp;<span class="pink">"valuation"</span>: <span class="amber">"unverified"</span>,<br>
-                                  &nbsp;&nbsp;<span class="pink">"timestamp"</span>: <span class="cyan">1729785600</span><br>
-                                  }
-                              </div>
-
-                          </div>
-
-                          <!-- Unstructured Text (Средний слой) -->
-                          <div class="card card-text">
-                              <div class="card-header">
-                                  <i data-lucide="file-text" class="icon-xs"></i>
-                                  <span>notes_raw.txt</span>
-                              </div>
-                              <div class="text-content">
-                                  On <span class="tag tag-date">October 24, 2024 <small>DATE</small></span>,
-                                  <span class="tag tag-entity">Globex <small>ENTITY</small></span> reported
-                                  <span class="tag tag-capital">$4.2 million <small>CAPITAL</small></span> in Q3 revenue, reflecting a
-                                  <span class="tag tag-cyan">12% contraction <small class="text-red">SEM -0.64</small></span>.
-                                  CEO <span class="tag tag-entity">Sarah Mitchell <small>ENTITY9</small></span> confirmed a pending
-                                  <span class="tag tag-capital">$890 million <small>CAPITAL</small></span> acquisition of
-                                  <span class="tag tag-entity">DataStream Inc. <small>ENTITY</small></span> in
-                                  <span class="tag tag-loc">San Francisco, CA <small>LOC</small></span>.
-                                  Forward hiring <span class="tag tag-signal">SIGNAL <small>SEM +0.42</small></span> contrasts with uncertainty
-                                  <span class="tag tag-alert">ALERT <small>SEM -0.58</small></span>.
-
-                                  <div class="bias-box">
-                                      Overall Market Bias: <strong>0.37</strong> <small>(Moderate Positive)</small>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <!-- Таблица (Верхний слой, справа) -->
-                          <div class="card card-table">
-                              <div class="table-row table-header">
-                                  <span>ID</span><span>ORG</span><span>VAL</span><span>STATUS</span>
-                              </div>
-                              <div class="table-row">
-                                  <span>921</span><span>Acme</span><span>---</span><span class="text-red">FAIL</span>
-                              </div>
-                              <div class="table-row">
-                                  <span>922</span><span>Globex</span><span>$4M</span><span class="text-yellow">PEND</span>
-                              </div>
-                              <div class="table-row">
-                                  <span>923</span><span>???</span><span>ERR</span><span class="text-red">FAIL</span>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  <!-- Центр: Engine -->
-                  <div class="column column-center">
-                      <div class="engine-wrapper">
-                          <div class="orbit orbit-outer"></div>
-                          <div class="orbit orbit-inner"></div>
-                          <div class="engine-core">
-                              <i data-lucide="cpu" class="icon-lg cyan-icon"></i>
-                              <span class="engine-label">Nexial<br>Intelligence</span>
-                          </div>
-                      </div>
-                  </div>
-
-                  <!-- Правая колонка: Output -->
-                  <div class="column column-right">
-                      <div class="label label-output">
-                          <i data-lucide="sparkles" class="icon-sm"></i>
-                          Structured Output
-                      </div>
-
-                      <div class="output-visual">
-                          <div class="card-result result-amber">
-                              <div class="result-header">
-                                  <div class="result-info">
-                                      <div class="icon-box-amber"><i data-lucide="target"></i></div>
-                                      <div>
-                                          <h4>TechCorp Inc</h4>
-                                          <p>Prime Acquisition Target</p>
-                                      </div>
-                                  </div>
-                                  <span class="match-tag">98% Match</span>
-                              </div>
-                              <div class="progress-container">
-                                  <div class="progress-labels">
-                                      <span>Growth Signal Strength</span>
-                                      <span>High</span>
-                                  </div>
-                                  <div class="progress-bar">
-                                      <div class="progress-fill" style="width: 90%;"></div>
-                                  </div>
-                              </div>
-                          </div>
-
-                          <div class="card-result result-emerald">
-                              <div class="result-header">
-                                  <div class="result-info">
-                                      <div class="icon-box-emerald"><i data-lucide="trending-up"></i></div>
-                                      <h4>Revenue Forecast</h4>
-                                  </div>
-                                  <span class="text-emerald">+24% YoY</span>
-                              </div>
-                              <div class="chart-container">
-                                  <div class="chart-grid">
-                                      <div></div><div></div><div></div><div></div>
-                                  </div>
-                                  <div class="chart-bars">
-                                      <div class="bar" style="height: 30%;"></div>
-                                      <div class="bar" style="height: 45%;"></div>
-                                      <div class="bar" style="height: 40%;"></div>
-                                      <div class="bar" style="height: 65%;"></div>
-                                      <div class="bar" style="height: 80%;"></div>
-                                      <div class="bar bar-highlight" style="height: 100%;"></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              
-
-
-
-              <div class="nexial-glass-container">
-                  <div class="nexial-glass-grid">
-
-                    <div class="nexial-glass-item">
-                      <div class="nexial-glass-content">
-                        <div class="nexial-glass-header">
-                          <span class="nexial-glass-icon" style="color: #00e0ff;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
-                          </span>
-                          <h4 class="nexial-glass-title">Signals In</h4>
-                        </div>
-                        <p class="nexial-glass-text">Jobs, patents, filings, news, web footprints, communities.</p>
-                      </div>
-                    </div>
-
-                    <div class="nexial-glass-item">
-                      <div class="nexial-glass-content">
-                        <div class="nexial-glass-header">
-                          <span class="nexial-glass-icon" style="color: #547aff;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path></svg>
-                          </span>
-                          <h4 class="nexial-glass-title">Value Delivery</h4>
-                        </div>
-                        <p class="nexial-glass-text">Entity linking, marker detection, convergence scoring.</p>
-                      </div>
-                    </div>
-
-                    <div class="nexial-glass-item">
-                      <div class="nexial-glass-content">
-                        <div class="nexial-glass-header">
-                          <span class="nexial-glass-icon" style="color: #a855f7;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                          </span>
-                          <h4 class="nexial-glass-title">Outputs</h4>
-                        </div>
-                        <p class="nexial-glass-text">Ranked markers, watchlist, sector map, early warnings.</p>
-                      </div>
-                    </div>
-
-                    <div class="nexial-glass-item">
-                      <div class="nexial-glass-content">
-                        <div class="nexial-glass-header">
-                          <span class="nexial-glass-icon" style="color: #ff3399;">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-                          </span>
-                          <h4 class="nexial-glass-title">Delivery</h4>
-                        </div>
-                        <p class="nexial-glass-text">Platform, daily or weekly digest, API, reports.</p>
-                      </div>
-                    </div>
-
-                  </div>
-              </div>
-
-              
-          </main>
-          <script>lucide.createIcons();</script>
-      </section>
-
-
-
-
-      <!-- Product -->
       <section id="product" class="section section-light">
         <div class="container section-inner">
           <header class="section-header">
-            <h2>What Is Inside the Platform</h2>
+            <h2>What Is Inside <span class="text-gradient-cyan-pink">the Platform</span></h2>
             <p>Pick a sector and get ranked markers with the evidence behind each one. Demo data today, your sector next.</p>
           </header>
 
-          <div class="product-rows">
-            <article class="product-row">
+          <div class="product-rows" id="product-rows">
+            <div class="product-line" aria-hidden="true"><span></span></div>
+            <article class="product-row" data-reveal>
               <div class="product-copy">
                 <p class="eyebrow">Today</p>
                 <h3>See who moves this week</h3>
@@ -566,12 +192,12 @@
               </div>
               <a class="shot-frame product-shot" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=product" aria-label="Open the live sample: See who moves this week">
                 <div class="shot-bar"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">app.nexial-intelligence.com</span></div>
-                <img src="/assets/product/today.webp" alt="Today feed: companies ranked by marker score with confidence and recency" width="1440" height="900" loading="lazy" />
+                <video class="product-clip" muted loop playsinline preload="none" poster="/assets/video/clip-today.jpg" width="1440" height="900" aria-label="Today feed: companies ranked by marker score with confidence and recency" data-webm="/assets/video/clip-today.webm" data-mp4="/assets/video/clip-today.mp4"></video>
                 <span class="shot-tag">Demo data</span>
               </a>
             </article>
 
-            <article class="product-row product-row-reverse">
+            <article class="product-row product-row-reverse" data-reveal>
               <div class="product-copy">
                 <p class="eyebrow">Company profile</p>
                 <h3>Check the evidence before the call</h3>
@@ -583,12 +209,12 @@
               </div>
               <a class="shot-frame product-shot" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=product" aria-label="Open the live sample: Check the evidence before the call">
                 <div class="shot-bar"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">app.nexial-intelligence.com</span></div>
-                <img src="/assets/product/company.webp" alt="Company profile with a Pre-Raise Buildout marker, evidence cards and a signal timeline" width="1440" height="900" loading="lazy" />
+                <video class="product-clip" muted loop playsinline preload="none" poster="/assets/video/clip-company.jpg" width="1440" height="900" aria-label="Company profile with a Pre-Raise Buildout marker, evidence cards and a signal timeline" data-webm="/assets/video/clip-company.webm" data-mp4="/assets/video/clip-company.mp4"></video>
                 <span class="shot-tag">Demo data</span>
               </a>
             </article>
 
-            <article class="product-row">
+            <article class="product-row" data-reveal>
               <div class="product-copy">
                 <p class="eyebrow">Sectors</p>
                 <h3>Find the cluster before it has a name</h3>
@@ -600,12 +226,12 @@
               </div>
               <a class="shot-frame product-shot" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=product" aria-label="Open the live sample: Find the cluster before it has a name">
                 <div class="shot-bar"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">app.nexial-intelligence.com</span></div>
-                <img src="/assets/product/graph.webp" alt="Ecosystem network graph of companies, investors and universities" width="1440" height="900" loading="lazy" />
+                <video class="product-clip" muted loop playsinline preload="none" poster="/assets/video/clip-graph.jpg" width="1440" height="900" aria-label="Ecosystem network graph of companies, investors and universities" data-webm="/assets/video/clip-graph.webm" data-mp4="/assets/video/clip-graph.mp4"></video>
                 <span class="shot-tag">Demo data</span>
               </a>
             </article>
 
-            <article class="product-row product-row-reverse">
+            <article class="product-row product-row-reverse" data-reveal>
               <div class="product-copy">
                 <p class="eyebrow">Investors</p>
                 <h3>Know who is backing the move</h3>
@@ -617,7 +243,7 @@
               </div>
               <a class="shot-frame product-shot" href="https://app.nexial-intelligence.com/demo/climate-deeptech-europe?utm_source=site&utm_medium=cta&utm_campaign=product" aria-label="Open the live sample: Know who is backing the move">
                 <div class="shot-bar"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-url">app.nexial-intelligence.com</span></div>
-                <img src="/assets/product/investors.webp" alt="Investors view: funds in scope, deals in the last 12 months, portfolio signals and co-investors" width="1440" height="900" loading="lazy" />
+                <video class="product-clip" muted loop playsinline preload="none" poster="/assets/video/clip-investors.jpg" width="1440" height="900" aria-label="Investors view: funds in scope, deals in the last 12 months, portfolio signals and co-investors" data-webm="/assets/video/clip-investors.webm" data-mp4="/assets/video/clip-investors.mp4"></video>
                 <span class="shot-tag">Demo data</span>
               </a>
             </article>
@@ -626,7 +252,7 @@
 
           <div class="markers-strip glass-card">
             <div class="markers-strip-head">
-              <span class="signals-strip-label">Seven convergence markers</span>
+              <h3 class="markers-title">Seven <span class="text-gradient-cyan-pink">Convergence Markers</span></h3>
               <span class="markers-rule">A marker fires only when 2+ independent, verifiable sources line up. Confidence: Confirmed, Emerging, Hypothesis. Trial includes M1, M3 and M6.</span>
             </div>
             <ul class="markers-list">
@@ -640,380 +266,16 @@
             </ul>
           </div>
 
-          <div class="cta-inline">
+          <div class="cta-inline cta-center">
             <a href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=product" class="btn primary btn-large-glow"><span>Start 14-day free trial</span></a>
             <a href="/sample" class="btn ghost"><span>See a live sample&nbsp;→</span></a>
           </div>
         </div>
       </section>
-
-      <!-- Solutions -->
-      
-
-      
-      <section id="solutions" class="section">
-        <div class="container section-inner">
-          <header class="section-header">
-            <h2>Add-ons</h2>
-            <p>The platform subscription is the product. These extras are built on top of it for teams that need a one-off report, a sector the platform does not cover yet, or an on-prem deployment.</p>
-          </header>
-
-          <div class="solutions-grid-v2">
-            <!-- Card 01 -->
-            <article class="sol-card sol-cyan">
-              <div class="sol-top-gradient"></div>
-              <div class="sol-card-content">
-                <div class="sol-card-head">
-                  <h3>Sector Landscape Report</h3>
-                  <span class="sol-number-badge">$1,500</span>
-                </div>
-                
-                <div class="sol-main-text">
-                  <p>A one-off landscape of your sector, generated from the platform and reviewed by an analyst.</p>
-                  <div class="sol-feature-line">
-                    <i data-lucide="move-right" class="sol-icon"></i>
-                    <p>Ranked clusters, top companies, white spaces and early warnings, with the methodology attached.</p>
-                  </div>
-                </div>
-
-                <div class="sol-output-box">
-                  <span class="sol-pill">OUTPUT</span>
-                  <p>PDF or interactive report, delivered in days. One-off, no subscription required.</p>
-                </div>
-
-                <details class="sol-details-v2">
-                  <summary>
-                    <span>See full breakdown</span>
-                    <div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div>
-                  </summary>
-                  <div class="sol-details-content">
-                    <ul>
-                      <li><strong>Includes:</strong> ranked clusters with scores, top companies with markers and evidence, white spaces, early warnings, methodology.</li>
-                      <li><strong>Best for:</strong> fund theses, investment committee prep, market entry, board updates.</li>
-                      <li><strong>Sectors:</strong> Climate &amp; Deep Tech (Europe) and Fintech Infrastructure (GCC) today, others through a pilot.</li>
-                    </ul>
-                  </div>
-                </details>
-                <a class="sol-sample-link" href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=addon-report">Order inside the platform&nbsp;→</a>
-              </div>
-            </article>
-
-            <!-- Card 02 -->
-            <article class="sol-card sol-pink">
-              <div class="sol-top-gradient"></div>
-              <div class="sol-card-content">
-                <div class="sol-card-head">
-                  <h3>Scoped Pilot on Your Sector</h3>
-                  <span class="sol-number-badge">$9,000</span>
-                </div>
-                
-                <div class="sol-main-text">
-                  <p>For sectors the platform does not cover yet, or for markers tuned to your thesis.</p>
-                  <div class="sol-feature-line">
-                    <i data-lucide="move-right" class="sol-icon"></i>
-                    <p>2 to 4 weeks, fixed scope, fixed price. Cloud, private cloud or on-prem.</p>
-                  </div>
-                </div>
-
-                <div class="sol-output-box">
-                  <span class="sol-pill">OUTPUT</span>
-                  <p>Deal and M&amp;A watchlist with intent scores, alerts and the evidence behind each one.</p>
-                </div>
-
-                <details class="sol-details-v2">
-                  <summary>
-                    <span>See full breakdown</span>
-                    <div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div>
-                  </summary>
-                  <div class="sol-details-content">
-                    <ul>
-                      <li><strong>Signals:</strong> funding rounds, hiring spikes, new leadership, stealth teams, launches, regulatory moves.</li>
-                      <li><strong>Use cases:</strong> sourcing for VC and PE, corporate development, buy-side idea generation.</li>
-                      <li><strong>After the pilot:</strong> your sector goes live in the platform and the subscription takes over.</li>
-                    </ul>
-                  </div>
-                </details>
-                <a class="sol-sample-link" href="/sample">Configure the scope&nbsp;→</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Разворачиваемый стек -->
-          <details class="capability-stack-toggle">
-
-            <summary class="btn-stack">
-              <div class="btn-stack-left">
-                <i data-lucide="layers"></i>
-                <span>Enterprise add-ons: AI agents and internal intelligence</span>
-              </div>
-              <div class="btn-stack-arrow">
-                <i data-lucide="chevron-down"></i>
-              </div>
-            </summary>            
-            
-            <div class="solutions-grid-v2 stack-margin">
-              <!-- Card 04 -->
-
-              <article class="sol-card sol-amber">
-                <div class="sol-top-gradient"></div>
-                <div class="sol-card-content">
-                  <div class="sol-card-head">
-                    <h3>Custom AI Agent Deployment (on‑prem / enterprise)</h3>
-                    <span class="sol-number-badge">Enterprise</span>
-                  </div>
-                  <div class="sol-main-text">
-                    <p>Custom AI agents designed around your workflows, data, and risk profile - deployed where you need them.</p>
-                    <div class="sol-feature-line">
-                      <i data-lucide="move-right" class="sol-icon"></i>
-                      <p>Embed intelligence directly into your workflows to automate monitoring, analysis, and decision support.</p>
-                    </div>
-                  </div>
-                  <div class="sol-output-box">
-                    <span class="sol-pill">OUTPUT</span>
-                    <p>Agents that monitor, summarize, rank, and propose actions directly in your tools.</p>
-                  </div>
-                  <details class="sol-details-v2">
-                    <summary><span>See full breakdown</span><div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div></summary>
-                    <div class="sol-details-content">
-                      <ul>
-                        <li><strong>Signals:</strong> any mix of external feeds and internal systems, defined per use case.</li>
-                        <li><strong>Use cases:</strong> portfolio monitoring copilots, sector analysts, policy intelligence agents.</li>
-                        <li><strong>Deployment:</strong> on-premise, private cloud, or tightly scoped SaaS - your infrastructure, your rules.</li>
-                      </ul>
-                    </div>
-                  </details>
-                </div>
-              </article>
-
-              <!-- Card 07 -->
-              <article class="sol-card sol-cyan" style="grid-column: span 1;">
-                <div class="sol-top-gradient"></div>
-                <div class="sol-card-content">
-                  <div class="sol-card-head">
-                    <h3>AI-Based Internal Intelligence System</h3>
-                    <span class="sol-number-badge">Enterprise</span>
-                  </div>
-                  <div class="sol-main-text">
-                    <p>Private AI layer that turns your calls, memos, and internal data into structured, actionable intelligence.</p>
-                    <div class="sol-feature-line">
-                      <i data-lucide="move-right" class="sol-icon"></i>
-                      <p>Turn fragmented internal knowledge into aligned insights, faster decisions, and consistent execution.</p>
-                    </div>
-                  </div>
-                  <div class="sol-output-box">
-                    <span class="sol-pill">OUTPUT</span>
-                    <p>Auto-generated SWOTs, action plans after calls, classification, and internal analytics.</p>
-                  </div>
-                  <details class="sol-details-v2">
-                    <summary><span>See full breakdown</span><div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div></summary>
-                    <div class="sol-details-content">
-                      <ul>
-                        <li><strong>Signals:</strong> meeting transcripts, analyst notes, CRM, pipeline, research decks, internal databases.</li>
-                        <li><strong>Use cases:</strong> investment committees, deal teams, strategy units, leadership reviews.</li>
-                        <li><strong>Deployment:</strong> designed for private cloud or on-prem, aligned with your compliance constraints.</li>
-                      </ul>
-                    </div>
-                  </details>
-                </div>
-              </article>              
-
-
-            </div>
-          </details>
-
-          <p class="addons-note">Patent and narrative signal layers are on the platform roadmap. Growth and hiring signals are already inside the subscription.</p>
-
-        </div>
-      </section>
-
-
-
-
-
-
-      <!-- Who We Work With -->
-      <!-- ================= INTERACTIVE SAMPLE TEASER ================= -->
-      <section id="sample-teaser" class="section">
-        <div class="container section-inner">
-          <div class="teaser-grid">
-
-            <div class="teaser-head-mobile">
-              <p class="eyebrow">Interactive Sample</p>
-              <h2>Configure your scope.<br><span class="accent-break">See the report before you commit.</span></h2>
-            </div>
-
-            <div class="teaser-visual" aria-hidden="true">
-              <div class="tsr-glow"></div>
-              <div class="tsr-window">
-                <div class="tsr-bar">
-                  <span class="tsr-dot"></span><span class="tsr-dot"></span><span class="tsr-dot"></span>
-                  <span class="tsr-url">nexial-intelligence.com/sample</span>
-                </div>
-                <div class="tsr-body">
-                  <div class="tsr-label">01 · REGION</div>
-                  <div class="tsr-chips">
-                    <span class="tsr-chip c1">Europe</span>
-                    <span class="tsr-chip">North America</span>
-                    <span class="tsr-chip">MENA / GCC</span>
-                  </div>
-                  <div class="tsr-label">02 · INDUSTRY</div>
-                  <div class="tsr-chips">
-                    <span class="tsr-chip s1">Climate &amp; Deep Tech</span>
-                    <span class="tsr-chip">Fintech Infrastructure</span>
-                    <span class="tsr-chip">AI Infrastructure</span>
-                  </div>
-                  <div class="tsr-label">03 · CONVERGENCE MARKERS</div>
-                  <div class="tsr-chips">
-                    <span class="tsr-chip m1">M1 · Pre-Raise Buildout</span>
-                    <span class="tsr-chip m3">M3 · Cluster Formation</span>
-                    <span class="tsr-chip">M6 · Quiet Exit</span>
-                  </div>
-                  <div class="tsr-progress"><i></i></div>
-                  <div class="tsr-report">
-                    <div class="tsr-row r1">
-                      <span class="tsr-ent">ThermoVault Energy †<em>Thermal storage · DE</em></span>
-                      <span class="tsr-scorebar"><i style="--w:87%"></i></span>
-                      <span class="tsr-num">87</span>
-                      <span class="tsr-conf ok">CONFIRMED</span>
-                    </div>
-                    <div class="tsr-row r2">
-                      <span class="tsr-ent">HelioForge †<em>Solar-thermal heat · ES</em></span>
-                      <span class="tsr-scorebar"><i style="--w:81%"></i></span>
-                      <span class="tsr-num">81</span>
-                      <span class="tsr-conf em">EMERGING</span>
-                    </div>
-                    <div class="tsr-row r3">
-                      <span class="tsr-ent">Nordwind Grid †<em>Grid orchestration · DK</em></span>
-                      <span class="tsr-scorebar"><i style="--w:78%"></i></span>
-                      <span class="tsr-num">78</span>
-                      <span class="tsr-conf em">EMERGING</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="teaser-copy">
-              <p class="eyebrow">Interactive Sample</p>
-              <h2>Configure your scope.<br><span class="accent-break">See the report before you commit.</span></h2>
-              <p class="teaser-desc">
-                Pick region, sector and markers, then walk through a sample report built the
-                way the platform builds yours: ranked clusters, watchlist, markers with evidence
-                and a confidence tier on every finding.
-              </p>
-              <ol class="teaser-steps">
-                <li><span class="tstep-num">01</span><div><b>Scope</b> - pick region, sector and the convergence markers that matter to you.</div></li>
-                <li><span class="tstep-num">02</span><div><b>Assemble</b> - watch signals link into ranked clusters, watchlists and markers.</div></li>
-                <li><span class="tstep-num">03</span><div><b>Report</b> - open the live sample in the platform, or send your scope to us as a pilot spec.</div></li>
-              </ol>
-              <div class="teaser-cta">
-                <a href="/sample" class="btn primary btn-large-glow"><span>Build your sample report&nbsp;→</span></a>
-                <p class="hero-trust-tagline">no signup &nbsp;·&nbsp; ~2 minutes &nbsp;·&nbsp; live sample or pilot spec</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="who-we-work-with" class="section section-light">
-        <div class="container section-inner">
-          <header class="section-header">
-            <h2>Who It Is For</h2>
-            <p>
-              Teams that source, underwrite and monitor companies, and need to see moves before they are announced.
-            </p>
-          </header>
-
-          <div class="grid grid-4">
-            <article class="card">
-              <span class="role-index">01</span>
-              <h3>Venture Capital</h3>
-              <div class="role-bars" aria-hidden="true">
-                <div class="role-bar role-bar-deals"></div>
-                <div class="role-bar role-bar-theses"></div>
-                <div class="role-bar role-bar-ops"></div>
-              </div>
-              <ul class="role-points">
-                <li>
-                  <span class="role-label pill">Situation</span>
-                  <span class="role-text">Generic deal flow, and the interesting companies show up after the round is announced.</span>
-                </li>
-                <li>
-                  <span class="role-label pill">Nexial</span>
-                  <span class="role-text">M1 Pre-Raise Buildout and M3 Cluster Formation on your thesis sectors, with evidence for the first call.</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <span class="role-index">02</span>
-              <h3>Private Equity</h3>
-              <div class="role-bars" aria-hidden="true">
-                <div class="role-bar role-bar-ops"></div>
-                <div class="role-bar role-bar-risk"></div>
-                <div class="role-bar role-bar-competition"></div>
-              </div>
-              <ul class="role-points">
-                <li>
-                  <span class="role-label pill">Situation</span>
-                  <span class="role-text">Little visibility into targets and portfolio between reporting cycles.</span>
-                </li>
-                <li>
-                  <span class="role-label pill">Nexial</span>
-                  <span class="role-text">M4 scale signals on targets and M6 distress flags on the portfolio, in a daily digest.</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <span class="role-index">03</span>
-              <h3>Strategy &amp; Corporate Development</h3>
-              <div class="role-bars" aria-hidden="true">
-                <div class="role-bar role-bar-markets"></div>
-                <div class="role-bar role-bar-tech"></div>
-                <div class="role-bar role-bar-competition"></div>
-              </div>
-              <ul class="role-points">
-                <li>
-                  <span class="role-label pill">Situation</span>
-                  <span class="role-text">Sub-segments form around the core business faster than the strategy cycle.</span>
-                </li>
-                <li>
-                  <span class="role-label pill">Nexial</span>
-                  <span class="role-text">Cluster map and white spaces of your sector, plus the investors moving into it.</span>
-                </li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <span class="role-index">04</span>
-              <h3>Government &amp; Policy<br />Units</h3>
-              <div class="role-bars" aria-hidden="true">
-                <div class="role-bar role-bar-industries"></div>
-                <div class="role-bar role-bar-tech"></div>
-                <div class="role-bar role-bar-actors"></div>
-              </div>
-              <ul class="role-points">
-                <li>
-                  <span class="role-label pill">Situation</span>
-                  <span class="role-text">Fragmented data and slow reports hide what industries and actors are doing right now.</span>
-                </li>
-                <li>
-                  <span class="role-label pill">Nexial</span>
-                  <span class="role-text">Continuous view of industries, technologies and actors through a scoped pilot and on-prem deployment.</span>
-                </li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- How It Works -->
       <section id="how-it-works" class="section">
         <div class="container section-inner">
           <header class="section-header">
-            <h2>How It Works</h2>
+            <h2>How Nexial Intelligence Works</h2>
             <p>From signup to a ranked watchlist in 3 steps:</p>
           </header>
           
@@ -1308,16 +570,469 @@
           </div>
         </div>
       </section>
+      <section id="what-we-do" class="section section-light">
+        <div class="container section-inner">
+          <header class="section-header">
+            <h2>Four Signal Layers Behind Every Marker</h2>
+            <p>
+              The platform reads capital, talent, technology and narrative signals for every company in your sector and combines them into markers. One layer alone never triggers an alert.
+            </p>
+          </header>
+
+          <div class="signals-strip-container">
+            <div class="signals-strip-label">Signal Layers We Model</div>
+            
+            <div class="signals-grid-new">
+              <!-- Markets & Capital -->
+              <div class="signal-card-integrated market">
+                <div class="signal-card-head">
+                  <span class="signal-dot signal-dot-market"></span>
+                  <h3>Markets & Capital</h3>
+                </div>
+                <p>Where capital, talent, and attention are actually going.</p>
+              </div>
+
+              <!-- Technology & IP -->
+              <div class="signal-card-integrated tech">
+                <div class="signal-card-head">
+                  <span class="signal-dot signal-dot-tech"></span>
+                  <h3>Technology & IP</h3>
+                </div>
+                <p>Patents, trials, research - tech that is compounding.</p>
+              </div>
+
+              <!-- Narratives & Reputation -->
+              <div class="signal-card-integrated narrative">
+                <div class="signal-card-head">
+                  <span class="signal-dot signal-dot-narrative"></span>
+                  <h3>Narratives & Reputation</h3>
+                </div>
+                <p>How companies and themes are framed in public space.</p>
+              </div>
+
+              <!-- Growth & Execution -->
+              <div class="signal-card-integrated growth">
+                <div class="signal-card-head">
+                  <span class="signal-dot signal-dot-growth"></span>
+                  <h3>Growth & Execution</h3>
+                </div>
+                <p>Signals of scale-up, restructuring, or quiet pivots.</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>      
+      <section id="transformation" class="section">
+
+          <!-- Фоновое свечение -->
+          <div class="ambient-glow glow-1"></div>
+          <div class="ambient-glow glow-2"></div>
+
+          <main class="main-container">
+              <!-- Заголовок -->
+              <header class="header">
+                  <h2 class="title">
+                      From Chaotic Noise to <br class="hidden-mobile">
+                      <span class="gradient-text">Pure Gold</span>
+                  </h2>
+                  <p class="subtitle">
+                      Job posts, patents, filings, news and web footprints arrive as millions of fragmented data points. The platform links them to companies, scores the patterns and hands you ranked markers with the evidence attached.
+                  </p>
+              </header>
+
+              <!-- Инфографика -->
+              <div class="infographic-grid">
+
+                  <!-- Линии связи (Desktop) -->
+                  <div class="connection-lines">
+                      <div class="flow-line flow-1"></div>
+                      <div class="flow-line flow-2"></div>
+                  </div>
+
+
+      <!-- Левая колонка: Raw Input -->
+                  <div class="column column-left">
+                      <div class="label label-raw">
+                          <i data-lucide="database" class="icon-sm"></i>
+                          Raw Input
+                      </div>
+
+                      <div class="input-visual">
+                          <!-- JSON Snippet (Самый нижний слой) -->
+                          <div class="card card-json">
+                              <div class="card-header">
+                                  <i data-lucide="file-json" class="icon-xs"></i>
+                                  <span>scrape_data.json</span>
+                              </div>
+                              <div class="code-content">
+                                  <span class="pink">"company_data"</span>: {<br>
+                                  &nbsp;&nbsp;<span class="pink">"name"</span>: <span class="green">"TechCorp Inc"</span>,<br>
+                                  &nbsp;&nbsp;<span class="pink">"revenue_q3"</span>: <span class="amber">"null"</span>,<br>
+                                  &nbsp;&nbsp;<span class="comment">// missing field</span><br>
+                                  &nbsp;&nbsp;<span class="pink">"signals"</span>: [<span class="green">"hiring_surge"</span>],<br>
+                                  &nbsp;&nbsp;<span class="pink">"metadata"</span>: {<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"source"</span>: <span class="cyan">"web_scrp_01"</span>,<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"reliability"</span>: <span class="amber">0.42</span>,<br>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="pink">"raw_logs"</span>: [<span class="cyan">"ERR_404"</span>, <span class="cyan">"302_RED"</span>]<br>
+                                  &nbsp;&nbsp;},<br>
+                                  &nbsp;&nbsp;<span class="pink">"valuation"</span>: <span class="amber">"unverified"</span>,<br>
+                                  &nbsp;&nbsp;<span class="pink">"timestamp"</span>: <span class="cyan">1729785600</span><br>
+                                  }
+                              </div>
+
+                          </div>
+
+                          <!-- Unstructured Text (Средний слой) -->
+                          <div class="card card-text">
+                              <div class="card-header">
+                                  <i data-lucide="file-text" class="icon-xs"></i>
+                                  <span>notes_raw.txt</span>
+                              </div>
+                              <div class="text-content">
+                                  On <span class="tag tag-date">October 24, 2024 <small>DATE</small></span>,
+                                  <span class="tag tag-entity">Globex <small>ENTITY</small></span> reported
+                                  <span class="tag tag-capital">$4.2 million <small>CAPITAL</small></span> in Q3 revenue, reflecting a
+                                  <span class="tag tag-cyan">12% contraction <small class="text-red">SEM -0.64</small></span>.
+                                  CEO <span class="tag tag-entity">Sarah Mitchell <small>ENTITY9</small></span> confirmed a pending
+                                  <span class="tag tag-capital">$890 million <small>CAPITAL</small></span> acquisition of
+                                  <span class="tag tag-entity">DataStream Inc. <small>ENTITY</small></span> in
+                                  <span class="tag tag-loc">San Francisco, CA <small>LOC</small></span>.
+                                  Forward hiring <span class="tag tag-signal">SIGNAL <small>SEM +0.42</small></span> contrasts with uncertainty
+                                  <span class="tag tag-alert">ALERT <small>SEM -0.58</small></span>.
+
+                                  <div class="bias-box">
+                                      Overall Market Bias: <strong>0.37</strong> <small>(Moderate Positive)</small>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Таблица (Верхний слой, справа) -->
+                          <div class="card card-table">
+                              <div class="table-row table-header">
+                                  <span>ID</span><span>ORG</span><span>VAL</span><span>STATUS</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>921</span><span>Acme</span><span>---</span><span class="text-red">FAIL</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>922</span><span>Globex</span><span>$4M</span><span class="text-yellow">PEND</span>
+                              </div>
+                              <div class="table-row">
+                                  <span>923</span><span>???</span><span>ERR</span><span class="text-red">FAIL</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <!-- Центр: Engine -->
+                  <div class="column column-center">
+                      <div class="engine-wrapper">
+                          <div class="orbit orbit-outer"></div>
+                          <div class="orbit orbit-inner"></div>
+                          <div class="engine-core">
+                              <i data-lucide="cpu" class="icon-lg cyan-icon"></i>
+                              <span class="engine-label">Nexial<br>Intelligence</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Правая колонка: Output -->
+                  <div class="column column-right">
+                      <div class="label label-output">
+                          <i data-lucide="sparkles" class="icon-sm"></i>
+                          Structured Output
+                      </div>
+
+                      <div class="output-visual">
+                          <div class="card-result result-amber">
+                              <div class="result-header">
+                                  <div class="result-info">
+                                      <div class="icon-box-amber"><i data-lucide="target"></i></div>
+                                      <div>
+                                          <h4>TechCorp Inc</h4>
+                                          <p>Prime Acquisition Target</p>
+                                      </div>
+                                  </div>
+                                  <span class="match-tag">98% Match</span>
+                              </div>
+                              <div class="progress-container">
+                                  <div class="progress-labels">
+                                      <span>Growth Signal Strength</span>
+                                      <span>High</span>
+                                  </div>
+                                  <div class="progress-bar">
+                                      <div class="progress-fill" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="card-result result-emerald">
+                              <div class="result-header">
+                                  <div class="result-info">
+                                      <div class="icon-box-emerald"><i data-lucide="trending-up"></i></div>
+                                      <h4>Revenue Forecast</h4>
+                                  </div>
+                                  <span class="text-emerald">+24% YoY</span>
+                              </div>
+                              <div class="chart-container">
+                                  <div class="chart-grid">
+                                      <div></div><div></div><div></div><div></div>
+                                  </div>
+                                  <div class="chart-bars">
+                                      <div class="bar" style="height: 30%;"></div>
+                                      <div class="bar" style="height: 45%;"></div>
+                                      <div class="bar" style="height: 40%;"></div>
+                                      <div class="bar" style="height: 65%;"></div>
+                                      <div class="bar" style="height: 80%;"></div>
+                                      <div class="bar bar-highlight" style="height: 100%;"></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+
+
+
+              <div class="nexial-glass-container">
+                  <div class="nexial-glass-grid">
+
+                    <div class="nexial-glass-item">
+                      <div class="nexial-glass-content">
+                        <div class="nexial-glass-header">
+                          <span class="nexial-glass-icon" style="color: #00e0ff;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+                          </span>
+                          <h4 class="nexial-glass-title">Signals In</h4>
+                        </div>
+                        <p class="nexial-glass-text">Jobs, patents, filings, news, web footprints, communities.</p>
+                      </div>
+                    </div>
+
+                    <div class="nexial-glass-item">
+                      <div class="nexial-glass-content">
+                        <div class="nexial-glass-header">
+                          <span class="nexial-glass-icon" style="color: #547aff;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path></svg>
+                          </span>
+                          <h4 class="nexial-glass-title">Value Delivery</h4>
+                        </div>
+                        <p class="nexial-glass-text">Entity linking, marker detection, convergence scoring.</p>
+                      </div>
+                    </div>
+
+                    <div class="nexial-glass-item">
+                      <div class="nexial-glass-content">
+                        <div class="nexial-glass-header">
+                          <span class="nexial-glass-icon" style="color: #a855f7;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                          </span>
+                          <h4 class="nexial-glass-title">Outputs</h4>
+                        </div>
+                        <p class="nexial-glass-text">Ranked markers, watchlist, sector map, early warnings.</p>
+                      </div>
+                    </div>
+
+                    <div class="nexial-glass-item">
+                      <div class="nexial-glass-content">
+                        <div class="nexial-glass-header">
+                          <span class="nexial-glass-icon" style="color: #ff3399;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                          </span>
+                          <h4 class="nexial-glass-title">Delivery</h4>
+                        </div>
+                        <p class="nexial-glass-text">Platform, daily or weekly digest, API, reports.</p>
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+
+              
+          </main>
+          <script>lucide.createIcons();</script>
+      </section>
+      <section id="examples" class="section section-light section-examples">
+        <div class="container section-inner">
+          <header class="section-header">
+            <h2>Example Scenarios</h2>
+            <p>
+              How a trial week can look for a fund or a corporate team.
+            </p>
+            <p>
+              Synthetic scenarios on demo data, built from real signal patterns.
+            </p>
+          </header>
+
+
+
+          <div class="examples-grid-advanced">
+              <!-- Card 1 -->
+              <article class="example-advanced glass-card">
+                  <div class="example-head">
+                      <span class="example-badge">VC Fund</span>
+                      <h3>Climate tech thesis</h3>
+                  </div>
+                  <div class="example-timeline">
+                      <div class="example-step">
+                          <div class="example-dot icon-box"><i data-lucide="target"></i></div>
+                          <div>
+                              <h4>Situation</h4>
+                              <p>A VC fund wants early-stage climate tech companies before the round is announced.</p>
+                          </div>
+                      </div>
+                      <div class="example-step">
+                          <div class="example-dot icon-box"><i data-lucide="zap"></i></div>
+                          <div>
+                              <h4>Signal detected</h4>
+                              <p>M1 Pre-Raise Buildout confirmed on 12 companies in the Industrial Heat cluster: senior hiring plus patent density, no round yet.</p>
+                          </div>
+                      </div>
+                      <div class="example-step">
+                          <div class="example-dot icon-box outcome-icon"><i data-lucide="trending-up"></i></div>
+                          <div>
+                              <h4>Outcome</h4>
+                              <p><strong>12 non-obvious targets</strong> on the watchlist in week 1</p>
+                          </div>
+                      </div>
+                  </div>
+                  <p class="example-disclaimer">Synthetic pilot scenario based on real signal patterns</p>
+              </article>
+
+              <!-- Card 2 -->
+              <article class="example-advanced glass-card">
+                  <div class="example-head">
+                      <span class="example-badge badge-indigo">Corporate</span>
+                      <h3>M&A Watchlist in Fintech</h3>
+                  </div>
+                  <div class="example-timeline">
+                      <div class="example-step">
+                          <div class="example-dot icon-box"><i data-lucide="target"></i></div>
+                          <div>
+                              <h4>Situation</h4>
+                              <p>A corporate team tracks acquisition targets in payments infrastructure.</p>
+                          </div>
+                      </div>
+                      <div class="example-step">
+                          <div class="example-dot icon-box"><i data-lucide="zap"></i></div>
+                          <div>
+                              <h4>Signal detected</h4>
+                              <p>M3 Cluster Formation across three co-investing funds, confirmed by hiring and product signals, ranked into a watchlist.</p>
+                          </div>
+                      </div>
+                     <div class="example-step">
+                          <div class="example-dot icon-box outcome-icon"><i data-lucide="trending-up"></i></div>
+                          <div>
+                              <h4>Outcome</h4>
+                              <p>Deal signal <strong>90 days</strong> before it became public</p>
+                          </div>
+                      </div>
+                  </div>
+                  <p class="example-disclaimer">Synthetic pilot scenario based on real signal patterns</p>
+              </article>
+          </div>
 
 
 
 
+        </div>
+      </section>
+      <section id="who-we-work-with" class="section">
+        <div class="container section-inner">
+          <header class="section-header">
+            <h2>Who It Is For</h2>
+            <p>
+              Teams that source, underwrite and monitor companies, and need to see moves before they are announced.
+            </p>
+          </header>
 
+          <div class="grid grid-4">
+            <article class="card">
+              <span class="role-index">01</span>
+              <h3>Venture Capital</h3>
+              <div class="role-bars" aria-hidden="true">
+                <div class="role-bar role-bar-deals"></div>
+                <div class="role-bar role-bar-theses"></div>
+                <div class="role-bar role-bar-ops"></div>
+              </div>
+              <ul class="role-points">
+                <li>
+                  <span class="role-label pill">Situation</span>
+                  <span class="role-text">Generic deal flow, and the interesting companies show up after the round is announced.</span>
+                </li>
+                <li>
+                  <span class="role-label pill">Nexial</span>
+                  <span class="role-text">M1 Pre-Raise Buildout and M3 Cluster Formation on your thesis sectors, with evidence for the first call.</span>
+                </li>
+              </ul>
+            </article>
 
+            <article class="card">
+              <span class="role-index">02</span>
+              <h3>Private Equity</h3>
+              <div class="role-bars" aria-hidden="true">
+                <div class="role-bar role-bar-ops"></div>
+                <div class="role-bar role-bar-risk"></div>
+                <div class="role-bar role-bar-competition"></div>
+              </div>
+              <ul class="role-points">
+                <li>
+                  <span class="role-label pill">Situation</span>
+                  <span class="role-text">Little visibility into targets and portfolio between reporting cycles.</span>
+                </li>
+                <li>
+                  <span class="role-label pill">Nexial</span>
+                  <span class="role-text">M4 scale signals on targets and M6 distress flags on the portfolio, in a daily digest.</span>
+                </li>
+              </ul>
+            </article>
 
+            <article class="card">
+              <span class="role-index">03</span>
+              <h3>Strategy &amp; Corporate Development</h3>
+              <div class="role-bars" aria-hidden="true">
+                <div class="role-bar role-bar-markets"></div>
+                <div class="role-bar role-bar-tech"></div>
+                <div class="role-bar role-bar-competition"></div>
+              </div>
+              <ul class="role-points">
+                <li>
+                  <span class="role-label pill">Situation</span>
+                  <span class="role-text">Sub-segments form around the core business faster than the strategy cycle.</span>
+                </li>
+                <li>
+                  <span class="role-label pill">Nexial</span>
+                  <span class="role-text">Cluster map and white spaces of your sector, plus the investors moving into it.</span>
+                </li>
+              </ul>
+            </article>
 
-
-<!-- Pricing -->
+            <article class="card">
+              <span class="role-index">04</span>
+              <h3>Government &amp; Policy<br />Units</h3>
+              <div class="role-bars" aria-hidden="true">
+                <div class="role-bar role-bar-industries"></div>
+                <div class="role-bar role-bar-tech"></div>
+                <div class="role-bar role-bar-actors"></div>
+              </div>
+              <ul class="role-points">
+                <li>
+                  <span class="role-label pill">Situation</span>
+                  <span class="role-text">Fragmented data and slow reports hide what industries and actors are doing right now.</span>
+                </li>
+                <li>
+                  <span class="role-label pill">Nexial</span>
+                  <span class="role-text">Continuous view of industries, technologies and actors through a scoped pilot and on-prem deployment.</span>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
       <section id="pricing" class="section section-light">
         <div class="container section-inner">
           <header class="section-header">
@@ -1401,8 +1116,263 @@
           <p class="pricing-note">Sectors with data today: Climate &amp; Deep Tech (Europe) and Fintech Infrastructure (GCC). Other sectors are covered through a pilot.</p>
         </div>
       </section>
+      <section id="solutions" class="section">
+        <div class="container section-inner">
+          <header class="section-header">
+            <p class="eyebrow">Optional extras, priced separately</p>
+            <h2>Add-ons <span class="text-gradient-cyan-pink">on Top of the Platform</span></h2>
+            <p>Everything shown above is included in the subscription. The services below are ordered separately when you need more: a one-off report on your sector, a pilot on a sector the platform does not cover yet, or an enterprise deployment with agents and your internal data.</p>
+          </header>
 
-      <!-- FAQ Section -->
+          <div class="solutions-grid-v2">
+            <!-- Card 01 -->
+            <article class="sol-card sol-cyan">
+              <div class="sol-top-gradient"></div>
+              <div class="sol-card-content">
+                <div class="sol-card-head">
+                  <h3>Sector Landscape Report</h3>
+                  <span class="sol-number-badge">$1,500</span>
+                </div>
+                
+                <div class="sol-main-text">
+                  <p>A one-off landscape of your sector, generated from the platform and reviewed by an analyst.</p>
+                  <div class="sol-feature-line">
+                    <i data-lucide="move-right" class="sol-icon"></i>
+                    <p>Ranked clusters, top companies, white spaces and early warnings, with the methodology attached.</p>
+                  </div>
+                </div>
+
+                <div class="sol-output-box">
+                  <span class="sol-pill">OUTPUT</span>
+                  <p>PDF or interactive report, delivered in days. One-off, no subscription required.</p>
+                </div>
+
+                <details class="sol-details-v2">
+                  <summary>
+                    <span>See full breakdown</span>
+                    <div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div>
+                  </summary>
+                  <div class="sol-details-content">
+                    <ul>
+                      <li><strong>Includes:</strong> ranked clusters with scores, top companies with markers and evidence, white spaces, early warnings, methodology.</li>
+                      <li><strong>Best for:</strong> fund theses, investment committee prep, market entry, board updates.</li>
+                      <li><strong>Sectors:</strong> Climate &amp; Deep Tech (Europe) and Fintech Infrastructure (GCC) today, others through a pilot.</li>
+                    </ul>
+                  </div>
+                </details>
+                <a class="sol-sample-link" href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=addon-report">Order inside the platform&nbsp;→</a>
+              </div>
+            </article>
+
+            <!-- Card 02 -->
+            <article class="sol-card sol-pink">
+              <div class="sol-top-gradient"></div>
+              <div class="sol-card-content">
+                <div class="sol-card-head">
+                  <h3>Scoped Pilot on Your Sector</h3>
+                  <span class="sol-number-badge">$9,000</span>
+                </div>
+                
+                <div class="sol-main-text">
+                  <p>For sectors the platform does not cover yet, or for markers tuned to your thesis.</p>
+                  <div class="sol-feature-line">
+                    <i data-lucide="move-right" class="sol-icon"></i>
+                    <p>2 to 4 weeks, fixed scope, fixed price. Cloud, private cloud or on-prem.</p>
+                  </div>
+                </div>
+
+                <div class="sol-output-box">
+                  <span class="sol-pill">OUTPUT</span>
+                  <p>Deal and M&amp;A watchlist with intent scores, alerts and the evidence behind each one.</p>
+                </div>
+
+                <details class="sol-details-v2">
+                  <summary>
+                    <span>See full breakdown</span>
+                    <div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div>
+                  </summary>
+                  <div class="sol-details-content">
+                    <ul>
+                      <li><strong>Signals:</strong> funding rounds, hiring spikes, new leadership, stealth teams, launches, regulatory moves.</li>
+                      <li><strong>Use cases:</strong> sourcing for VC and PE, corporate development, buy-side idea generation.</li>
+                      <li><strong>After the pilot:</strong> your sector goes live in the platform and the subscription takes over.</li>
+                    </ul>
+                  </div>
+                </details>
+                <a class="sol-sample-link" href="/sample">Configure the scope&nbsp;→</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Разворачиваемый стек -->
+          <details class="capability-stack-toggle">
+
+            <summary class="btn-stack">
+              <div class="btn-stack-left">
+                <i data-lucide="layers"></i>
+                <span>Enterprise add-ons: AI agents and internal intelligence</span>
+              </div>
+              <div class="btn-stack-arrow">
+                <i data-lucide="chevron-down"></i>
+              </div>
+            </summary>            
+            
+            <div class="solutions-grid-v2 stack-margin">
+              <!-- Card 04 -->
+
+              <article class="sol-card sol-amber">
+                <div class="sol-top-gradient"></div>
+                <div class="sol-card-content">
+                  <div class="sol-card-head">
+                    <h3>Custom AI Agent Deployment (on‑prem / enterprise)</h3>
+                    <span class="sol-number-badge">Enterprise</span>
+                  </div>
+                  <div class="sol-main-text">
+                    <p>Custom AI agents designed around your workflows, data, and risk profile - deployed where you need them.</p>
+                    <div class="sol-feature-line">
+                      <i data-lucide="move-right" class="sol-icon"></i>
+                      <p>Embed intelligence directly into your workflows to automate monitoring, analysis, and decision support.</p>
+                    </div>
+                  </div>
+                  <div class="sol-output-box">
+                    <span class="sol-pill">OUTPUT</span>
+                    <p>Agents that monitor, summarize, rank, and propose actions directly in your tools.</p>
+                  </div>
+                  <details class="sol-details-v2">
+                    <summary><span>See full breakdown</span><div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div></summary>
+                    <div class="sol-details-content">
+                      <ul>
+                        <li><strong>Signals:</strong> any mix of external feeds and internal systems, defined per use case.</li>
+                        <li><strong>Use cases:</strong> portfolio monitoring copilots, sector analysts, policy intelligence agents.</li>
+                        <li><strong>Deployment:</strong> on-premise, private cloud, or tightly scoped SaaS - your infrastructure, your rules.</li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </article>
+
+              <!-- Card 07 -->
+              <article class="sol-card sol-cyan" style="grid-column: span 1;">
+                <div class="sol-top-gradient"></div>
+                <div class="sol-card-content">
+                  <div class="sol-card-head">
+                    <h3>AI-Based Internal Intelligence System</h3>
+                    <span class="sol-number-badge">Enterprise</span>
+                  </div>
+                  <div class="sol-main-text">
+                    <p>Private AI layer that turns your calls, memos, and internal data into structured, actionable intelligence.</p>
+                    <div class="sol-feature-line">
+                      <i data-lucide="move-right" class="sol-icon"></i>
+                      <p>Turn fragmented internal knowledge into aligned insights, faster decisions, and consistent execution.</p>
+                    </div>
+                  </div>
+                  <div class="sol-output-box">
+                    <span class="sol-pill">OUTPUT</span>
+                    <p>Auto-generated SWOTs, action plans after calls, classification, and internal analytics.</p>
+                  </div>
+                  <details class="sol-details-v2">
+                    <summary><span>See full breakdown</span><div class="sol-expand-icon"><i data-lucide="chevron-down"></i></div></summary>
+                    <div class="sol-details-content">
+                      <ul>
+                        <li><strong>Signals:</strong> meeting transcripts, analyst notes, CRM, pipeline, research decks, internal databases.</li>
+                        <li><strong>Use cases:</strong> investment committees, deal teams, strategy units, leadership reviews.</li>
+                        <li><strong>Deployment:</strong> designed for private cloud or on-prem, aligned with your compliance constraints.</li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </article>              
+
+
+            </div>
+          </details>
+
+          <p class="addons-note">Patent and narrative signal layers are on the platform roadmap. Growth and hiring signals are already inside the subscription.</p>
+
+        </div>
+      </section>
+      <section id="sample-teaser" class="section">
+        <div class="container section-inner">
+          <div class="teaser-grid">
+
+            <div class="teaser-head-mobile">
+              <p class="eyebrow">Interactive Sample</p>
+              <h2>Configure your scope.<br><span class="accent-break">See the report before you commit.</span></h2>
+            </div>
+
+            <div class="teaser-visual" aria-hidden="true">
+              <div class="tsr-glow"></div>
+              <div class="tsr-window">
+                <div class="tsr-bar">
+                  <span class="tsr-dot"></span><span class="tsr-dot"></span><span class="tsr-dot"></span>
+                  <span class="tsr-url">nexial-intelligence.com/sample</span>
+                </div>
+                <div class="tsr-body">
+                  <div class="tsr-label">01 · REGION</div>
+                  <div class="tsr-chips">
+                    <span class="tsr-chip c1">Europe</span>
+                    <span class="tsr-chip">North America</span>
+                    <span class="tsr-chip">MENA / GCC</span>
+                  </div>
+                  <div class="tsr-label">02 · INDUSTRY</div>
+                  <div class="tsr-chips">
+                    <span class="tsr-chip s1">Climate &amp; Deep Tech</span>
+                    <span class="tsr-chip">Fintech Infrastructure</span>
+                    <span class="tsr-chip">AI Infrastructure</span>
+                  </div>
+                  <div class="tsr-label">03 · CONVERGENCE MARKERS</div>
+                  <div class="tsr-chips">
+                    <span class="tsr-chip m1">M1 · Pre-Raise Buildout</span>
+                    <span class="tsr-chip m3">M3 · Cluster Formation</span>
+                    <span class="tsr-chip">M6 · Quiet Exit</span>
+                  </div>
+                  <div class="tsr-progress"><i></i></div>
+                  <div class="tsr-report">
+                    <div class="tsr-row r1">
+                      <span class="tsr-ent">ThermoVault Energy †<em>Thermal storage · DE</em></span>
+                      <span class="tsr-scorebar"><i style="--w:87%"></i></span>
+                      <span class="tsr-num">87</span>
+                      <span class="tsr-conf ok">CONFIRMED</span>
+                    </div>
+                    <div class="tsr-row r2">
+                      <span class="tsr-ent">HelioForge †<em>Solar-thermal heat · ES</em></span>
+                      <span class="tsr-scorebar"><i style="--w:81%"></i></span>
+                      <span class="tsr-num">81</span>
+                      <span class="tsr-conf em">EMERGING</span>
+                    </div>
+                    <div class="tsr-row r3">
+                      <span class="tsr-ent">Nordwind Grid †<em>Grid orchestration · DK</em></span>
+                      <span class="tsr-scorebar"><i style="--w:78%"></i></span>
+                      <span class="tsr-num">78</span>
+                      <span class="tsr-conf em">EMERGING</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="teaser-copy">
+              <p class="eyebrow">Interactive Sample</p>
+              <h2>Configure your scope.<br><span class="accent-break">See the report before you commit.</span></h2>
+              <p class="teaser-desc">
+                Pick region, sector and markers, then walk through a sample report built the
+                way the platform builds yours: ranked clusters, watchlist, markers with evidence
+                and a confidence tier on every finding.
+              </p>
+              <ol class="teaser-steps">
+                <li><span class="tstep-num">01</span><div><b>Scope</b> - pick region, sector and the convergence markers that matter to you.</div></li>
+                <li><span class="tstep-num">02</span><div><b>Assemble</b> - watch signals link into ranked clusters, watchlists and markers.</div></li>
+                <li><span class="tstep-num">03</span><div><b>Report</b> - open the live sample in the platform, or send your scope to us as a pilot spec.</div></li>
+              </ol>
+              <div class="teaser-cta">
+                <a href="/sample" class="btn primary btn-large-glow"><span>Build your sample report&nbsp;→</span></a>
+                <p class="hero-trust-tagline">no signup &nbsp;·&nbsp; ~2 minutes &nbsp;·&nbsp; live sample or pilot spec</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
       <section id="faq" class="section">
         <div class="container section-inner">
           <header class="section-header" style="max-width: 100%; margin-bottom: 50px;">
@@ -1412,38 +1382,6 @@
           </header>
 
           <div class="faq-list">
-            <!-- Q1 -->
-            <div class="faq-item glass-card">
-              <button class="faq-trigger">
-                <span class="question">What exactly does Nexial Intelligence do?</span>
-                <div class="icon-box"></div>
-              </button>
-              <div class="faq-content">
-                <div class="content-inner">
-                  <div class="answer">
-                    <p>Nexial Intelligence transforms fragmented external and internal signals into structured intelligence for investors and corporate strategy teams.</p>
-                    <p>Instead of static reports, clients receive continuously updated maps of sectors, companies, and emerging opportunities.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Q2 -->
-            <div class="faq-item glass-card">
-              <button class="faq-trigger">
-                <span class="question">How do you handle data privacy and security?</span>
-                <div class="icon-box"></div>
-              </button>
-              <div class="faq-content">
-                <div class="content-inner">
-                  <div class="answer">
-                    <p>Security is at our core. Unlike most AI tools, Nexial can be deployed on-premise or in your private cloud. Your internal data, investment theses, and watchlists never leave your infrastructure. We are built for teams with strict compliance and confidentiality requirements.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Q3 -->
             <div class="faq-item glass-card">
               <button class="faq-trigger">
                 <span class="question">How is this different from PitchBook, Crunchbase or CB Insights?</span>
@@ -1461,31 +1399,33 @@
 
             <div class="faq-item glass-card">
               <button class="faq-trigger">
-                <span class="question">What do I get in the free trial?</span>
+                <span class="question">What do I get in the free trial, and is the data real?</span>
                 <div class="icon-box"></div>
               </button>
               <div class="faq-content">
                 <div class="content-inner">
                   <div class="answer">
-                    <p>14 days on one sector with markers M1, M3 and M6, a watchlist of up to 10 companies and a weekly digest. No card required.</p>
-                    <p>The trial runs on demo data until your sector is live.</p>
+                    <p>14 days on one sector with markers M1, M3 and M6, a watchlist of up to 10 companies and a weekly digest. No card required, and the trial ends on its own if you do not upgrade.</p>
+                    <p>The platform is in prototype mode: companies are fictional and labelled "Demo data" everywhere. The markers, evidence cards, scoring and confidence levels are the same ones that will run on live data.</p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="faq-item glass-card">
               <button class="faq-trigger">
-                <span class="question">Is the data in the trial real?</span>
+                <span class="question">How do you handle data privacy and security?</span>
                 <div class="icon-box"></div>
               </button>
               <div class="faq-content">
                 <div class="content-inner">
                   <div class="answer">
-                    <p>Not yet. The platform is in prototype mode: companies are fictional and labelled "Demo data" everywhere. The markers, evidence cards, scoring and confidence levels are the same ones that will run on live data.</p>
+                    <p>Starter and Pro run in the cloud. Team plans can be deployed in your private cloud or on-prem, so your internal data, theses and watchlists never leave your infrastructure. Plans are billed monthly and you can cancel from your billing settings.</p>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="faq-item glass-card">
               <button class="faq-trigger">
                 <span class="question">Can you cover my sector or run a custom pilot?</span>
@@ -1499,32 +1439,9 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item glass-card">
-              <button class="faq-trigger">
-                <span class="question">Can I cancel any time?</span>
-                <div class="icon-box"></div>
-              </button>
-              <div class="faq-content">
-                <div class="content-inner">
-                  <div class="answer">
-                    <p>Yes. Plans are billed monthly and you can cancel from your billing settings. The trial ends on its own if you do not upgrade.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-      <!-- Contact -->
       <section id="contact" class="section section-contact">
         <div class="container section-inner contact-inner">
           <div class="contact-copy">
@@ -1713,17 +1630,65 @@
     <script>
       lucide.createIcons();
       (function () {
-        const tourModal = document.getElementById('tour-modal');
-        const tourVideo = tourModal ? tourModal.querySelector('video') : null;
-        const heroVideo = document.querySelector('.tour-video');
-        const closeTour = () => { if (!tourModal) return; tourVideo.pause(); tourModal.close(); if (heroVideo) heroVideo.play().catch(() => {}); };
-        document.querySelectorAll('[data-open-tour]').forEach((b) => b.addEventListener('click', () => {
-          if (!tourModal) return; tourModal.showModal(); if (heroVideo) heroVideo.pause();
-          tourVideo.currentTime = 0; tourVideo.muted = false; tourVideo.play().catch(() => {});
-        }));
-        document.querySelectorAll('[data-close-tour]').forEach((b) => b.addEventListener('click', closeTour));
-        if (tourModal) { tourModal.addEventListener('click', (e) => { if (e.target === tourModal) closeTour(); }); tourModal.addEventListener('close', () => { tourVideo.pause(); if (heroVideo) heroVideo.play().catch(() => {}); }); }
-        if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
+        const player = document.getElementById('tour-player');
+        if (!player) return;
+        const frame = player.querySelector('.tour-frame');
+        const v = player.querySelector('.tour-video');
+        const cap = player.querySelector('.tour-caption');
+        const bar = player.querySelector('.tour-progress span');
+        const seek = player.querySelector('[data-tour="seek"]');
+        const time = player.querySelector('[data-tour="time"]');
+        const btn = (n) => player.querySelector('[data-tour="' + n + '"]');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+        const fmt = (s) => Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0');
+        const setPlayState = () => player.classList.toggle('is-paused', v.paused);
+        btn('play').addEventListener('click', () => { if (v.paused) v.play().catch(() => {}); else v.pause(); });
+        v.addEventListener('play', () => { setPlayState(); btn('play').setAttribute('aria-label', 'Pause'); });
+        v.addEventListener('pause', () => { setPlayState(); btn('play').setAttribute('aria-label', 'Play'); });
+        v.addEventListener('timeupdate', () => { if (!v.duration) return; const p = v.currentTime / v.duration * 100; bar.style.width = p + '%'; seek.setAttribute('aria-valuenow', Math.round(p)); time.textContent = fmt(v.currentTime); });
+        const seekTo = (frac) => { if (v.duration) v.currentTime = Math.max(0, Math.min(1, frac)) * v.duration; };
+        seek.addEventListener('click', (e) => { const r = seek.getBoundingClientRect(); seekTo((e.clientX - r.left) / r.width); });
+        seek.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') v.currentTime += 5; if (e.key === 'ArrowLeft') v.currentTime -= 5; });
+        const setMuted = (m) => { v.muted = m; player.classList.toggle('is-sound', !m); btn('mute').setAttribute('aria-pressed', String(!m)); btn('mute').setAttribute('aria-label', m ? 'Turn sound on' : 'Mute'); };
+        btn('mute').addEventListener('click', () => { setMuted(!v.muted); if (v.paused) v.play().catch(() => {}); });
+        setMuted(true);
+        // subtitles: rendered by the page so they look the same in every browser
+        let track = null;
+        const bindTrack = () => { track = v.textTracks && v.textTracks[0]; if (!track) return; track.mode = 'hidden'; track.addEventListener('cuechange', () => { const c = track.activeCues && track.activeCues[0]; cap.textContent = c ? c.text : ''; cap.classList.toggle('is-on', !!c); }); };
+        bindTrack(); v.addEventListener('loadedmetadata', () => { if (!track) bindTrack(); });
+        let ccOn = true;
+        btn('cc').addEventListener('click', () => { ccOn = !ccOn; player.classList.toggle('cc-off', !ccOn); btn('cc').setAttribute('aria-pressed', String(ccOn)); });
+        btn('full').addEventListener('click', () => {
+          if (document.fullscreenElement) { document.exitFullscreen(); return; }
+          if (frame.requestFullscreen) frame.requestFullscreen().catch(() => {});
+          else if (v.webkitEnterFullscreen) { if (!ccOn) { track && (track.mode = 'disabled'); } else if (track) track.mode = 'showing'; v.webkitEnterFullscreen(); }
+        });
+        document.addEventListener('fullscreenchange', () => player.classList.toggle('is-full', !!document.fullscreenElement));
+        player.querySelectorAll('[data-seek]').forEach((b) => b.addEventListener('click', () => { v.currentTime = parseFloat(b.dataset.seek) || 0; v.play().catch(() => {}); player.querySelectorAll('[data-seek]').forEach((x) => x.classList.toggle('is-active', x === b)); }));
+        const chapters = [...player.querySelectorAll('[data-seek]')].map((b) => ({ b, t: parseFloat(b.dataset.seek) || 0 }));
+        v.addEventListener('timeupdate', () => { let cur = chapters[0]; chapters.forEach((c) => { if (v.currentTime >= c.t) cur = c; }); chapters.forEach((c) => c.b.classList.toggle('is-active', c === cur)); });
+      })();
+      (function () {
+        // product rows: reveal on scroll, draw the connecting line, play clips only while visible
+        const rows = document.querySelectorAll('[data-reveal]');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if ('IntersectionObserver' in window && !reduce) {
+          const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.25, rootMargin: '0px 0px -8% 0px' });
+          rows.forEach((r) => io.observe(r));
+        } else rows.forEach((r) => r.classList.add('is-in'));
+        const wrap = document.getElementById('product-rows');
+        const line = wrap && wrap.querySelector('.product-line span');
+        if (line) {
+          const draw = () => { const r = wrap.getBoundingClientRect(); const vh = innerHeight; const p = (vh * 0.75 - r.top) / r.height; line.style.transform = 'scaleY(' + Math.max(0, Math.min(1, p)) + ')'; };
+          addEventListener('scroll', draw, { passive: true }); addEventListener('resize', draw); draw();
+        }
+        const clips = document.querySelectorAll('.product-clip');
+        const load = (c) => { if (c.dataset.loaded) return; c.dataset.loaded = '1'; const w = document.createElement('source'); w.src = c.dataset.webm; w.type = 'video/webm'; const m = document.createElement('source'); m.src = c.dataset.mp4; m.type = 'video/mp4'; c.append(w, m); c.load(); };
+        if ('IntersectionObserver' in window) {
+          const io2 = new IntersectionObserver((es) => es.forEach((e) => { const c = e.target; if (e.isIntersecting) { load(c); if (!reduce) c.play().catch(() => {}); } else c.pause(); }), { threshold: 0.35 });
+          clips.forEach((c) => io2.observe(c));
+        } else clips.forEach(load);
       })();
     </script>
 
