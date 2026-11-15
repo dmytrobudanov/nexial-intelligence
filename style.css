@@ -6016,3 +6016,58 @@ html { background-color: #02030a; }
 .sol-pink .sol-price small { color: #ff3399; }
 .sol-btn { display: flex; justify-content: center; width: 100%; margin-top: 22px; padding: 15px 22px; font-size: 0.98rem; }
 @media (max-width: 560px) { .sol-price b { font-size: 1.7rem; } }
+
+/* ===== How it works: one drawn axis through the step cards, values in the same card style ===== */
+.how-timeline { position: relative; padding-top: 24px; }
+.how-axis { position: absolute; left: 0; right: 0; top: 24px; height: 2px; background: rgba(123, 142, 255, 0.14); border-radius: 2px; }
+.how-axis span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, #00e0ff, #9d7bff 50%, #ff3399); transform: scaleX(0); transform-origin: left; box-shadow: 0 0 18px rgba(0, 224, 255, 0.45); }
+.how-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.how-step { position: relative; opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.how-step:nth-child(2) { transition-delay: 0.12s; } .how-step:nth-child(3) { transition-delay: 0.24s; }
+.how-step.is-in { opacity: 1; transform: none; }
+.how-step-num {
+  position: absolute; left: 26px; top: -24px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.04em; color: #fff;
+  background: #070b1d; border: 2px solid var(--how-tone, #00e0ff); box-shadow: 0 0 0 6px #070c1f, 0 0 26px var(--how-glow, rgba(0, 224, 255, 0.5));
+  transform: scale(0.6); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s;
+}
+.how-step.is-in .how-step-num { transform: scale(1); }
+.how-step-cyan { --how-tone: #00e0ff; --how-glow: rgba(0, 224, 255, 0.5); }
+.how-step-violet { --how-tone: #9d7bff; --how-glow: rgba(157, 123, 255, 0.5); }
+.how-step-pink { --how-tone: #ff3399; --how-glow: rgba(255, 51, 153, 0.5); }
+.how-card {
+  height: 100%; display: flex; flex-direction: column; gap: 12px; padding: 40px 26px 26px; border-radius: 20px;
+  background: linear-gradient(165deg, rgba(12, 20, 55, 0.9), rgba(6, 10, 30, 0.97)); border: 1px solid rgba(145, 169, 255, 0.22);
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.how-step:hover .how-card { border-color: var(--how-tone); box-shadow: 0 18px 50px var(--how-glow); transform: translateY(-3px); }
+.how-card h3 { margin: 0; font-size: 1.22rem; font-weight: 500; letter-spacing: -0.01em; color: #eef2ff; }
+.how-card p { margin: 0; font-size: 0.95rem; line-height: 1.55; color: rgba(210, 221, 255, 0.74); }
+.how-result { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(145, 169, 255, 0.16); display: flex; align-items: baseline; gap: 10px; font-size: 0.95rem; font-weight: 500; color: var(--how-tone, #00e0ff); }
+.how-result b { white-space: nowrap; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(178, 196, 255, 0.6); }
+.how-values { margin-top: 8px; }
+.how-values-label { margin: 0 0 14px; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(150, 170, 255, 0.72); }
+.how-values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.how-value { padding: 26px; }
+.how-value h3 { font-size: 1.08rem; }
+.how-value p { font-size: 0.92rem; }
+@media (max-width: 1024px) {
+  .how-steps, .how-values-grid { gap: 16px; }
+  .how-card { padding: 36px 20px 22px; } .how-value { padding: 22px 20px; }
+  .how-step-num { left: 20px; }
+}
+@media (max-width: 900px) {
+  .how-timeline { padding: 0 0 0 44px; }
+  .how-axis { left: 23px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .how-axis span { width: 100%; height: 100%; background: linear-gradient(180deg, #00e0ff, #9d7bff 50%, #ff3399); transform: scaleY(0); transform-origin: top; }
+  .how-steps { grid-template-columns: 1fr; gap: 20px; }
+  .how-step { transform: translateX(18px); }
+  .how-step-num { left: -44px; top: 22px; width: 44px; height: 44px; font-size: 0.78rem; }
+  .how-card { padding: 22px 20px; }
+  .how-values { margin-top: 12px; }
+  .how-values-grid { grid-template-columns: 1fr; gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .how-step, .how-step-num, .how-card { transition: none; }
+  .how-step { opacity: 1; transform: none; } .how-step-num { transform: none; } .how-axis span { transform: none; }
+}

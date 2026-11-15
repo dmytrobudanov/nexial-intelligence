@@ -307,249 +307,51 @@
           </header>
           
 
-          <div class="how-flow">
-            <div class="how-flow-line" aria-hidden="true"></div>
-            <div class="how-flow-line-accent" aria-hidden="true"></div>
-
-            <div class="how-flow-grid">
-              <!-- Step 01 -->
-              <div class="how-flow-step how-flow-step-cyan">
-                <div class="how-flow-mobile-line" aria-hidden="true"></div>
-
-                <div class="how-flow-node">
-                  <div class="how-flow-node-shell">
-                    <div class="how-flow-node-dot"></div>
-                  </div>
+          <div class="how-timeline" id="how-timeline">
+            <div class="how-axis" aria-hidden="true"><span></span></div>
+            <ol class="how-steps">
+              <li class="how-step how-step-cyan" data-reveal>
+                <span class="how-step-num">01</span>
+                <div class="how-card">
+                  <h3>Pick your sector</h3>
+                  <p>Choose a sector and region, the markers you care about and your digest cadence. About 2 minutes, no card.</p>
+                  <span class="how-result"><b>You get</b>a ranked watchlist</span>
                 </div>
-
-                <div class="how-flow-card-shell">
-                  <div class="how-flow-card">
-                    <div class="how-flow-card-glow" aria-hidden="true"></div>
-                    <div class="how-flow-card-head">
-                      <h3>Pick Your Sector</h3>
-                      <span class="how-flow-badge">01</span>
-                    </div>
-                    <ul class="how-flow-list">
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M12 22v-5" />
-                            <path d="M9 8V2" />
-                            <path d="M15 8V2" />
-                            <path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z" />
-                          </svg>
-                        </span>
-                        <p>Choose a sector and region, the markers you care about and your digest cadence.</p>
-                      </li>
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <rect x="16" y="16" width="6" height="6" rx="1" />
-                            <rect x="2" y="16" width="6" height="6" rx="1" />
-                            <rect x="9" y="2" width="6" height="6" rx="1" />
-                            <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
-                            <path d="M12 12V8" />
-                          </svg>
-                        </span>
-                        <p>About 2 minutes, no card. Your workspace opens with ranked companies.</p>
-                      </li>
-                    </ul>
-                  </div>
+              </li>
+              <li class="how-step how-step-violet" data-reveal>
+                <span class="how-step-num">02</span>
+                <div class="how-card">
+                  <h3>Get ranked markers</h3>
+                  <p>Signals are linked to companies and scored by how many independent sources converge on the same move.</p>
+                  <span class="how-result"><b>You get</b>evidence per marker</span>
                 </div>
-              </div>
-
-              <!-- Step 02 -->
-              <div class="how-flow-step how-flow-step-violet">
-                <div class="how-flow-mobile-line" aria-hidden="true"></div>
-
-                <div class="how-flow-node">
-                  <div class="how-flow-node-shell">
-                    <div class="how-flow-node-dot"></div>
-                  </div>
+              </li>
+              <li class="how-step how-step-pink" data-reveal>
+                <span class="how-step-num">03</span>
+                <div class="how-card">
+                  <h3>Act on them</h3>
+                  <p>Add companies to a watchlist, get a weekly or daily digest, order a sector report or scope a pilot when you need more.</p>
+                  <span class="how-result"><b>You get</b>digest or CSV export</span>
                 </div>
-
-                <div class="how-flow-card-shell">
-                  <div class="how-flow-card">
-                    <div class="how-flow-card-glow" aria-hidden="true"></div>
-                    <div class="how-flow-card-head">
-                      <h3>Get Ranked Markers</h3>
-                      <span class="how-flow-badge">02</span>
-                    </div>
-                    <ul class="how-flow-list">
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
-                            <path d="M9 13a4.5 4.5 0 0 0 3-4" />
-                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
-                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
-                            <path d="M6 18a4 4 0 0 1-1.967-.516" />
-                            <path d="M12 13h4" />
-                            <path d="M12 18h6a2 2 0 0 1 2 2v1" />
-                            <path d="M12 8h8" />
-                            <path d="M16 8V5a2 2 0 0 1 2-2" />
-                            <circle cx="16" cy="13" r=".5" />
-                            <circle cx="18" cy="3" r=".5" />
-                            <circle cx="20" cy="21" r=".5" />
-                            <circle cx="20" cy="8" r=".5" />
-                          </svg>
-                        </span>
-                        <p>Signals are linked to companies and scored by convergence across sources.</p>
-                      </li>
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M9 17H7A5 5 0 0 1 7 7h2" />
-                            <path d="M15 7h2a5 5 0 1 1 0 10h-2" />
-                            <line x1="8" x2="16" y1="12" y2="12" />
-                          </svg>
-                        </span>
-                        <p>Every marker shows its evidence, dates and a confidence level.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Step 03 -->
-              <div class="how-flow-step how-flow-step-pink">
-                <div class="how-flow-node">
-                  <div class="how-flow-node-shell">
-                    <div class="how-flow-node-dot"></div>
-                  </div>
-                </div>
-
-                <div class="how-flow-card-shell">
-                  <div class="how-flow-card">
-                    <div class="how-flow-card-glow" aria-hidden="true"></div>
-                    <div class="how-flow-card-head">
-                      <h3>Act On Them</h3>
-                      <span class="how-flow-badge">03</span>
-                    </div>
-                    <ul class="how-flow-list">
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
-                            <path d="m21.854 2.147-10.94 10.939" />
-                          </svg>
-                        </span>
-                        <p>Add companies to a watchlist, get a weekly or daily digest, export CSV.</p>
-                      </li>
-                      <li class="how-flow-item">
-                        <span class="how-flow-icon" aria-hidden="true">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <circle cx="18" cy="18" r="3" />
-                            <circle cx="6" cy="6" r="3" />
-                            <path d="M6 21V9a9 9 0 0 0 9 9" />
-                          </svg>
-                        </span>
-                        <p>Order a sector report or scope a pilot when you need more.</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </li>
+            </ol>
           </div>
 
-          <div class="how-secondary" role="list">
-            <div class="how-secondary-item" role="listitem">
-              <h4 class="how-secondary-title">
-                <span class="how-secondary-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z" stroke="currentColor" stroke-width="1.6"/>
-                    <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="currentColor" stroke-width="1.6"/>
-                    <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" stroke="currentColor" stroke-width="1.6"/>
-                  </svg>
-                </span>
-                Your data stays yours
-              </h4>
-              <p class="how-secondary-text">Sectors, watchlists and notes live in your workspace. Team plans run on-prem or in your private cloud.</p>
-            </div>
-            <div class="how-secondary-item" role="listitem">
-              <h4 class="how-secondary-title">
-                <span class="how-secondary-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2 20 6v6c0 5-3.2 9.4-8 10-4.8-.6-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                    <path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                Evidence you can defend
-              </h4>
-              <p class="how-secondary-text">Every marker needs 2 or more independent sources. Licensed data shapes the confidence level but is never shown.</p>
-            </div>
-            <div class="how-secondary-item" role="listitem">
-              <h4 class="how-secondary-title">
-                <span class="how-secondary-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M21 12a9 9 0 1 1-3-6.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-                    <path d="M21 3v6h-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                Sharper every week
-              </h4>
-              <p class="how-secondary-text">Mark alerts useful or noise. Your feedback tunes the scoring for your sector over time.</p>
+          <div class="how-values">
+            <p class="how-values-label">What you get with every plan</p>
+            <div class="how-values-grid">
+              <div class="how-card how-value">
+                <h3>Your data stays yours</h3>
+                <p>Sectors, watchlists and notes live in your workspace. Team plans run on-prem or in your private cloud.</p>
+              </div>
+              <div class="how-card how-value">
+                <h3>Evidence you can defend</h3>
+                <p>Every marker needs 2 or more independent sources. Licensed data shapes the confidence level but is never shown.</p>
+              </div>
+              <div class="how-card how-value">
+                <h3>Sharper every week</h3>
+                <p>Mark alerts useful or noise. Your feedback tunes the scoring for your sector over time.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -1670,6 +1472,22 @@
         if (reduce) { ang = 0.6; draw(0); } else requestAnimationFrame(loop);
       })();
 
+      // How it works: the axis draws itself on scroll
+      (function () {
+        const tl = document.getElementById('how-timeline');
+        if (!tl) return;
+        const line = tl.querySelector('.how-axis span');
+        const mq = window.matchMedia('(max-width: 900px)');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { line.style.transform = 'none'; return; }
+        const draw = () => {
+          const r = tl.getBoundingClientRect();
+          const p = (window.innerHeight * 0.85 - r.top) / (mq.matches ? r.height : Math.max(1, r.height * 0.9));
+          line.style.transform = (mq.matches ? 'scaleY(' : 'scaleX(') + Math.max(0, Math.min(1, p)) + ')';
+        };
+        window.addEventListener('scroll', draw, { passive: true });
+        window.addEventListener('resize', draw);
+        draw();
+      })();
       // Markers rail: infinite loop, slow auto-rotate, side arrows, progress thumb
       (function () {
         const rail = document.getElementById('markers-rail');
