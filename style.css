@@ -6071,3 +6071,6 @@ html { background-color: #02030a; }
   .how-step, .how-step-num, .how-card { transition: none; }
   .how-step { opacity: 1; transform: none; } .how-step-num { transform: none; } .how-axis span { transform: none; }
 }
+
+.how-note { margin: 2px 0 0; text-align: center; font-size: 0.9rem; color: rgba(180, 200, 255, 0.62); }
+@media (max-width: 900px) { .how-note { text-align: left; padding-left: 44px; } }

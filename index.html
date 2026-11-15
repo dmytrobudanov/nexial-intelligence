@@ -337,23 +337,7 @@
             </ol>
           </div>
 
-          <div class="how-values">
-            <p class="how-values-label">What you get with every plan</p>
-            <div class="how-values-grid">
-              <div class="how-card how-value">
-                <h3>Your data stays yours</h3>
-                <p>Sectors, watchlists and notes live in your workspace. Team plans run on-prem or in your private cloud.</p>
-              </div>
-              <div class="how-card how-value">
-                <h3>Evidence you can defend</h3>
-                <p>Every marker needs 2 or more independent sources. Licensed data shapes the confidence level but is never shown.</p>
-              </div>
-              <div class="how-card how-value">
-                <h3>Sharper every week</h3>
-                <p>Mark alerts useful or noise. Your feedback tunes the scoring for your sector over time.</p>
-              </div>
-            </div>
-          </div>
+          <p class="how-note">Sectors, watchlists and notes live in your workspace. Team plans run on-prem or in your private cloud.</p>
         </div>
       </section>
       <section id="who-we-work-with" class="section">
@@ -1463,7 +1447,7 @@
         };
         const loop = (ts) => {
           if (!t0) t0 = ts;
-          if (visible && !document.hidden) { ang += 0.0028; draw(ts); }
+          if (visible && !document.hidden) { ang += 0.0014; draw(ts); }
           requestAnimationFrame(loop);
         };
         if ('IntersectionObserver' in window) new IntersectionObserver((es) => es.forEach((e) => { visible = e.isIntersecting; }), { threshold: 0.05 }).observe(wrap);
