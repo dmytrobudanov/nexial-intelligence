@@ -5848,3 +5848,54 @@ html { background-color: #02030a; }
   .markers-grid .signal-card-integrated { flex-basis: 100%; }
 }
 @media (min-width: 1025px) { .hero-visual { transform: translateY(-28px); } }
+
+/* ===== Round 4: markers as a horizontal card rail ===== */
+#markers .section-header { max-width: 640px; }
+.markers-rail-wrap { display: flex; flex-direction: column; gap: 22px; }
+.markers-rail {
+  display: flex; gap: 20px; overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; padding: 6px 2px 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.markers-rail::-webkit-scrollbar { display: none; }
+.marker-card {
+  position: relative; flex: 0 0 280px; min-height: 372px; scroll-snap-align: start;
+  display: flex; flex-direction: column; padding: 26px 26px 24px; border-radius: 20px;
+  background: linear-gradient(165deg, rgba(12, 20, 55, 0.9), rgba(6, 10, 30, 0.97));
+  border: 1px solid rgba(145, 169, 255, 0.22);
+  transition: transform .35s cubic-bezier(.23,1,.32,1), border-color .35s, box-shadow .35s;
+}
+.marker-card:hover { transform: translateY(-4px); }
+.marker-card.market:hover { border-color: rgba(0, 224, 255, .55); box-shadow: 0 18px 50px rgba(0, 224, 255, .12); }
+.marker-card.tech:hover { border-color: rgba(255, 51, 153, .55); box-shadow: 0 18px 50px rgba(255, 51, 153, .12); }
+.marker-card.narrative:hover { border-color: rgba(255, 198, 88, .55); box-shadow: 0 18px 50px rgba(255, 198, 88, .1); }
+.marker-card.growth:hover { border-color: rgba(124, 255, 155, .5); box-shadow: 0 18px 50px rgba(124, 255, 155, .1); }
+.marker-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
+.marker-top .marker-id { font-size: 0.82rem; }
+.marker-plan { font-size: 0.68rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(178, 196, 255, .55); border: 1px solid rgba(145, 169, 255, .22); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
+.marker-plan.is-trial { color: #00e0ff; border-color: rgba(0, 224, 255, .4); background: rgba(0, 224, 255, .06); }
+.marker-card h3 { margin: 0; font-size: 1.32rem; line-height: 1.18; font-weight: 500; letter-spacing: -0.01em; color: #eef2ff; }
+.marker-visual { margin: 22px -4px 0; flex: 1 1 auto; min-height: 84px; display: flex; align-items: center; opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s cubic-bezier(.23,1,.32,1); }
+.marker-visual svg { width: 100%; height: 84px; display: block; }
+.marker-card:hover .marker-visual, .marker-card:focus-within .marker-visual { opacity: 1; transform: none; }
+.marker-rule { display: block; width: 26px; height: 1px; background: rgba(178, 196, 255, .45); margin: 20px 0 14px; }
+.marker-card p { margin: 0; font-size: 0.93rem; line-height: 1.55; color: rgba(210, 221, 255, .74); }
+.marker-sources { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.marker-sources span { font-size: 0.72rem; letter-spacing: .02em; color: rgba(178, 196, 255, .62); background: rgba(145, 169, 255, .08); border-radius: 6px; padding: 3px 8px; }
+.markers-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.markers-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(145, 169, 255, .4); background: rgba(8, 14, 40, .7); color: #dfe7ff; display: grid; place-items: center; cursor: pointer; padding: 0; transition: border-color .25s, color .25s, background .25s, opacity .25s; }
+.markers-btn svg { width: 18px; height: 18px; }
+.markers-btn:hover:not(:disabled) { border-color: #00e0ff; color: #00e0ff; background: rgba(0, 224, 255, .08); }
+.markers-btn:focus-visible { outline: 2px solid #00e0ff; outline-offset: 3px; }
+.markers-btn:disabled { opacity: .3; cursor: default; }
+.markers-progress { position: relative; width: 140px; height: 2px; margin-left: 10px; background: rgba(145, 169, 255, .18); border-radius: 2px; overflow: hidden; }
+.markers-progress i { position: absolute; left: 0; top: 0; height: 100%; width: 40%; background: #00e0ff; border-radius: 2px; transition: transform .25s ease-out, width .25s; }
+.markers-nav .markers-footnote { margin: 0 0 0 auto; text-align: right; }
+@media (hover: none) { .marker-visual { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .markers-nav .markers-footnote { flex-basis: 100%; text-align: left; margin: 6px 0 0; }
+}
+@media (max-width: 560px) {
+  .marker-card { flex-basis: 78vw; min-height: 340px; padding: 22px 22px 20px; }
+  .markers-progress { width: 90px; }
+}
+@media (prefers-reduced-motion: reduce) { .marker-card, .marker-visual, .markers-progress i { transition: none; } .markers-rail { scroll-behavior: auto; } }
