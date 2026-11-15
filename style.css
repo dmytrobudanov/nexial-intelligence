@@ -6007,3 +6007,12 @@ html { background-color: #02030a; }
 .product-rows .product-cta { margin: 0; position: relative; z-index: 1; }
 .product-line { bottom: 30px; }
 @media (max-width: 900px) { .product-rows .product-cta { margin-top: 4px; } }
+
+/* add-ons: visible prices and real buttons */
+.sol-price { display: flex; flex-direction: column; align-items: flex-end; flex-shrink: 0; line-height: 1; }
+.sol-price b { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; color: #fff; text-shadow: 0 0 26px rgba(0, 224, 255, 0.5); }
+.sol-pink .sol-price b { text-shadow: 0 0 26px rgba(255, 51, 153, 0.5); }
+.sol-price small { margin-top: 7px; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #00e0ff; white-space: nowrap; }
+.sol-pink .sol-price small { color: #ff3399; }
+.sol-btn { display: flex; justify-content: center; width: 100%; margin-top: 22px; padding: 15px 22px; font-size: 0.98rem; }
+@media (max-width: 560px) { .sol-price b { font-size: 1.7rem; } }
