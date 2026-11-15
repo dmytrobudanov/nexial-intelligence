@@ -5999,3 +5999,6 @@ html { background-color: #02030a; }
   .markers-head .markers-progress { flex-basis: auto; width: 120px; margin: 0; }
   .markers-nav .markers-footnote { text-align: center; margin: 0; }
 }
+
+/* hero to product: no seam, the light section fades in from the hero background */
+#product.section-light { background: linear-gradient(180deg, rgba(10, 17, 42, 0) 0, rgba(10, 17, 42, 0.9) 300px, rgba(3, 7, 25, 0.98) 100%); }
