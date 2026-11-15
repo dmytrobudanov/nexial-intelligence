@@ -1341,11 +1341,11 @@
         // twinkling points scattered over the sphere
         for (let i = 0; i < N; i += 7) { pts[i].tw = i * 0.37; pts[i].tc = (i % 3 === 0) ? 1 : 0; }
         seeds.forEach((s, c) => { [0, 7, 13, 21, 34].forEach((d, k) => { const p = pts[(s + d * 3) % N]; p.hot = c; p.ph = k * 1.3 + c; clusters[c].push(p); }); });
-        let W = 0, H = 0, dpr = 1, ang = 0, t0 = 0, visible = true, limX = 1e9, minX = -1e9;
+        let W = 0, H = 0, dpr = 1, ang = 0, t0 = 0, visible = true, limX = 1e9, minX = -1e9, isAbs = true;
         const resize = () => {
           const r = cv.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1);
           W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-          const abs = getComputedStyle(wrap).position === 'absolute'; limX = abs ? W * 0.55 : 1e9; minX = abs ? W * 0.3 : -1e9; // bright elements stay between the copy and the stats column
+          const abs = getComputedStyle(wrap).position === 'absolute'; isAbs = abs; limX = abs ? W * 0.55 : 1e9; minX = abs ? W * 0.3 : -1e9; // bright elements stay between the copy and the stats column
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
         const tilt = 0.42, ct = Math.cos(tilt), st = Math.sin(tilt);
@@ -1419,7 +1419,8 @@
             if (!q) { tag.style.opacity = '0'; return; }
             const on = q.z > 0.12 && q.sx > cx - 90 && q.sx < cx + 90;
             tag.style.opacity = on ? String(Math.min(1, (q.z - 0.12) * 4, (q.sx - cx + 90) / 50, (cx + 90 - q.sx) / 50) * q.v) : '0';
-            tag.style.transform = 'translate(' + (q.sx - 14 - tag.offsetWidth).toFixed(1) + 'px,' + (q.sy - 14).toFixed(1) + 'px)';
+            const tw = tag.offsetWidth; let tx = q.sx - 14 - tw; if (!isAbs) tx = Math.max(4, Math.min(W - tw - 4, tx));
+            tag.style.transform = 'translate(' + tx.toFixed(1) + 'px,' + (q.sy - 14).toFixed(1) + 'px)';
           });
         };
         const loop = (ts) => {
