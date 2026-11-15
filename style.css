@@ -5850,16 +5850,30 @@ html { background-color: #02030a; }
 @media (min-width: 1025px) { .hero-visual { transform: translateY(-28px); } }
 
 /* ===== Round 4: markers as a horizontal card rail ===== */
+:root { --mk-gap: 20px; --mk-inner: min(calc(var(--mk-vw, 100vw) - 40px), 1080px); --mk-gutter: max(20px, calc((var(--mk-vw, 100vw) - 1080px) / 2)); --mk-per: 4; }
 #markers .section-header { max-width: 640px; }
-.markers-rail-wrap { display: flex; flex-direction: column; gap: 22px; }
+.markers-rail-wrap { display: flex; flex-direction: column; gap: 20px; }
+.markers-stage {
+  position: relative; width: var(--mk-vw, 100vw); left: 50%; transform: translateX(-50%);
+  overflow: hidden;
+}
 .markers-rail {
-  display: flex; gap: 20px; overflow-x: auto; overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory; padding: 6px 2px 10px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  display: flex; gap: var(--mk-gap); overflow-x: auto; overscroll-behavior-x: contain;
+  padding: 10px var(--mk-gutter) 24px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
 .markers-rail::-webkit-scrollbar { display: none; }
+/* soft edges: the partial cards blur and fade into the page */
+.markers-stage::before, .markers-stage::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: var(--mk-gutter); z-index: 2; pointer-events: none;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  -webkit-mask-image: linear-gradient(to right, #000 30%, transparent); mask-image: linear-gradient(to right, #000 30%, transparent);
+  background: linear-gradient(to right, rgba(2, 3, 10, 0.95), rgba(2, 3, 10, 0.55) 45%, rgba(2, 3, 10, 0));
+}
+.markers-stage::before { left: 0; }
+.markers-stage::after { right: 0; transform: scaleX(-1); }
 .marker-card {
-  position: relative; flex: 0 0 280px; min-height: 372px; scroll-snap-align: start;
-  display: flex; flex-direction: column; padding: 26px 26px 24px; border-radius: 20px;
+  position: relative; flex: 0 0 calc((var(--mk-inner) - (var(--mk-per) - 1) * var(--mk-gap)) / var(--mk-per)); min-height: 372px;
+  display: flex; flex-direction: column; padding: 26px 24px 24px; border-radius: 20px;
   background: linear-gradient(165deg, rgba(12, 20, 55, 0.9), rgba(6, 10, 30, 0.97));
   border: 1px solid rgba(145, 169, 255, 0.22);
   transition: transform .35s cubic-bezier(.23,1,.32,1), border-color .35s, box-shadow .35s;
@@ -5871,31 +5885,46 @@ html { background-color: #02030a; }
 .marker-card.growth:hover { border-color: rgba(124, 255, 155, .5); box-shadow: 0 18px 50px rgba(124, 255, 155, .1); }
 .marker-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
 .marker-top .marker-id { font-size: 0.82rem; }
-.marker-plan { font-size: 0.68rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(178, 196, 255, .55); border: 1px solid rgba(145, 169, 255, .22); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
+.marker-plan { font-size: 0.66rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(178, 196, 255, .55); border: 1px solid rgba(145, 169, 255, .22); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
 .marker-plan.is-trial { color: #00e0ff; border-color: rgba(0, 224, 255, .4); background: rgba(0, 224, 255, .06); }
-.marker-card h3 { margin: 0; font-size: 1.32rem; line-height: 1.18; font-weight: 500; letter-spacing: -0.01em; color: #eef2ff; }
+.marker-card h3 { margin: 0; font-size: 1.28rem; line-height: 1.18; font-weight: 500; letter-spacing: -0.01em; color: #eef2ff; }
 .marker-visual { margin: 22px -4px 0; flex: 1 1 auto; min-height: 84px; display: flex; align-items: center; opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s cubic-bezier(.23,1,.32,1); }
 .marker-visual svg { width: 100%; height: 84px; display: block; }
 .marker-card:hover .marker-visual, .marker-card:focus-within .marker-visual { opacity: 1; transform: none; }
 .marker-rule { display: block; width: 26px; height: 1px; background: rgba(178, 196, 255, .45); margin: 20px 0 14px; }
-.marker-card p { margin: 0; font-size: 0.93rem; line-height: 1.55; color: rgba(210, 221, 255, .74); }
+.marker-card p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: rgba(210, 221, 255, .74); }
 .marker-sources { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
 .marker-sources span { font-size: 0.72rem; letter-spacing: .02em; color: rgba(178, 196, 255, .62); background: rgba(145, 169, 255, .08); border-radius: 6px; padding: 3px 8px; }
-.markers-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-.markers-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(145, 169, 255, .4); background: rgba(8, 14, 40, .7); color: #dfe7ff; display: grid; place-items: center; cursor: pointer; padding: 0; transition: border-color .25s, color .25s, background .25s, opacity .25s; }
-.markers-btn svg { width: 18px; height: 18px; }
-.markers-btn:hover:not(:disabled) { border-color: #00e0ff; color: #00e0ff; background: rgba(0, 224, 255, .08); }
+/* side arrows: tall pills in the gutters, no frame */
+.markers-btn {
+  position: absolute; top: 50%; z-index: 3; width: 56px; height: 148px; margin-top: -82px; border: 0; border-radius: 18px;
+  background: rgba(10, 16, 44, 0.72); color: #dfe7ff; display: grid; place-items: center; cursor: pointer; padding: 0;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  transition: background .25s, color .25s, transform .25s, box-shadow .25s;
+}
+.markers-prev { left: max(10px, calc(var(--mk-gutter) / 2 - 28px)); }
+.markers-next { right: max(10px, calc(var(--mk-gutter) / 2 - 28px)); }
+.markers-btn svg { width: 26px; height: 26px; }
+.markers-btn:hover { color: #00e0ff; background: rgba(0, 224, 255, 0.1); box-shadow: 0 14px 40px rgba(0, 224, 255, 0.18); }
+.markers-prev:hover { transform: translateX(-3px); }
+.markers-next:hover { transform: translateX(3px); }
 .markers-btn:focus-visible { outline: 2px solid #00e0ff; outline-offset: 3px; }
-.markers-btn:disabled { opacity: .3; cursor: default; }
-.markers-progress { position: relative; width: 140px; height: 2px; margin-left: 10px; background: rgba(145, 169, 255, .18); border-radius: 2px; overflow: hidden; }
-.markers-progress i { position: absolute; left: 0; top: 0; height: 100%; width: 40%; background: #00e0ff; border-radius: 2px; transition: transform .25s ease-out, width .25s; }
+.markers-nav { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.markers-progress { position: relative; width: 160px; height: 2px; background: rgba(145, 169, 255, .18); border-radius: 2px; overflow: hidden; }
+.markers-progress i { position: absolute; left: 0; top: 0; height: 100%; width: 25%; background: #00e0ff; border-radius: 2px; }
 .markers-nav .markers-footnote { margin: 0 0 0 auto; text-align: right; }
 @media (hover: none) { .marker-visual { opacity: 1; transform: none; } }
+@media (max-width: 1200px) { .markers-btn { width: 46px; height: 120px; margin-top: -68px; } }
 @media (max-width: 900px) {
+  :root { --mk-per: 2; }
   .markers-nav .markers-footnote { flex-basis: 100%; text-align: left; margin: 6px 0 0; }
+  .markers-stage::before, .markers-stage::after { width: 40px; }
 }
 @media (max-width: 560px) {
-  .marker-card { flex-basis: 78vw; min-height: 340px; padding: 22px 22px 20px; }
-  .markers-progress { width: 90px; }
+  :root { --mk-per: 1; --mk-inner: calc(var(--mk-vw, 100vw) - 80px); --mk-gutter: 40px; }
+  .marker-card { min-height: 340px; padding: 22px 22px 20px; }
+  .markers-btn { width: 32px; height: 96px; margin-top: -56px; border-radius: 12px; }
+  .markers-prev { left: 4px; } .markers-next { right: 4px; }
+  .markers-progress { width: 100px; }
 }
-@media (prefers-reduced-motion: reduce) { .marker-card, .marker-visual, .markers-progress i { transition: none; } .markers-rail { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .marker-card, .marker-visual, .markers-btn { transition: none; } }

@@ -241,7 +241,9 @@
           </header>
 
           <div class="markers-rail-wrap">
-            <div class="markers-rail" id="markers-rail" aria-label="Seven convergence markers">
+            <div class="markers-stage">
+              <button type="button" class="markers-btn markers-prev" aria-label="Previous markers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+              <div class="markers-rail" id="markers-rail" aria-label="Seven convergence markers">
               <article class="marker-card market">
                 <div class="marker-top"><b class="marker-id">M1</b><span class="marker-plan is-trial">In free trial</span></div>
                 <h3>Pre-Raise<br>Buildout</h3>
@@ -298,10 +300,10 @@
                 <p>Standards work, lobbying and compliance hiring ahead of a rule change.</p>
                 <div class="marker-sources"><span>Policy</span><span>Jobs</span><span>News</span></div>
               </article>
+              </div>
+              <button type="button" class="markers-btn markers-next" aria-label="Next markers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
             </div>
             <div class="markers-nav">
-              <button type="button" class="markers-btn markers-prev" aria-label="Previous markers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
-              <button type="button" class="markers-btn markers-next" aria-label="Next markers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
               <span class="markers-progress" aria-hidden="true"><i></i></span>
               <p class="markers-footnote">Free trial and Starter include M1, M3 and M6. Pro and Team include all seven.</p>
             </div>
@@ -1566,35 +1568,65 @@
         } else clips.forEach(load);
       })();
 
-      // Markers rail: arrows, progress thumb
+      // Markers rail: infinite loop, slow auto-rotate, side arrows, progress thumb
       (function () {
         const rail = document.getElementById('markers-rail');
         if (!rail) return;
-        const prev = document.querySelector('.markers-prev');
-        const next = document.querySelector('.markers-next');
+        const stage = rail.parentElement;
+        const prev = stage.querySelector('.markers-prev');
+        const next = stage.querySelector('.markers-next');
         const thumb = document.querySelector('.markers-progress i');
-        const step = () => { const c = rail.querySelector('.marker-card'); return c ? c.getBoundingClientRect().width + 20 : 300; };
-        const update = () => {
-          const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
-          prev.disabled = rail.scrollLeft <= 2;
-          next.disabled = rail.scrollLeft >= max - 2;
-          const w = rail.clientWidth / rail.scrollWidth;
-          thumb.style.width = (w * 100) + '%';
-          thumb.style.transform = 'translateX(' + (max ? (rail.scrollLeft / max) * (100 / w - 100) : 0) + '%)';
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const originals = Array.from(rail.children);
+        const count = originals.length;
+        // second copy so the loop never shows an empty end
+        originals.forEach((c) => { const d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); rail.appendChild(d); });
+        const fitWidth = () => { document.documentElement.style.setProperty('--mk-vw', document.documentElement.clientWidth + 'px'); };
+        const step = () => { const c = rail.children[1]; return c ? c.offsetLeft - rail.children[0].offsetLeft : 300; };
+        const setWidth = () => step() * count;
+        let animating = 0, paused = false, visible = true, last = 0, pos = 0;
+        const wrap = () => {
+          const w = setWidth();
+          if (!w) return;
+          if (rail.scrollLeft >= w) { rail.scrollLeft -= w; pos = rail.scrollLeft; }
+          else if (rail.scrollLeft < 0) { rail.scrollLeft += w; pos = rail.scrollLeft; }
         };
-        let target = null;
+        const update = () => {
+          const w = setWidth();
+          const frac = w ? ((rail.scrollLeft % w) + w) % w / w : 0;
+          thumb.style.transform = 'translateX(' + (frac * 100 / 0.25) + '%)';
+        };
         const go = (dir) => {
           const s = step();
-          const base = target === null ? rail.scrollLeft : target;
-          target = Math.max(0, Math.min(rail.scrollWidth - rail.clientWidth, (Math.round(base / s) + dir) * s));
-          rail.scrollTo({ left: target, behavior: 'smooth' });
-          clearTimeout(go.t); go.t = setTimeout(() => { target = null; }, 700);
+          const target = (Math.round(rail.scrollLeft / s) + dir) * s;
+          animating = Date.now() + 800;
+          rail.scrollTo({ left: target, behavior: reduce ? 'auto' : 'smooth' });
         };
         prev.addEventListener('click', () => go(-1));
         next.addEventListener('click', () => go(1));
-        rail.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', update);
-        update();
+        rail.addEventListener('scroll', () => { if (Math.abs(rail.scrollLeft - pos) > 1.5) pos = rail.scrollLeft; if (Date.now() > animating) wrap(); update(); }, { passive: true });
+        stage.addEventListener('pointerenter', () => { paused = true; });
+        stage.addEventListener('pointerleave', () => { paused = false; });
+        stage.addEventListener('pointerdown', () => { paused = true; animating = Date.now() + 1500; });
+        stage.addEventListener('focusin', () => { paused = true; });
+        stage.addEventListener('focusout', () => { paused = false; });
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver((es) => es.forEach((e) => { visible = e.isIntersecting; }), { threshold: 0.1 }).observe(stage);
+        }
+        const SPEED = 22; // px per second
+        const tick = (t) => {
+          const dt = Math.min(64, t - last); last = t;
+          if (!paused && visible && Date.now() > animating && !document.hidden) {
+            pos += SPEED * dt / 1000;
+            const w = setWidth();
+            if (w && pos >= w) { pos -= w; }
+            rail.scrollLeft = pos; // the browser rounds, pos keeps the fraction
+          }
+          requestAnimationFrame(tick);
+        };
+        window.addEventListener('resize', () => { fitWidth(); update(); });
+        fitWidth(); update();
+        if (!reduce) requestAnimationFrame((t) => { last = t; requestAnimationFrame(tick); });
       })();
     </script>
 
