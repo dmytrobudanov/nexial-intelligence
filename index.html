@@ -1580,10 +1580,11 @@
         const clusters = [[], [], []];
         const seeds = [210, 760, 1180];
         seeds.forEach((s, c) => { [0, 7, 13, 21, 34].forEach((d, k) => { const p = pts[(s + d * 3) % N]; p.hot = c; p.ph = k * 1.3 + c; clusters[c].push(p); }); });
-        let W = 0, H = 0, dpr = 1, ang = 0, t0 = 0, visible = true;
+        let W = 0, H = 0, dpr = 1, ang = 0, t0 = 0, visible = true, limX = 1e9, minX = -1e9;
         const resize = () => {
           const r = cv.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1);
           W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+          const abs = getComputedStyle(wrap).position === 'absolute'; limX = abs ? W * 0.55 : 1e9; minX = abs ? W * 0.3 : -1e9; // bright elements stay between the copy and the stats column
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         };
         const tilt = 0.42, ct = Math.cos(tilt), st = Math.sin(tilt);
@@ -1615,7 +1616,7 @@
               ctx.fillStyle = 'rgba(176,196,255,' + al.toFixed(3) + ')';
               ctx.fillRect(sx - s / 2, sy - s / 2, s, s);
             }
-            if (p.hot !== undefined) proj.push({ p, sx, sy, d, z: z2 });
+            if (p.hot !== undefined && sx < limX && sx > minX) proj.push({ p, sx, sy, d, z: z2 });
           }
           // cluster links
           clusters.forEach((cl, c) => {
@@ -1643,9 +1644,9 @@
           tags.forEach((tag, c) => {
             const q = proj.find(x => x.p === clusters[c][0]);
             if (!q) return;
-            const on = q.z > 0.12 && q.sx > cx - 30;
-            tag.style.opacity = on ? String(Math.min(1, (q.z - 0.12) * 4, (q.sx - cx + 30) / 60)) : '0';
-            tag.style.transform = 'translate(' + (q.sx + 14).toFixed(1) + 'px,' + (q.sy - 14).toFixed(1) + 'px)';
+            const on = q.z > 0.12 && q.sx > cx - 90 && q.sx < cx + 90;
+            tag.style.opacity = on ? String(Math.min(1, (q.z - 0.12) * 4, (q.sx - cx + 90) / 50, (cx + 90 - q.sx) / 50)) : '0';
+            tag.style.transform = 'translate(' + (q.sx - 14 - tag.offsetWidth).toFixed(1) + 'px,' + (q.sy - 14).toFixed(1) + 'px)';
           });
         };
         const loop = (ts) => {
