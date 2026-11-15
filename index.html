@@ -77,74 +77,65 @@
 
     <main>
       <!-- Hero -->
-      <section id="hero" class="hero">
+      <section id="hero" class="hero hero-stage">
         <div class="container hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">For VC, PE & Corporate Strategy Teams</p>
-            <h1>
-              Detect Hidden Deals
-              <span class="accent-break">& Market Shifts Early</span>
-            </h1>
-            <p class="hero-subtitle">
-              Pick your sector and get ranked company alerts from day one, each backed by evidence from 2 or more independent sources.
-            </p>
-            <div class="hero-metrics">
-              <div class="metric-card">
-                <span class="metric-label">Signal Coverage</span>
-                <span class="metric-value">20+</span>
-                <span class="metric-caption">external &amp; internal sources</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-label">Time to First Watchlist</span>
-                <span class="metric-value">2 min</span>
-                <span class="metric-caption">pick a sector, get ranked markers</span>
-              </div>
-              <div class="metric-card">
-                <span class="metric-label">Deployment</span>
-                <span class="metric-value">Cloud</span>
-                <span class="metric-caption">on-prem for Team plans</span>
-              </div>
-            </div>
-
-            <div class="hero-actions centered-action">
-              <div class="hero-cta-row">
-                <a href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=hero" class="btn primary btn-large-glow"><span>Start 14-day free trial</span></a>
-                <a href="/sample" class="btn ghost btn-sample"><span>See a live sample&nbsp;→</span></a>
-              </div>
-              <p class="hero-trust-tagline">
-                no card &nbsp;·&nbsp; one sector &nbsp;·&nbsp; demo data until your sector is live
+          <div class="hero-main">
+            <div class="hero-copy">
+              <p class="eyebrow">For VC, PE & Corporate Strategy Teams</p>
+              <h1>
+                Detect Hidden Deals
+                <span class="accent-break">& Market Shifts Early</span>
+              </h1>
+              <p class="hero-subtitle">
+                Pick your sector and get ranked company alerts from day one, each backed by evidence from 2 or more independent sources.
               </p>
-            </div>
-
-          </div>
-
-          <div class="hero-visual">
-            <div class="intel-orbit">
-              <div class="orbit-center">
-                <span class="orbit-label">Value Delivery</span>
-              </div>
-              <div class="orbit-ring orbit-ring-1">
-                <div class="chip chip-news">News</div>
-                <div class="chip chip-patents">Patents</div>
-                <div class="chip chip-jobs">Jobs</div>
-              </div>
-              <div class="orbit-ring orbit-ring-2">
-                <div class="chip chip-web">Web Activity</div>
-                <div class="chip chip-reddit">Communities</div>
-                <div class="chip chip-internal">Internal Data</div>
-              </div>
-              <div class="orbit-output">
-                <div class="glass-card">
-                  <p class="card-label">Outputs</p>
-                  <ul>
-                    <li>Ranked Markers</li>
-                    <li>Evidence Cards</li>
-                    <li>Early Warnings</li>
-                  </ul>
+              <div class="hero-actions centered-action">
+                <div class="hero-cta-row">
+                  <a href="https://app.nexial-intelligence.com/login?utm_source=site&utm_medium=cta&utm_campaign=hero" class="btn primary btn-large-glow"><span>Start 14-day free trial</span></a>
+                  <a href="/sample" class="btn ghost btn-sample"><span>See a live sample&nbsp;→</span></a>
                 </div>
+                <p class="hero-trust-tagline">
+                  no card &nbsp;·&nbsp; one sector &nbsp;·&nbsp; demo data until your sector is live
+                </p>
               </div>
             </div>
+
+            <div class="hero-visual hero-sphere-wrap" aria-hidden="true">
+              <canvas id="hero-sphere" class="hero-sphere"></canvas>
+              <div class="sphere-tag sphere-tag-cyan" data-tag="0"><b>M1</b>Pre-Raise Buildout</div>
+              <div class="sphere-tag sphere-tag-pink" data-tag="1"><b>M2</b>Infrastructure Pivot</div>
+              <div class="sphere-tag sphere-tag-amber" data-tag="2"><b>M3</b>Cluster Formation</div>
+            </div>
           </div>
+
+          <aside class="hero-aside">
+            <div class="hero-stat">
+              <span class="hero-stat-label">Signal coverage</span>
+              <span class="hero-stat-value">20<small>+</small></span>
+              <span class="hero-stat-caption">external and internal sources</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-label">Time to first watchlist</span>
+              <span class="hero-stat-value">2<small>min</small></span>
+              <span class="hero-stat-caption">pick a sector, get ranked markers</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-label">Deployment</span>
+              <span class="hero-stat-value hero-stat-text">Cloud</span>
+              <span class="hero-stat-caption">on-prem for Team plans</span>
+            </div>
+            <div class="hero-stat hero-stat-markers">
+              <span class="hero-stat-label">Markers in the free trial</span>
+              <span class="hero-ticks">
+                <i class="is-on">M1</i><i>M2</i><i class="is-on">M3</i><i>M4</i><i>M5</i><i class="is-on">M6</i><i>M7</i>
+              </span>
+              <span class="hero-stat-caption">3 of 7, all seven on Pro and Team</span>
+            </div>
+            <div class="hero-stat hero-stat-levels">
+              <span class="hero-stat-label">Confidence levels</span>
+              <span class="hero-levels"><i class="lv-confirmed">Confirmed</i><i class="lv-emerging">Emerging</i><i class="lv-hypothesis">Hypothesis</i></span>
+            </div>
+          </aside>
         </div>
       </section>
       <section id="product" class="section section-light">
@@ -235,10 +226,13 @@
       </section>
       <section id="markers" class="section">
         <div class="container section-inner">
-          <header class="section-header">
-            <h2>Seven <span class="text-gradient-cyan-pink">Convergence Markers</span></h2>
-            <p>A marker fires only when 2 or more independent, verifiable sources line up. Every one comes with a confidence level: Confirmed, Emerging or Hypothesis.</p>
-          </header>
+          <div class="markers-head">
+            <header class="section-header">
+              <h2>Seven <span class="text-gradient-cyan-pink">Convergence Markers</span></h2>
+              <p>A marker fires only when 2 or more independent, verifiable sources line up. Every one comes with a confidence level: Confirmed, Emerging or Hypothesis.</p>
+            </header>
+            <span class="markers-progress" aria-hidden="true"><i></i></span>
+          </div>
 
           <div class="markers-rail-wrap">
             <div class="markers-stage">
@@ -304,7 +298,6 @@
               <button type="button" class="markers-btn markers-next" aria-label="Next markers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
             </div>
             <div class="markers-nav">
-              <span class="markers-progress" aria-hidden="true"><i></i></span>
               <p class="markers-footnote">Free trial and Starter include M1, M3 and M6. Pro and Team include all seven.</p>
             </div>
           </div>
@@ -1566,6 +1559,104 @@
           const io2 = new IntersectionObserver((es) => es.forEach((e) => { const c = e.target; if (e.isIntersecting) { load(c); if (!reduce) c.play().catch(() => {}); } else c.pause(); }), { threshold: 0.35 });
           clips.forEach((c) => io2.observe(c));
         } else clips.forEach(load);
+      })();
+
+      // Hero: rotating point sphere with signal clusters
+      (function () {
+        const cv = document.getElementById('hero-sphere');
+        if (!cv) return;
+        const ctx = cv.getContext('2d');
+        const wrap = cv.parentElement;
+        const tags = Array.from(wrap.querySelectorAll('.sphere-tag'));
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const N = 1700, GA = Math.PI * (3 - Math.sqrt(5));
+        const pts = [];
+        for (let i = 0; i < N; i++) {
+          const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), t = GA * i;
+          pts.push({ x: Math.cos(t) * r, y: y, z: Math.sin(t) * r });
+        }
+        const tones = [[0, 224, 255], [255, 51, 153], [255, 198, 88]];
+        // three clusters of hot points, one per tone
+        const clusters = [[], [], []];
+        const seeds = [210, 760, 1180];
+        seeds.forEach((s, c) => { [0, 7, 13, 21, 34].forEach((d, k) => { const p = pts[(s + d * 3) % N]; p.hot = c; p.ph = k * 1.3 + c; clusters[c].push(p); }); });
+        let W = 0, H = 0, dpr = 1, ang = 0, t0 = 0, visible = true;
+        const resize = () => {
+          const r = cv.getBoundingClientRect(); dpr = Math.min(2, window.devicePixelRatio || 1);
+          W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const tilt = 0.42, ct = Math.cos(tilt), st = Math.sin(tilt);
+        const draw = (ts) => {
+          const time = ts / 1000;
+          const cx = W / 2, cy = H / 2, R = Math.min(W, H) * 0.38;
+          ctx.clearRect(0, 0, W, H);
+          // bloom
+          const g = ctx.createRadialGradient(cx, cy, R * 0.1, cx, cy, R * 1.45);
+          g.addColorStop(0, 'rgba(0,224,255,0.2)'); g.addColorStop(0.45, 'rgba(84,122,255,0.09)'); g.addColorStop(1, 'rgba(2,3,10,0)');
+          ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+          // orbit rings behind
+          ctx.save(); ctx.translate(cx, cy);
+          [[1.16, 0.3, -0.5], [1.02, 0.44, 0.9]].forEach(([rx, ry, rot], i) => {
+            ctx.beginPath(); ctx.ellipse(0, 0, R * rx, R * ry, rot + Math.sin(time * 0.08 + i) * 0.08, 0, Math.PI * 2);
+            ctx.strokeStyle = i ? 'rgba(255,51,153,0.16)' : 'rgba(0,224,255,0.2)'; ctx.lineWidth = 1; ctx.setLineDash([2, 7]); ctx.stroke();
+          });
+          ctx.restore(); ctx.setLineDash([]);
+          const ca = Math.cos(ang), sa = Math.sin(ang);
+          const proj = [];
+          for (let i = 0; i < N; i++) {
+            const p = pts[i];
+            const x1 = p.x * ca - p.z * sa, z1 = p.x * sa + p.z * ca;
+            const y2 = p.y * ct - z1 * st, z2 = p.y * st + z1 * ct;
+            const f = 1.45 / (1.6 - z2 * 0.45);
+            const sx = cx + x1 * R * f, sy = cy + y2 * R * f, d = (z2 + 1) / 2;
+            if (p.hot === undefined) {
+              const al = 0.14 + 0.7 * d * d, s = 1.1 + 1.9 * d;
+              ctx.fillStyle = 'rgba(176,196,255,' + al.toFixed(3) + ')';
+              ctx.fillRect(sx - s / 2, sy - s / 2, s, s);
+            }
+            if (p.hot !== undefined) proj.push({ p, sx, sy, d, z: z2 });
+          }
+          // cluster links
+          clusters.forEach((cl, c) => {
+            const [r0, g0, b0] = tones[c];
+            const vis = proj.filter(q => q.p.hot === c && q.z > -0.05);
+            for (let i = 0; i < vis.length; i++) for (let j = i + 1; j < vis.length; j++) {
+              const a = vis[i], b = vis[j];
+              ctx.strokeStyle = 'rgba(' + r0 + ',' + g0 + ',' + b0 + ',' + (0.12 + 0.28 * Math.min(a.d, b.d)).toFixed(3) + ')';
+              ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy); ctx.stroke();
+            }
+          });
+          // hot points
+          proj.forEach((q) => {
+            const [r0, g0, b0] = tones[q.p.hot];
+            const pulse = 0.5 + 0.5 * Math.sin(time * 1.6 + q.p.ph);
+            const rad = (1.8 + 2.6 * q.d) + pulse * 1.3;
+            const al = 0.35 + 0.65 * q.d;
+            const gg = ctx.createRadialGradient(q.sx, q.sy, 0, q.sx, q.sy, rad * 4);
+            gg.addColorStop(0, 'rgba(' + r0 + ',' + g0 + ',' + b0 + ',' + (0.35 * al).toFixed(3) + ')'); gg.addColorStop(1, 'rgba(' + r0 + ',' + g0 + ',' + b0 + ',0)');
+            ctx.fillStyle = gg; ctx.beginPath(); ctx.arc(q.sx, q.sy, rad * 4, 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = 'rgba(' + r0 + ',' + g0 + ',' + b0 + ',' + al.toFixed(3) + ')';
+            ctx.beginPath(); ctx.arc(q.sx, q.sy, rad, 0, Math.PI * 2); ctx.fill();
+          });
+          // tags follow the first point of each cluster while it faces front
+          tags.forEach((tag, c) => {
+            const q = proj.find(x => x.p === clusters[c][0]);
+            if (!q) return;
+            const on = q.z > 0.12 && q.sx > cx - 30;
+            tag.style.opacity = on ? String(Math.min(1, (q.z - 0.12) * 4, (q.sx - cx + 30) / 60)) : '0';
+            tag.style.transform = 'translate(' + (q.sx + 14).toFixed(1) + 'px,' + (q.sy - 14).toFixed(1) + 'px)';
+          });
+        };
+        const loop = (ts) => {
+          if (!t0) t0 = ts;
+          if (visible && !document.hidden) { ang += 0.0028; draw(ts); }
+          requestAnimationFrame(loop);
+        };
+        if ('IntersectionObserver' in window) new IntersectionObserver((es) => es.forEach((e) => { visible = e.isIntersecting; }), { threshold: 0.05 }).observe(wrap);
+        window.addEventListener('resize', () => { resize(); draw(performance.now()); });
+        resize();
+        if (reduce) { ang = 0.6; draw(0); } else requestAnimationFrame(loop);
       })();
 
       // Markers rail: infinite loop, slow auto-rotate, side arrows, progress thumb
