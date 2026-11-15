@@ -5719,7 +5719,6 @@ html { background-color: #02030a; }
 
 
 /* ===== Round 2: hero player, product timeline, centred markers ===== */
-@media (min-width: 1025px) { .hero-inner { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; } }
 .hero-visual-video { transform: none; flex-direction: column; align-items: stretch; }
 .tour-player { width: 100%; display: flex; flex-direction: column; gap: 14px; }
 .tour-frame { max-width: none; }
@@ -5812,3 +5811,40 @@ html { background-color: #02030a; }
   .product-row .product-copy, .product-row .product-shot, .product-row::before { opacity: 1; transform: none; transition: none; }
   .product-line span { transform: none; }
 }
+
+
+/* ===== Round 3: two-line headline, glowing core, marker cards, tidy pricing ===== */
+@media (min-width: 1025px) {
+  .hero-copy { max-width: 640px; }
+  h1 { font-size: clamp(2rem, 4.1vw, 3.1rem); }
+}
+.hero-subtitle { max-width: 560px; margin-bottom: 26px; }
+.orbit-center {
+  background: radial-gradient(circle at 32% 24%, rgba(0, 224, 255, 0.55), rgba(84, 122, 255, 0.35) 38%, #070b1d 72%);
+  box-shadow: 0 0 60px rgba(0, 224, 255, 0.35), 0 0 120px rgba(255, 51, 153, 0.18), inset 0 0 30px rgba(0, 224, 255, 0.15);
+  border-color: rgba(0, 224, 255, 0.65);
+}
+.orbit-center::before {
+  content: ""; position: absolute; inset: -70px; border-radius: 50%; z-index: -1;
+  background: radial-gradient(circle, rgba(0, 224, 255, 0.22), rgba(255, 51, 153, 0.08) 45%, transparent 70%);
+  animation: orbit-bloom 6s ease-in-out infinite;
+}
+@keyframes orbit-bloom { 0%, 100% { transform: scale(0.92); opacity: 0.8; } 50% { transform: scale(1.08); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .orbit-center::before { animation: none; } }
+.markers-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.markers-grid .signal-card-integrated { flex: 0 1 calc(25% - 12px); min-width: 220px; }
+.markers-grid .signal-card-head h3 { display: flex; align-items: baseline; gap: 8px; }
+.marker-id { color: #ff3399; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; }
+.markers-footnote { margin: 18px 0 0; text-align: center; font-size: 0.88rem; color: rgba(180, 200, 255, 0.7); }
+.role-single { display: block; margin-top: 4px; font-size: 0.95rem; line-height: 1.5; }
+.plan-price { white-space: nowrap; font-size: 1.85rem; }
+.plan-from { font-size: 0.9rem; font-weight: 400; color: rgba(180, 200, 255, 0.7); margin-right: 6px; }
+.pricing-note a { color: #00e0ff; text-decoration: none; }
+.pricing-note a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .markers-grid .signal-card-integrated { flex-basis: calc(50% - 8px); min-width: 0; }
+}
+@media (max-width: 560px) {
+  .markers-grid .signal-card-integrated { flex-basis: 100%; }
+}
+@media (min-width: 1025px) { .hero-visual { transform: translateY(-28px); } }
